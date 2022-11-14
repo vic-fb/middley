@@ -1,4 +1,5 @@
 # Creating a progressive web app
+
 ## Client
 
 The instructions below follow the create-react-app steps described [here](https://create-react-app.dev/docs/making-a-progressive-web-app/).
