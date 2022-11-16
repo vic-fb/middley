@@ -1,31 +1,27 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Navbar.css';
+import { Link } from 'react-router-dom';
+// import { Avatar } from '@chakra-ui/react';
+
+import styles from './Navbar.module.css';
 
 function Navbar() {
-  const nav = useNavigate();
-
-  function onHomeClick() {
-    nav('/');
-  }
-  function onLoginClick() {
-    nav('/login');
-  }
-  function onProfileClick() {
-    nav('/profile');
-  }
+  const loggedin = true;
 
   return (
     <nav className="navbar">
-      <button className="homeicon" type="button" onClick={onHomeClick}>
+      <Link to="/" className={styles.HomeLink}>
         Home
-      </button>
-      <button className="signIn" type="button" onClick={onLoginClick}>
-        Sign In
-      </button>
-      <button className="profile" type="button" onClick={onProfileClick}>
-        Profile
-      </button>
+      </Link>
+      {loggedin && (
+        <Link to="/profile" className={styles.ProfileLink}>
+          Profile
+        </Link>
+      )}
+      {!loggedin && (
+        <Link to="/login" className={styles.LoginLink}>
+          Login
+        </Link>
+      )}
     </nav>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './home.css';
+import './Home.css';
 
 function Home() {
   const nav = useNavigate();
@@ -10,7 +10,7 @@ function Home() {
   }
 
   function onGlobalClick() {
-    nav('/global');
+    nav('/GlobalView');
   }
 
   return (
@@ -19,7 +19,7 @@ function Home() {
       <button className="local" type="button" onClick={onLocalClick}>
         Local
       </button>
-      <button className="global" type="button" onClick={onGlobalClick}>
+      <button className="globalView" type="button" onClick={onGlobalClick}>
         Global
       </button>
     </div>
