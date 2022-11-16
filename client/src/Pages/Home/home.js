@@ -10,16 +10,16 @@ function Home() {
   }
 
   function onGlobalClick() {
-    nav('/Global');
+    nav('/global');
   }
 
   return (
     <div className="Home">
       <h1>Meet in the Middle</h1>
-      <button className="Local" type="button" onClick={onLocalClick}>
+      <button className="local" type="button" onClick={onLocalClick}>
         Local
       </button>
-      <button className="Global" type="button" onClick={onGlobalClick}>
+      <button className="global" type="button" onClick={onGlobalClick}>
         Global
       </button>
     </div>
