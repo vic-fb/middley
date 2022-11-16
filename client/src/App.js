@@ -7,7 +7,7 @@ import Home from './Pages/Home/home';
 import Local from './Pages/Local/Local';
 import Global from './Pages/Global/Global';
 import Navbar from './CommonComponents/Navbar/Navbar';
-
+import Activities from './Pages/Activities/Activities';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Local" element={<Local />} />
         <Route path="/Global" element={<Global />} />
+        <Route path="/Activities" element={<Activities />} />
       </Routes>
     </div>
   );
