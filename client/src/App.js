@@ -1,24 +1,31 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { ChakraProvider } from '@chakra-ui/react';
 import styles from './App.module.css';
 import Home from './Pages/Home/Home';
 import Local from './Pages/Local/Local';
 import GlobalView from './Pages/GlobalView/GlobalView';
-import Navbar from './CommonComponents/Navbar/Navbar';
+import Navbar from './common/components/Navbar/Navbar';
 import Activities from './Pages/Activities/Activities';
+import Signup from './Pages/Signup/Signup';
+import Login from './Pages/Login/Login';
 
 function App() {
   return (
-    <div className={styles.App}>
-      <Navbar />
+    <ChakraProvider>
+      <div className={styles.App}>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/GlobalView" element={<GlobalView />} />
-        <Route path="/Local" element={<Local />} />
-        <Route path="/Activities" element={<Activities />} />
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/global" element={<GlobalView />} />
+          <Route path="/local" element={<Local />} />
+          <Route path="/activities" element={<Activities />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </div>
+    </ChakraProvider>
   );
 }
 
