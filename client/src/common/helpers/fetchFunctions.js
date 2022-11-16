@@ -17,11 +17,11 @@ const requestPost = (path, body) => {
     options.headers.Authorization = `Bearer ${token}`;
   }
   return fetch(route, options)
+    .then((response) => response.json())
     .then((response) => {
-      if (!response.ok) { throw new Error('Network response was not OK'); }
-      return response.json();
-    })
-    .catch((error) => error.message);
+      if (!response.ok) { throw new Error(response.message); }
+      return response;
+    });
 };
 
 const userLogin = (password, email) => requestPost('/auth/login', { password, email });

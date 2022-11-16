@@ -2,22 +2,22 @@ import {
   FormControl,
   FormLabel,
   FormErrorMessage,
-  FormHelperText,
   Input,
   Container,
-  Button, Heading,
+  Button, Heading, Text, Link, useToast,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { Link as RouteLink } from 'react-router-dom';
 import userLogin from '../../common/helpers/fetchFunctions';
 import { saveUserInfo } from '../../common/helpers/localFunctions';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loginErrorMsg, setLoginErrorMsg] = useState('');
-  const isError = (response) => typeof response === 'string';
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const toast = useToast();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -34,22 +34,21 @@ function Login() {
   };
 
   async function doUserLogin() {
-    const response = await userLogin(password, email);
-    if (isError(response)) {
-      setLoginErrorMsg('Login failed');
-      // eslint-disable-next-line no-console
-      console.log(loginErrorMsg);
-      // return toast({
-      //   title: loginErrorMsg,
-      //   status: 'error',
-      //   isClosable: true,
-      // });
-    } else {
+    try {
+      setLoading(true);
+      const response = await userLogin(password, email);
       // I would prefer only saving token in local and saving user as state/context
       saveUserInfo(response.token, response.user);
-      setLoginErrorMsg('');
       navigate('/');
+    } catch (error) {
+      toast({
+        title: 'Login failed',
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      });
     }
+    setLoading(false);
   }
 
   const handleSubmit = (event) => {
@@ -65,7 +64,6 @@ function Login() {
         <FormControl isRequired>
           <FormLabel>Email address</FormLabel>
           <Input type="email" name="email" onChange={handleChange} value={email} />
-          <FormHelperText>We&apos;ll never share your email.</FormHelperText>
           <FormErrorMessage>Email is required.</FormErrorMessage>
         </FormControl>
         <FormControl isRequired>
@@ -73,8 +71,12 @@ function Login() {
           <Input type="password" name="password" onChange={handleChange} value={password} />
           <FormErrorMessage>Email is required.</FormErrorMessage>
         </FormControl>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" isLoading={loading}>Submit</Button>
       </form>
+      <Text>
+        {'Not yet registered? Sign up '}
+        <Link as={RouteLink} to="/signup">here</Link>
+      </Text>
     </Container>
   );
 }
