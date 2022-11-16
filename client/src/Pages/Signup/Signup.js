@@ -10,9 +10,13 @@ import {
 function Signup() {
   // [loading, setLoading] = useState(false);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <Container>
-      <form>
+      <form onSubmit={handleSubmit}>
         <FormControl isRequired>
           <FormLabel>Name</FormLabel>
           <Input type="text" />
