@@ -8,11 +8,23 @@ function Navbar() {
   function onHomeClick() {
     nav('/');
   }
+  function onLoginClick() {
+    nav('/login');
+  }
+  function onProfileClick() {
+    nav('/profile');
+  }
 
   return (
     <nav className="navbar">
       <button className="homeicon" type="button" onClick={onHomeClick}>
         Home
+      </button>
+      <button className="signIn" type="button" onClick={onLoginClick}>
+        Sign In
+      </button>
+      <button className="profile" type="button" onClick={onProfileClick}>
+        Profile
       </button>
     </nav>
   );

@@ -6,11 +6,11 @@ function Home() {
   const nav = useNavigate();
 
   function onLocalClick() {
-    nav('/local'); // not in use yet, but will action when clicking on local button
+    nav('/local');
   }
 
   function onGlobalClick() {
-    nav('/global'); // not in use yet, but will action when clicking on global button
+    nav('/global');
   }
 
   return (
