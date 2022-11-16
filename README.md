@@ -25,10 +25,11 @@ const cors = require('cors');
 
 // import any routes you need
 const usersRouter = require('../routes/users');
+const indexRouter = require("../routes");
 
 app.use(cors());
-
 // use your routes
+app.use('/api', indexRouter);
 app.use('/api/users', usersRouter);
 
 module.exports = app;
@@ -50,6 +51,18 @@ To deploy your application on Vercel, you can follow the steps [here](https://ve
 You will have to deploy the client selecting the 'Create React App' framework and deploy the server selecting 'Other'.
 
 *Don't forget to connect your client with the corresponding server!*
+
+When deploying the frontend, you should add an Environment Variable (REACT_APP_API_URL) for your server URL.
+In the frontend, you can add:
+
+```javascript
+const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+```
+
+You should use this variable to build your fetch routes in the front (for example, apiUrl + '/api/users').
+
+## Add cloud database
+
 
 
 
