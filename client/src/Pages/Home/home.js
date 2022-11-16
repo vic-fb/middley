@@ -10,7 +10,7 @@ function Home() {
   }
 
   function onGlobalClick() {
-    nav('/global');
+    nav('/Global');
   }
 
   return (
