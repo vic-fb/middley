@@ -24,6 +24,6 @@ const requestPost = (path, body) => {
     .catch((error) => error.message);
 };
 
-const userLogin = (email, password) => requestPost('/login', { password, email });
+const userLogin = (password, email) => requestPost('/auth/login', { password, email });
 
 export default userLogin;
