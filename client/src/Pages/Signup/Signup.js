@@ -3,7 +3,7 @@ import {
   FormLabel,
   FormErrorMessage,
   FormHelperText,
-  Input, Container, Button,
+  Input, Container, Button, Heading,
 } from '@chakra-ui/react';
 // import { useState } from 'react';
 
@@ -16,6 +16,8 @@ function Signup() {
 
   return (
     <Container>
+      <Heading as="h1">Welcome!</Heading>
+      <Heading as="h2">Create your account</Heading>
       <form onSubmit={handleSubmit}>
         <FormControl isRequired>
           <FormLabel>Name</FormLabel>
