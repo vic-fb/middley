@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './global.css';
+import './Global.css';
 
 function global() {
   const nav = useNavigate();
