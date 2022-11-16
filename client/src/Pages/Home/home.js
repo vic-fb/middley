@@ -6,7 +6,7 @@ function Home() {
   const nav = useNavigate();
 
   function onLocalClick() {
-    nav('/local'); // not in use yet, but will action when clicking on local button
+    nav('/Local');
   }
 
   function onGlobalClick() {
