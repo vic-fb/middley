@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const express = require('express');
 
 const router = express.Router();
@@ -23,15 +24,17 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-    const results = await db(`SELECT * FROM userInfo WHERE username = '${username}'`);
+    const results = await db(`SELECT * FROM userInfo WHERE email = '${email}'`);
+    console.log(results);
     if (results.data.length === 0) {
       res.status(401).send({ error: 'Login failed' });
     } else {
       const user = results.data[0];
       const passwordsEqual = await bcrypt.compare(password, user.password);
+      console.log(passwordsEqual);
       if (passwordsEqual) {
         const payload = { userId: user.id };
         const token = jwt.sign(payload, SECRET_KEY);
@@ -49,3 +52,5 @@ router.post('/login', async (req, res) => {
     res.status(500).send({ error: err.message });
   }
 });
+
+module.exports = router;
