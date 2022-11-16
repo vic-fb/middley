@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Global.css';
+import './GlobalView.css';
 
-function Global() {
+function GlobalView() {
   const nav = useNavigate();
 
   function returnHomeClick() {
@@ -18,4 +18,4 @@ function Global() {
   );
 }
 
-export default Global;
+export default GlobalView;

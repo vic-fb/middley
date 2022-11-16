@@ -1,10 +1,8 @@
-// eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from 'react';
-// eslint-disable-next-line no-unused-vars
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 import styles from './App.module.css';
-import Home from './Pages/Home/home';
-import Global from './Pages/Global/Global';
+import Home from './Pages/Home/Home';
+import GlobalView from './Pages/GlobalView/GlobalView';
 import Navbar from './CommonComponents/Navbar/Navbar';
 
 function App() {
@@ -14,7 +12,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Global" element={<Global />} />
+        <Route path="/GlobalView" element={<GlobalView />} />
       </Routes>
     </div>
   );
