@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Global.css';
 
-function global() {
+function Global() {
   const nav = useNavigate();
 
   function returnHomeClick() {
@@ -18,4 +18,4 @@ function global() {
   );
 }
 
-export default global;
+export default Global;
