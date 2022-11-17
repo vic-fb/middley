@@ -1,17 +1,46 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heading, HStack, VStack } from '@chakra-ui/react';
+// eslint-disable-next-line object-curly-newline
+import { Button, Heading, HStack, Image, VStack } from '@chakra-ui/react';
+
 import styles from './Home.module.css';
 
 function Home() {
   return (
     <div className={styles.Home}>
       <VStack>
+        <Image
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5MRALgb4vgJEXZCN67pAWBgSjrfcqym0qQseIfSjmkugK-LQEol7QX95mSzcMVXm1QlY&usqp=CAU"
+          alt="Globa with points"
+        />
+        <Heading className={styles.MITMTitle} p={4} fontSize="6xl">
+          Meet in the Middle
+        </Heading>
+
         <HStack>
-          <Heading className={styles.MITMTitle}>Meet in the Middle </Heading>
+          <Button
+            size="lg"
+            as={Link}
+            to="/local"
+            p={8}
+            fontSize="2xl"
+            colorScheme="linkedin"
+            variant="outline"
+          >
+            Local
+          </Button>
+          <Button
+            size="lg"
+            as={Link}
+            to="/global"
+            p={8}
+            fontSize="2xl"
+            colorScheme="linkedin"
+            variant="outline"
+          >
+            Global
+          </Button>
         </HStack>
-        <Link to="/local">Local</Link>
-        <Link to="/global">Global</Link>
       </VStack>
     </div>
   );
