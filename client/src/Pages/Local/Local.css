@@ -1,42 +1,9 @@
-form {
-    width: 100%;
-    max-width:30%;
-  }
-  
-  button {
-    margin-top: 2rem;
-  }
-  
-  input {
-    border: 1px solid;
-    padding: 0.3em;
-    width: 100%;
-  }
-  
-  textarea {
-    width: 100%;
-    min-height: 6em;
-  }
-  
-  label {
-    display: block;
-    font-size: 1rem;
-    margin-top: 1rem;
-  }
-  
-  select {
-    font-size: 16px;
-  }
-  
-  .postal-code {
-    width: 50%;
-  }
-
+/*  */
   .user-icons  {
     display: flex;
-    align-items: center;
     margin-top: 1rem; 
     font-size: 300%;
+    cursor: pointer;
 }  
 
 

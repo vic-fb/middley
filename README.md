@@ -43,6 +43,31 @@ Add a `vercel.json` file to push all traffic to `index.js`. It should contain:
 }
 ```
 
+## Database
+
+The local database we are using is called: userdata (name to be changed to app name later on)
+It has one table: userInfo
+
+1. - Open MySQL in your terminal by running `mysql -u root -p;`
+
+2. - Create a new database called "userdata": `CREATE DATABASE userdata;`
+
+3. - There is an `.env` file in the project folder which contains MySQL authentication information. For example:
+
+```bash
+DB_HOST=localhost
+DB_USER=root
+DB_NAME=userdata
+DB_PASS=(your password)
+```
+(If you don't have this file yet, make sure to set it up before moving on to the next step.)
+
+4. - In a separate terminal go to the project folder and run `npm run migrate`.
+
+5. - In your MySQL terminal window, run `USE userdata;` then `SHOW TABLES;`. Your database should contain 1 table: `userInfo`
+
+6. - You can run `DESCRIBE userInfo;` to check that the table has been set up correctly.
+
 
 ## Deploy
 
