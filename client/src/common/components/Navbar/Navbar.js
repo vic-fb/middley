@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { GiWorld } from 'react-icons/gi';
+import { Button } from '@chakra-ui/react';
 import { getUser } from '../../helpers/localFunctions';
 // import styles from './Navbar.module.css';
 
@@ -9,12 +10,19 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/">
-        <GiWorld />
+      <Button lefticon={<GiWorld />} as={Link} to="/" variant="ghost">
         Home
-      </Link>
-      {!user && <Link to="/login">Log In</Link>}
-      {user && <Link to="/profile">Profile</Link>}
+      </Button>
+      {!user && (
+        <Button as={Link} to="/login" variant="ghost">
+          Log In
+        </Button>
+      )}
+      {user && (
+        <Button as={Link} to="/profile" variant="ghost">
+          Profile
+        </Button>
+      )}
     </nav>
   );
 }
