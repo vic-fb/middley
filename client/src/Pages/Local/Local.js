@@ -3,6 +3,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Local.css';
 import { BsFillHouseDoorFill, BsFillBriefcaseFill } from 'react-icons/bs';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
 
 function Local() {
   const nav = useNavigate();
@@ -16,14 +17,14 @@ function Local() {
     <div className="Local">
       <h6>LOCAL</h6>
       <form className="Local-form" onSubmit={handleClick}>
-        <h2>Location 1</h2>
-        <label htmlFor="street address">Street Address</label>
+        <h2>LOCATION 1</h2>
+        <label htmlFor="street address">ADRESS</label>
         <input type="text" id="street address" name="street address" />
         <label htmlFor="zip">
-          Zip or postal code:
+          POSTAL CODE:
           <input className="postal-code" id="postal-code" name="postal-code" />
         </label>
-        <label htmlFor="country"> Country </label>
+        <label htmlFor="country"> COUNTRY </label>
         <select id="country" name="country" autoComplete="country" enterKeyHint="done" required>
           <option value="AF">Afghanistan</option>
           <option value="AX">Åland Islands</option>
@@ -275,17 +276,19 @@ function Local() {
           <option value="ZM">Zambia</option>
           <option value="ZW">Zimbabwe</option>
         </select>
-        <br />
-        <BsFillHouseDoorFill />
-        <BsFillBriefcaseFill />
-        <h2>Location 2</h2>
-        <label htmlFor="street address">Street Address</label>
+        <div className="user-icons">
+          <BsFillHouseDoorFill />
+          <BsFillBriefcaseFill />
+          <HiOutlineLocationMarker />
+        </div>
+        <h2>LOCATION 2</h2>
+        <label htmlFor="street address">ADRESS</label>
         <input type="text" id="street address" name="street address" />
         <label htmlFor="zip">
-          Zip or postal code:
+          POSTAL CODE:
           <input className="postal-code" id="postal-code" name="postal-code" />
         </label>
-        <label htmlFor="country"> Country </label>
+        <label htmlFor="country"> COUNTRY </label>
         <select id="country" name="country" autoComplete="country" enterKeyHint="done" required>
           <option value="AF">Afghanistan</option>
           <option value="AX">Åland Islands</option>
@@ -537,11 +540,13 @@ function Local() {
           <option value="ZM">Zambia</option>
           <option value="ZW">Zimbabwe</option>
         </select>
-        <BsFillHouseDoorFill />
-        <BsFillBriefcaseFill />
-        <br />
+        <div className="user-icons">
+          <BsFillHouseDoorFill />
+          <BsFillBriefcaseFill />
+          <HiOutlineLocationMarker />
+        </div>
         <button className="Submit" type="submit">
-          Get Activities
+          CHOOSE ACTIVITY
         </button>
       </form>
     </div>

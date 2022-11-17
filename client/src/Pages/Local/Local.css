@@ -1,6 +1,6 @@
 form {
-    width: 90vw;
-    max-width: 20em;
+    width: 100%;
+    max-width:30%;
   }
   
   button {
@@ -31,3 +31,16 @@ form {
   .postal-code {
     width: 50%;
   }
+
+  .user-icons  {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem; 
+    font-size: 300%;
+}  
+
+
+  
+
+
+  
