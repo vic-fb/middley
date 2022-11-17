@@ -62,7 +62,7 @@ function Activities() {
         </div>
         <div className="Activities-icon" role="presentation" onClick={handleClick}>
           <GiPerspectiveDiceSixFacesRandom />
-          <p>SURPRISE</p>
+          <p>SUPRISE</p>
 
         </div>
 

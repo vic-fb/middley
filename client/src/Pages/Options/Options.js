@@ -7,6 +7,8 @@ import {
 
 function Options() {
   const nav = useNavigate();
+  // return options.map((option) => ( in return statement below to display api data in cards on page
+
   return (
     <div className="card-container">
       <Card
@@ -103,5 +105,4 @@ function Options() {
 
   );
 }
-
 export default Options;
