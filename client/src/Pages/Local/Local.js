@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Local.css';
@@ -14,22 +13,17 @@ import {
 function Local() {
   const nav = useNavigate();
 
-  // handle the form submission
-  const handleSubmit = (event) => {
+  const handleChange = (event) => {
     event.preventDefault();
-    nav('/Activities');
-  };
-
-  const handleClick = (event) => {
-    event.preventDefault();
-    nav('/Options'); // this is the path to the Options page but should give the form the user home adress
-    console.log('The icon was clicked.');
+    nav('/Options');
+    getMidpoint();
+    console.log('clicked');
   };
 
   return (
     <Container>
       <Heading as="h2">LOCATION 1</Heading>
-      <form onSubmit={handleSubmit}>
+      <form>
         <FormControl isRequired>
           <FormLabel>ADRESS</FormLabel>
           <Input type="text" />
@@ -45,13 +39,13 @@ function Local() {
           <FormErrorMessage>country is required</FormErrorMessage>
         </FormControl>
         <div className="user-icons">
-          <div className="home-icon" role="presentation" onClick={handleClick}>
+          <div className="home-icon" role="presentation" onClick={handleChange}>
             <BsFillHouseDoorFill />
           </div>
-          <div className="work-icon" role="presentation" onClick={handleClick}>
+          <div className="work-icon" role="presentation" onClick={handleChange}>
             <BsFillBriefcaseFill />
           </div>
-          <div className="currentLocation-icon" role="presentation" onClick={handleClick}>
+          <div className="currentLocation-icon" role="presentation" onClick={handleChange}>
             <HiOutlineLocationMarker />
           </div>
 
@@ -74,19 +68,19 @@ function Local() {
           <FormErrorMessage>country is required</FormErrorMessage>
         </FormControl>
         <div className="user-icons">
-          <div className="home-icon" role="presentation" onClick={handleClick}>
+          <div className="home-icon" role="presentation" onClick={handleChange}>
             <BsFillHouseDoorFill />
           </div>
-          <div className="work-icon" role="presentation" onClick={handleClick}>
+          <div className="work-icon" role="presentation" onClick={handleChange}>
             <BsFillBriefcaseFill />
           </div>
-          <div className="currentLocation-icon" role="presentation" onClick={handleClick}>
+          <div className="currentLocation-icon" role="presentation" onClick={handleChange}>
             <HiOutlineLocationMarker />
           </div>
 
         </div>
         <br />
-        <Button type="submit">CHOOSE ACTIVITIES</Button>
+        <Button type="submit" onClick={handleChange}>CHOOSE ACTIVITIES</Button>
       </form>
     </Container>
   );
