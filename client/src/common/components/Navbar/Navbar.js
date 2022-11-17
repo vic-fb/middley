@@ -1,31 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import styles from './Navbar.module.css';
+import { Link } from 'react-router-dom';
+import { GiWorld } from 'react-icons/gi';
+import { getUser } from '../../helpers/localFunctions';
+// import styles from './Navbar.module.css';
 
 function Navbar() {
-  const nav = useNavigate();
-
-  function onHomeClick() {
-    nav('/');
-  }
-  function onLoginClick() {
-    nav('/login');
-  }
-  function onProfileClick() {
-    nav('/profile');
-  }
+  const user = getUser();
 
   return (
     <nav className="navbar">
-      <button className={styles.HomeLink} type="button" onClick={onHomeClick}>
+      <Link to="/">
+        <GiWorld />
         Home
-      </button>
-      <button className={styles.LoginLink} type="button" onClick={onLoginClick}>
-        Sign In
-      </button>
-      <button className={styles.ProfileLink} type="button" onClick={onProfileClick}>
-        Profile
-      </button>
+      </Link>
+      {!user && <Link to="/login">Log In</Link>}
+      {user && <Link to="/profile">Profile</Link>}
     </nav>
   );
 }

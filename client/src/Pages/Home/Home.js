@@ -1,27 +1,18 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Home.css';
+import { Link } from 'react-router-dom';
+import { Heading, HStack, VStack } from '@chakra-ui/react';
+import styles from './Home.module.css';
 
 function Home() {
-  const nav = useNavigate();
-
-  function onLocalClick() {
-    nav('/local');
-  }
-
-  function onGlobalClick() {
-    nav('/GlobalView');
-  }
-
   return (
-    <div className="Home">
-      <h1>Meet in the Middle</h1>
-      <button className="local" type="button" onClick={onLocalClick}>
-        Local
-      </button>
-      <button className="globalView" type="button" onClick={onGlobalClick}>
-        Global
-      </button>
+    <div className={styles.Home}>
+      <VStack>
+        <HStack>
+          <Heading className={styles.MITMTitle}>Meet in the Middle </Heading>
+        </HStack>
+        <Link to="/local">Local</Link>
+        <Link to="/global">Global</Link>
+      </VStack>
     </div>
   );
 }
