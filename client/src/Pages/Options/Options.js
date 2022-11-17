@@ -1,18 +1,107 @@
-// import React from 'react'; 
-// import { useNavigate } from 'react-router-dom';
-import './Options.module.css';
+// import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Options.css';
+import {
+  Card, CardBody, CardFooter, Heading, Text, Button, Image, Stack,
+} from '@chakra-ui/react';
 
+function Options() {
+  const nav = useNavigate();
+  return (
+    <div className="card-container">
+      <Card
+        direction={{ base: 'column', sm: 'row' }}
+        overflow="hidden"
+        variant="outline"
+        onClick={() => nav('/Results')}
+      >
+        <Image
+          objectFit="cover"
+          maxW={{ base: '100%', sm: '200px' }}
+          src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+          alt="Caffe Latte"
+        />
 
-function Options = () => {
-    // const nav = useNavigate();
-    // const handleClick = (event) => {
-    //     event.preventDefault();
+        <Stack>
+          <CardBody>
+            <Heading size="md">OPTION 1</Heading>
 
-// should return  a grid with three activity options from the yelp api.
-// the user should be able to click on one of the options and be redirected to the navigation page
-// the user should be able to click on the back button and be redirected to the Activities page
+            <Text py="2">
+              Caffè latte is a coffee beverage of Italian origin made with espresso
+              and steamed milk.
+            </Text>
+          </CardBody>
 
-    
+          <CardFooter>
+            <Button variant="solid" colorScheme="blue">
+              GO
+            </Button>
+          </CardFooter>
+        </Stack>
+      </Card>
+      <Card
+        direction={{ base: 'column', sm: 'row' }}
+        overflow="hidden"
+        variant="outline"
+        onClick={() => nav('/Results')}
+      >
+        <Image
+          objectFit="cover"
+          maxW={{ base: '100%', sm: '200px' }}
+          src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+          alt="Caffe Latte"
+        />
 
+        <Stack>
+          <CardBody>
+            <Heading size="md">OPTION 2</Heading>
 
-    // export default Options; 
+            <Text py="2">
+              Caffè latte is a coffee beverage of Italian origin made with espresso
+              and steamed milk.
+            </Text>
+          </CardBody>
+
+          <CardFooter>
+            <Button variant="solid" colorScheme="blue">
+              GO
+            </Button>
+          </CardFooter>
+        </Stack>
+      </Card>
+      <Card
+        direction={{ base: 'column', sm: 'row' }}
+        overflow="hidden"
+        variant="outline"
+        onClick={() => nav('/Results')}
+      >
+        <Image
+          objectFit="cover"
+          maxW={{ base: '100%', sm: '200px' }}
+          src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+          alt="Caffe Latte"
+        />
+
+        <Stack>
+          <CardBody>
+            <Heading size="md">OPTION 3</Heading>
+
+            <Text py="2">
+              Caffè latte is a coffee beverage of Italian origin made with espresso
+              and steamed milk.
+            </Text>
+          </CardBody>
+
+          <CardFooter>
+            <Button variant="solid" colorScheme="blue">
+              GO
+            </Button>
+          </CardFooter>
+        </Stack>
+      </Card>
+    </div>
+
+  );
+}
+
+export default Options;
