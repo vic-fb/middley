@@ -3,7 +3,7 @@ import { getUserToken } from './localFunctions';
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
-const requestPost = (path, body) => {
+const post = (path, body) => {
   const options = {
     method: 'POST',
     headers: {
@@ -24,6 +24,4 @@ const requestPost = (path, body) => {
     });
 };
 
-const userLogin = (password, email) => requestPost('/auth/login', { password, email });
-
-export default userLogin;
+export default post;
