@@ -9,6 +9,7 @@ import Navbar from './common/components/Navbar/Navbar';
 import Activities from './Pages/Activities/Activities';
 import Signup from './Pages/Signup/Signup';
 import Login from './Pages/Login/Login';
+import Options from './Pages/Options/Options';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/activities" element={<Activities />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/options" element={<Options />} />
         </Routes>
       </div>
     </ChakraProvider>
