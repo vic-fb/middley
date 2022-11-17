@@ -16,7 +16,6 @@ function Local() {
   const handleChange = (event) => {
     event.preventDefault();
     nav('/Options');
-    getMidpoint();
     console.log('clicked');
   };
 
