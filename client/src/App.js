@@ -10,6 +10,7 @@ import Activities from './Pages/Activities/Activities';
 import Signup from './Pages/Signup/Signup';
 import Login from './Pages/Login/Login';
 import Options from './Pages/Options/Options';
+import RoutesPage from './Pages/RoutesPage/RoutesPage';
 
 function App() {
   const [midpoint, setMidpoint] = React.useState('');
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/options" element={<Options />} />
+          <Route path="/routes" element={<RoutesPage />} />
         </Routes>
       </div>
     </ChakraProvider>
