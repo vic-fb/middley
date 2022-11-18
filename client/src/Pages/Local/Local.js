@@ -8,9 +8,11 @@ import {
   FormControl,
   FormLabel,
   FormErrorMessage,
-  Input, Container, Button, Heading,
+  Input,
+  Container,
+  Button,
+  Heading,
 } from '@chakra-ui/react';
-
 
 const OCD_API_KEY = process.env.REACT_APP_OCD_API_KEY; // the API key is stored in the .env file
 
@@ -22,7 +24,10 @@ async function geocode(address) {
   };
 
   const myresponse = {
-    ok: false, data: null, status: 0, error: '',
+    ok: false,
+    data: null,
+    status: 0,
+    error: '',
   };
   try {
     // OC sends response in JSON, API takes care of parsing etc.
@@ -52,9 +57,7 @@ async function geocode(address) {
   return myresponse;
 }
 
-
-
-function Local({setMidpoint}) {
+function Local({ setMidpoint }) {
   const nav = useNavigate();
 
   const [address1, setAddress1] = React.useState('');
@@ -67,18 +70,16 @@ function Local({setMidpoint}) {
     const response1 = await geocode(address1);
     const response2 = await geocode(address2);
     if (response1.ok && response2.ok) {
+      const midlat = (response1.data.latLng[0] + response2.data.latLng[0]) / 2; // create var midlat = lat1 + lat2 (from arrays) divided by 2
+      console.log('midlat', midlat); // print midlat to console
 
-      const midlat = (response1.data.latLng[0] + response2.data.latLng[0]) / 2;  // create var midlat = lat1 + lat2 (from arrays) divided by 2
-      console.log ('midlat', midlat); // print midlat to console
-   
       const midlng = (response1.data.latLng[1] + response2.data.latLng[1]) / 2; // create var midlng = lng1 + lng2 (from arrays) divided by 2
-      console.log ('midlng', midlng);
+      console.log('midlng', midlng);
       const midarr = [midlat, midlng]; // create array containing midlat and midlng
 
-      setMidpoint(midarr); // return new array with both 
-
+      setMidpoint(midarr); // return new array with both
+      nav('/activities');
       // for some reason the long and lat are not calculated correctly - the returned value is not correct
-      
     } else {
       setError('Error calculating midpoint');
     }
@@ -86,17 +87,17 @@ function Local({setMidpoint}) {
 
   const handleAddress1 = (e) => {
     setAddress1(e.target.value);
-  }
+  };
 
   const handleAddress2 = (e) => {
     setAddress2(e.target.value);
-  }
-
-
+  };
 
   return (
     <Container>
-      <Heading as="h1" size="2xl" mb="4">Find Midway Point</Heading>
+      <Heading as="h1" size="2xl" mb="4">
+        Find Midway Point
+      </Heading>
       <form onSubmit={handleSubmit}>
         <FormControl id="address1" isRequired>
           <FormLabel>Address 1</FormLabel>
@@ -112,17 +113,16 @@ function Local({setMidpoint}) {
           <div className="home-icon" role="presentation">
             <BsFillHouseDoorFill />
           </div>
-          <div className="work-icon" role="presentation" >
+          <div className="work-icon" role="presentation">
             <BsFillBriefcaseFill />
           </div>
-          <div className="currentLocation-icon" role="presentation" >
+          <div className="currentLocation-icon" role="presentation">
             <HiOutlineLocationMarker />
           </div>
-
         </div>
 
         <br />
-        
+
         <FormControl id="address2" isRequired>
           <FormLabel>Address 2</FormLabel>
           <Input
@@ -132,27 +132,26 @@ function Local({setMidpoint}) {
             onChange={handleAddress2}
           />
         </FormControl>
-        
+
         <div className="user-icons">
           <div className="home-icon" role="presentation">
             <BsFillHouseDoorFill />
           </div>
-          <div className="work-icon" role="presentation" >
+          <div className="work-icon" role="presentation">
             <BsFillBriefcaseFill />
           </div>
-          <div className="currentLocation-icon" role="presentation" >
+          <div className="currentLocation-icon" role="presentation">
             <HiOutlineLocationMarker />
           </div>
-
         </div>
-     
 
-          <Button type="submit" colorScheme="teal" mt="4">Submit</Button>
+        <Button type="submit" colorScheme="teal" mt="4">
+          Submit
+        </Button>
       </form>
-      <div>
-      </div>
+      <div></div>
     </Container>
   );
-};
+}
 
 export default Local;

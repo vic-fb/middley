@@ -19,7 +19,9 @@ export const post = (path, body) => {
   return fetch(route, options)
     .then((response) => response.json())
     .then((response) => {
-      if (!response.ok) { throw new Error(response.message); }
+      if (!response.ok) {
+        throw new Error(response.message);
+      }
       return response;
     });
 };
@@ -28,7 +30,7 @@ export const get = (path) => {
   const route = apiUrl + path;
   const token = getUserToken();
   const options = {
-    method: 'POST',
+    method: 'GET',
     headers: {
       'Content-type': 'application/json',
     },
@@ -39,7 +41,9 @@ export const get = (path) => {
   return fetch(route, options)
     .then((response) => response.json())
     .then((response) => {
-      if (!response.ok) { throw new Error(response.message); }
+      if (!response.ok) {
+        throw new Error(response.message);
+      }
       return response;
     });
 };

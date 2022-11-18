@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import styles from './App.module.css';
@@ -13,7 +13,8 @@ import Options from './Pages/Options/Options';
 import RoutesPage from './Pages/RoutesPage/RoutesPage';
 
 function App() {
-  const [midpoint, setMidpoint] = React.useState('');
+  const [midpoint, setMidpoint] = useState('');
+  const [activities, setActivities] = useState('');
   return (
     <ChakraProvider>
       <div className={styles.App}>
@@ -22,11 +23,23 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/global" element={<GlobalView />} />
-          <Route path="/local" element={<Local setMidpoint= {setMidpoint} />} />
-          <Route path="/activities" element={<Activities midpointValue= {midpoint} />} />
+          <Route path="/local" element={<Local setMidpoint={setMidpoint} />} />
+          <Route
+            path="/activities"
+            element={
+              // eslint-disable-next-line react/jsx-wrap-multilines
+              <Activities
+                setActivities={setActivities}
+                midpointValue={midpoint}
+              />
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/options" element={<Options />} />
+          <Route
+            path="/options"
+            element={<Options activities={activities} />}
+          />
           <Route path="/routes" element={<RoutesPage />} />
         </Routes>
       </div>
