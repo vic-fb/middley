@@ -9,7 +9,7 @@ import {
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Link as RouteLink } from 'react-router-dom';
-import userLogin from '../../common/helpers/auth';
+import { userLogin } from '../../common/helpers/auth';
 import { saveUserInfo } from '../../common/helpers/localFunctions';
 
 function Login() {
