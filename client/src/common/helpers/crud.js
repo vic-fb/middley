@@ -17,12 +17,11 @@ export const post = (path, body) => {
     options.headers.Authorization = `Bearer ${token}`;
   }
   return fetch(route, options)
-    .then((response) => response.json())
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.message);
       }
-      return response;
+      return response.json();
     });
 };
 
@@ -39,11 +38,10 @@ export const get = (path) => {
     options.headers.Authorization = `Bearer ${token}`;
   }
   return fetch(route, options)
-    .then((response) => response.json())
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.message);
       }
-      return response;
+      return response.json();
     });
 };
