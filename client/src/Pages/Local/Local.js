@@ -1,27 +1,16 @@
 import React from 'react';
-// import opencage from 'opencage-api-client';
-// import { useNavigate } from 'react-router-dom';
 import './Local.css';
 import { BsFillHouseDoorFill, BsFillBriefcaseFill } from 'react-icons/bs';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 import {
   FormControl,
   FormLabel,
-
-
   Input, Container, Button, Heading,
 } from '@chakra-ui/react';
-
-// const OCD_API_KEY = process.env.REACT_APP_OCD_API_KEY; // the API key is stored in the .env file
 
 function Local({
   setAddress1, setAddress2, handleSubmit, address1, address2,
 }) {
-  // const [address1, setAddress1] = React.useState('');
-  // const [address2, setAddress2] = React.useState('');
-  // const [error, setError] = React.useState('');
-
-
   const handleAddress1 = (e) => {
     setAddress1(e.target.value);
   };
@@ -81,7 +70,6 @@ function Local({
             <HiOutlineLocationMarker />
           </div>
         </div>
-
 
         <Button type="submit" colorScheme="teal" mt="4">Submit</Button>
       </form>
