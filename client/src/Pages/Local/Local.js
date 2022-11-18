@@ -57,8 +57,8 @@ async function geocode(address) {
 function Local({setMidpoint}) {
   const nav = useNavigate();
 
-  const [address1, setAddress1] = React.useState('');
-  const [address2, setAddress2] = React.useState('');
+  // const [address1, setAddress1] = React.useState('');
+  // const [address2, setAddress2] = React.useState('');
   const [error, setError] = React.useState('');
 
   // calculate midpoint between two addresses
@@ -77,7 +77,7 @@ function Local({setMidpoint}) {
 
       setMidpoint(midarr); // return new array with both 
 
-      // for some reason the long and lat are not calculated correctly - the returned value is not correct
+      nav('/activities'); // navigate to activities page with midpoint as prop 
       
     } else {
       setError('Error calculating midpoint');
@@ -103,7 +103,7 @@ function Local({setMidpoint}) {
           <Input
             type="text"
             placeholder="Enter address"
-            value={address1}
+            value={address1} // should I take this out?
             onChange={handleAddress1}
           />
         </FormControl>
@@ -128,7 +128,7 @@ function Local({setMidpoint}) {
           <Input
             type="text"
             placeholder="Enter address"
-            value={address2}
+            value={address2} // should I take this out?
             onChange={handleAddress2}
           />
         </FormControl>

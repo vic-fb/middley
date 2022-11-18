@@ -14,6 +14,8 @@ import RoutesPage from './Pages/RoutesPage/RoutesPage';
 
 function App() {
   const [midpoint, setMidpoint] = React.useState('');
+  const [address1, setAddress1] = React.useState('');
+  const [address2, setAddress2] = React.useState('');
   return (
     <ChakraProvider>
       <div className={styles.App}>
@@ -22,12 +24,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/global" element={<GlobalView />} />
-          <Route path="/local" element={<Local setMidpoint= {setMidpoint} />} />
+          <Route path="/local" element={<Local setMidpoint= {setMidpoint} setAdress1= {setAddress1} setAdress2= {setAddress2} />} />
           <Route path="/activities" element={<Activities midpointValue= {midpoint} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/options" element={<Options />} />
-          <Route path="/routes" element={<RoutesPage />} />
+          <Route path="/routes" element={<RoutesPage address1= {address1} address2= {address2} />} />
         </Routes>
       </div>
     </ChakraProvider>
