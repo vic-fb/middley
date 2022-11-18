@@ -54,12 +54,12 @@ async function geocode(address) {
 
 
 
-function Local() {
+function Local({setMidpoint}) {
   const nav = useNavigate();
 
   const [address1, setAddress1] = React.useState('');
   const [address2, setAddress2] = React.useState('');
-  const [midpoint, setMidpoint] = React.useState('');
+  // const [midpoint, setMidpoint] = React.useState('');
   const [error, setError] = React.useState('');
 
   // calculate midpoint between two addresses
@@ -69,15 +69,14 @@ function Local() {
     const response2 = await geocode(address2);
     if (response1.ok && response2.ok) {
 
-      const midlat = response1.data.latLng[0] + response2.data.latLng[0] / 2;  // create var midlat = lat1 + lat2 (from arrays) divided by 2
+      const midlat = (response1.data.latLng[0] + response2.data.latLng[0]) / 2;  // create var midlat = lat1 + lat2 (from arrays) divided by 2
       console.log ('midlat', midlat); // print midlat to console
    
-      const midlng = response1.data.latLng[1] + response2.data.latLng[1] / 2; // create var midlng = lng1 + lng2 (from arrays) divided by 2
-
+      const midlng = (response1.data.latLng[1] + response2.data.latLng[1]) / 2; // create var midlng = lng1 + lng2 (from arrays) divided by 2
+      console.log ('midlng', midlng);
       const midarr = [midlat, midlng]; // create array containing midlat and midlng
 
-      setMidpoint(midarr); // return new array with both
-      console.log('midpoint:', midpoint); 
+      setMidpoint(midarr); // return new array with both 
 
       // for some reason the long and lat are not calculated correctly - the returned value is not correct
       
@@ -93,6 +92,8 @@ function Local() {
   const handleAddress2 = (e) => {
     setAddress2(e.target.value);
   }
+
+
 
   return (
     <Container>
@@ -150,7 +151,6 @@ function Local() {
           <Button type="submit" colorScheme="teal" mt="4">Submit</Button>
       </form>
       <div>
-        <p>{midpoint}</p>
       </div>
     </Container>
   );

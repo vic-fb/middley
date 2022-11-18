@@ -12,6 +12,7 @@ import Login from './Pages/Login/Login';
 import Options from './Pages/Options/Options';
 
 function App() {
+  const [midpoint, setMidpoint] = React.useState('');
   return (
     <ChakraProvider>
       <div className={styles.App}>
@@ -20,8 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/global" element={<GlobalView />} />
-          <Route path="/local" element={<Local />} />
-          <Route path="/activities" element={<Activities />} />
+          <Route path="/local" element={<Local setMidpoint= {setMidpoint} />} />
+          <Route path="/activities" element={<Activities midpointValue= {midpoint} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/options" element={<Options />} />
