@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Activities.css';
 import { IoRestaurantSharp } from 'react-icons/io5';
 import { BiDrink } from 'react-icons/bi';
 import { SiForestry } from 'react-icons/si';
@@ -8,14 +7,22 @@ import { HiOutlineMusicNote } from 'react-icons/hi';
 import { MdOutlineSpa } from 'react-icons/md';
 import { CgGym } from 'react-icons/cg';
 import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
+import getActivities from '../../common/helpers/activities';
 
-function Activities() {
+// eslint-disable-next-line react/prop-types
+function Activities({ midpointValue, setActivities }) {
   const nav = useNavigate();
 
-  const handleClick = (event) => {
+  const handleClick = async (event, category) => {
     event.preventDefault();
     nav('/Options');
     console.log('The icon was clicked.');
+    const options = await getActivities(
+      midpointValue[0],
+      midpointValue[1],
+      category,
+    );
+    setActivities(options);
   };
 
   // const ifEat = () => {
@@ -36,40 +43,64 @@ function Activities() {
     <div className="Activities">
       <h6>ACTIVITIES</h6>
       <div className="Activities-container">
-        <div className="Activities-icon" role="presentation" onClick={handleClick}>
+        <div
+          className="Activities-icon"
+          role="presentation"
+          onClick={(event) => handleClick(event, 'eat')}
+        >
           <IoRestaurantSharp />
           <p>EAT</p>
         </div>
-        <div className="Activities-icon" role="presentation" onClick={handleClick}>
+        <div
+          className="Activities-icon"
+          role="presentation"
+          onClick={(event) => handleClick(event, 'drink')}
+        >
           <BiDrink />
           <p>DRINK</p>
         </div>
-        <div className="Activities-icon" role="presentation" onClick={handleClick}>
+        <div
+          className="Activities-icon"
+          role="presentation"
+          onClick={(event) => handleClick(event, 'outdoor')}
+        >
           <SiForestry />
           <p>OUTDOOR</p>
         </div>
-        <div className="Activities-icon" role="presentation" onClick={handleClick}>
+        <div
+          className="Activities-icon"
+          role="presentation"
+          onClick={(event) => handleClick(event, 'music')}
+        >
           <HiOutlineMusicNote />
           <p>MUSIC</p>
         </div>
-        <div className="Activities-icon" role="presentation" onClick={handleClick}>
+        <div
+          className="Activities-icon"
+          role="presentation"
+          onClick={(event) => handleClick(event, 'spa')}
+        >
           <MdOutlineSpa />
           <p>SPA</p>
         </div>
-        <div className="Activities-icon" role="presentation" onClick={handleClick}>
+        <div
+          className="Activities-icon"
+          role="presentation"
+          onClick={(event) => handleClick(event, 'fitness')}
+        >
           <CgGym />
           <p>FITNESS</p>
         </div>
-        <div className="Activities-icon" role="presentation" onClick={handleClick}>
+        <div
+          className="Activities-icon"
+          role="presentation"
+          onClick={(event) => handleClick(event, 'surprise')}
+        >
           <GiPerspectiveDiceSixFacesRandom />
-          <p>SUPRISE</p>
-
+          <p>SURPRISE</p>
         </div>
-
       </div>
-
     </div>
-
   );
 }
 

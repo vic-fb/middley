@@ -1,5 +1,7 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
+
 import { ChakraProvider } from '@chakra-ui/react';
 import opencage from 'opencage-api-client';
 import styles from './App.module.css';
@@ -16,9 +18,11 @@ import RoutesPage from './Pages/RoutesPage/RoutesPage';
 const OCD_API_KEY = process.env.REACT_APP_OCD_API_KEY; // the API key is stored in the .env file
 
 function App() {
-  const [midpoint, setMidpoint] = React.useState('');
-  const [address1, setAddress1] = React.useState('');
-  const [address2, setAddress2] = React.useState('');
+
+  const [activities, setActivities] = useState('');
+  const [midpoint, setMidpoint] = useState('');
+  const [address1, setAddress1] = useState('');
+  const [address2, setAddress2] = useState('');
   const nav = useNavigate();
 
   async function geocode(address) {
@@ -81,6 +85,7 @@ function App() {
     }
   };
 
+
   return (
     <ChakraProvider>
       <div className={styles.App}>
@@ -89,12 +94,26 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/global" element={<GlobalView />} />
+
           <Route path="/local" element={<Local setMidpoint={setMidpoint} setAddress1={setAddress1} setAddress2={setAddress2} handleSubmit={handleSubmit} address1={address1} address2={address2} />} />
-          <Route path="/activities" element={<Activities midpointValue={midpoint} />} />
+          <Route
+            path="/activities"
+            element={
+              // eslint-disable-next-line react/jsx-wrap-multilines
+              <Activities
+                setActivities={setActivities}
+                midpointValue={midpoint}
+              />
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/options" element={<Options />} />
+          <Route
+            path="/options"
+            element={<Options activities={activities} />}
+          />
           <Route path="/routes" element={<RoutesPage address1={address1} address2={address2} />} />
+
         </Routes>
       </div>
     </ChakraProvider>

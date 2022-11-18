@@ -1,4 +1,5 @@
 {
+
     "env": {
         "browser": true,
         "es2021": true
@@ -21,4 +22,5 @@
         "react/react-in-jsx-scope": "off",
         "react/prop-types": "off"
     }
+
 }

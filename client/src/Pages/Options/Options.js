@@ -2,11 +2,19 @@
 import { useNavigate } from 'react-router-dom';
 import './Options.css';
 import {
-  Card, CardBody, CardFooter, Heading, Text, Button, Image, Stack,
+  Card,
+  CardBody,
+  CardFooter,
+  Heading,
+  Text,
+  Button,
+  Image,
+  Stack,
 } from '@chakra-ui/react';
 
-function Options() {
+function Options({ activities }) {
   const nav = useNavigate();
+
   // return options.map((option) => ( in return statement below to display api data in cards on page
 
   return (
@@ -26,11 +34,11 @@ function Options() {
 
         <Stack>
           <CardBody>
-            <Heading size="md">OPTION 1</Heading>
+            <Heading size="md">{activities}</Heading>
 
             <Text py="2">
-              Caffè latte is a coffee beverage of Italian origin made with espresso
-              and steamed milk.
+              Caffè latte is a coffee beverage of Italian origin made with
+              espresso and steamed milk.
             </Text>
           </CardBody>
 
@@ -59,8 +67,8 @@ function Options() {
             <Heading size="md">OPTION 2</Heading>
 
             <Text py="2">
-              Caffè latte is a coffee beverage of Italian origin made with espresso
-              and steamed milk.
+              Caffè latte is a coffee beverage of Italian origin made with
+              espresso and steamed milk.
             </Text>
           </CardBody>
 
@@ -89,8 +97,8 @@ function Options() {
             <Heading size="md">OPTION 3</Heading>
 
             <Text py="2">
-              Caffè latte is a coffee beverage of Italian origin made with espresso
-              and steamed milk.
+              Caffè latte is a coffee beverage of Italian origin made with
+              espresso and steamed milk.
             </Text>
           </CardBody>
 
@@ -102,7 +110,6 @@ function Options() {
         </Stack>
       </Card>
     </div>
-
   );
 }
 export default Options;
