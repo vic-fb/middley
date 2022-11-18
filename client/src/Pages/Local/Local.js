@@ -59,7 +59,6 @@ function Local({setMidpoint}) {
 
   const [address1, setAddress1] = React.useState('');
   const [address2, setAddress2] = React.useState('');
-  // const [midpoint, setMidpoint] = React.useState('');
   const [error, setError] = React.useState('');
 
   // calculate midpoint between two addresses
