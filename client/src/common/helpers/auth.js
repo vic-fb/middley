@@ -1,4 +1,4 @@
-import post from './crud';
+import { post } from './crud';
 
 const userLogin = (password, email) => post('/auth/login', { password, email });
 
