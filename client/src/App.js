@@ -16,6 +16,29 @@ function App() {
   const [midpoint, setMidpoint] = React.useState('');
   const [address1, setAddress1] = React.useState('');
   const [address2, setAddress2] = React.useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response1 = await geocode(address1);
+    const response2 = await geocode(address2);
+    if (response1.ok && response2.ok) {
+
+      const midlat = (response1.data.latLng[0] + response2.data.latLng[0]) / 2;  // create var midlat = lat1 + lat2 (from arrays) divided by 2
+      console.log ('midlat', midlat); // print midlat to console
+   
+      const midlng = (response1.data.latLng[1] + response2.data.latLng[1]) / 2; // create var midlng = lng1 + lng2 (from arrays) divided by 2
+      console.log ('midlng', midlng);
+      const midarr = [midlat, midlng]; // create array containing midlat and midlng
+
+      setMidpoint(midarr); // return new array with both 
+
+      nav('/activities'); // navigate to activities page with midpoint as prop 
+      
+    } else {
+      setError('Error calculating midpoint');
+    }
+  };
+
   return (
     <ChakraProvider>
       <div className={styles.App}>
@@ -24,7 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/global" element={<GlobalView />} />
-          <Route path="/local" element={<Local setMidpoint= {setMidpoint} setAdress1= {setAddress1} setAdress2= {setAddress2} />} />
+          <Route path="/local" element={<Local setMidpoint= {setMidpoint} setAdress1= {setAddress1} setAdress2= {setAddress2} handleSubmit={handleSubmit} />} />
           <Route path="/activities" element={<Activities midpointValue= {midpoint} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
