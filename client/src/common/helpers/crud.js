@@ -28,7 +28,7 @@ export const get = (path) => {
   const route = apiUrl + path;
   const token = getUserToken();
   const options = {
-    method: 'POST',
+    method: 'GET',
     headers: {
       'Content-type': 'application/json',
     },

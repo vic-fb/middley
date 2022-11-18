@@ -1,5 +1,5 @@
 import { post } from './crud';
 
-const userLogin = (password, email) => post('/auth/login', { password, email });
+export const userLogin = (password, email) => post('/auth/login', { password, email });
 
-export default userLogin;
+export const register = (username, email, password) => post('/auth/register', { username, email, password });
