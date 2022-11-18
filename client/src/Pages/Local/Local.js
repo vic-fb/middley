@@ -54,35 +54,12 @@ async function geocode(address) {
 
 
 
-function Local({setMidpoint}) {
+function Local({setAddress1, setAddress2, handleSubmit}) {
   const nav = useNavigate();
 
-  const [address1, setAddress1] = React.useState('');
-  const [address2, setAddress2] = React.useState('');
+  // const [address1, setAddress1] = React.useState('');
+  // const [address2, setAddress2] = React.useState('');
   const [error, setError] = React.useState('');
-
-  // calculate midpoint between two addresses
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response1 = await geocode(address1);
-    const response2 = await geocode(address2);
-    if (response1.ok && response2.ok) {
-
-      const midlat = (response1.data.latLng[0] + response2.data.latLng[0]) / 2;  // create var midlat = lat1 + lat2 (from arrays) divided by 2
-      console.log ('midlat', midlat); // print midlat to console
-   
-      const midlng = (response1.data.latLng[1] + response2.data.latLng[1]) / 2; // create var midlng = lng1 + lng2 (from arrays) divided by 2
-      console.log ('midlng', midlng);
-      const midarr = [midlat, midlng]; // create array containing midlat and midlng
-
-      setMidpoint(midarr); // return new array with both 
-
-      // for some reason the long and lat are not calculated correctly - the returned value is not correct
-      
-    } else {
-      setError('Error calculating midpoint');
-    }
-  };
 
   const handleAddress1 = (e) => {
     setAddress1(e.target.value);
@@ -103,7 +80,7 @@ function Local({setMidpoint}) {
           <Input
             type="text"
             placeholder="Enter address"
-            value={address1}
+            value={address1} // should I take this out?
             onChange={handleAddress1}
           />
         </FormControl>
@@ -128,7 +105,7 @@ function Local({setMidpoint}) {
           <Input
             type="text"
             placeholder="Enter address"
-            value={address2}
+            value={address2} // should I take this out?
             onChange={handleAddress2}
           />
         </FormControl>
