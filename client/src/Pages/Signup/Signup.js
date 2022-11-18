@@ -3,7 +3,8 @@ import {
   FormLabel,
   FormErrorMessage,
   FormHelperText,
-  Input, Container, Button, Heading, useToast,
+  Input, Container, Button, Heading,
+  // useToast,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -15,7 +16,7 @@ function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const toast = useToast();
+  // const toast = useToast();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -40,15 +41,15 @@ function Signup() {
       setLoading(true);
       const response = await register(username, email, password);
       // I would prefer only saving token in local and saving user as state/context
-      navigate('/');
+      navigate('/login');
       console.log(response);
     } catch (error) {
-      toast({
-        title: 'Signup failed',
-        status: 'error',
-        duration: 9000,
-        isClosable: true,
-      });
+    //   toast({
+    //     title: 'Signup failed',
+    //     status: 'error',
+    //     duration: 9000,
+    //     isClosable: true,
+    //   });
     }
     setLoading(false);
   }
