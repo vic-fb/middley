@@ -23,7 +23,7 @@ function Options({ activities }) {
         direction={{ base: 'column', sm: 'row' }}
         overflow="hidden"
         variant="outline"
-        onClick={() => nav('/Results')}
+        onClick={() => nav('/Routes')}
       >
         <Image
           objectFit="cover"
