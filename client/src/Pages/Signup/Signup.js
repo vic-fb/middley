@@ -3,7 +3,7 @@ import {
   FormLabel,
   FormErrorMessage,
   FormHelperText,
-  Input, Container, Button, Heading,
+  Input, Container, Button, Heading, VStack,
   // useToast,
 } from '@chakra-ui/react';
 import { useState } from 'react';
@@ -40,7 +40,6 @@ function Signup() {
     try {
       setLoading(true);
       const response = await register(username, email, password);
-      // I would prefer only saving token in local and saving user as state/context
       navigate('/login');
       console.log(response);
     } catch (error) {
@@ -60,28 +59,30 @@ function Signup() {
   };
 
   return (
-    <Container>
-      <Heading as="h1">Welcome!</Heading>
-      <Heading as="h2">Create your account</Heading>
-      <form onSubmit={handleSubmit}>
-        <FormControl isRequired>
-          <FormLabel>Name</FormLabel>
-          <Input type="text" name="username" onChange={handleChange} />
-          <FormHelperText>What shall we call you?</FormHelperText>
-          <FormErrorMessage>Name is required.</FormErrorMessage>
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>Email address</FormLabel>
-          <Input type="email" name="email" onChange={handleChange} value={email} />
-          <FormHelperText>We&apos;ll never share your email.</FormHelperText>
-          <FormErrorMessage>Email is required.</FormErrorMessage>
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>Password</FormLabel>
-          <Input type="password" name="password" onChange={handleChange} value={password} />
-          <FormErrorMessage>Password is required.</FormErrorMessage>
-        </FormControl>
-        <Button type="submit" isLoading={loading}>Submit</Button>
+    <Container centerContent>
+      <Heading as="h1" size="lg">Welcome!</Heading>
+      <Heading as="h2" size="md">Create your account</Heading>
+      <form onSubmit={handleSubmit} style={{ marginTop: '24px' }}>
+        <VStack spacing="24px">
+          <FormControl isRequired>
+            <FormLabel>Name</FormLabel>
+            <Input type="text" name="username" onChange={handleChange} />
+            <FormHelperText>What shall we call you?</FormHelperText>
+            <FormErrorMessage>Name is required.</FormErrorMessage>
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Email address</FormLabel>
+            <Input type="email" name="email" onChange={handleChange} value={email} />
+            <FormHelperText>We&apos;ll never share your email.</FormHelperText>
+            <FormErrorMessage>Email is required.</FormErrorMessage>
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Password</FormLabel>
+            <Input type="password" name="password" onChange={handleChange} value={password} />
+            <FormErrorMessage>Password is required.</FormErrorMessage>
+          </FormControl>
+          <Button type="submit" isLoading={loading}>Submit</Button>
+        </VStack>
       </form>
     </Container>
   );

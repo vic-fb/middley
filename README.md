@@ -64,9 +64,9 @@ DB_PASS=(your password)
 
 4. - In a separate terminal go to the project folder and run `npm run migrate`.
 
-5. - In your MySQL terminal window, run `USE userdata;` then `SHOW TABLES;`. Your database should contain 1 table: `userInfo`
+5. - In your MySQL terminal window, run `USE userdata;` then `SHOW TABLES;`. Your database should contain 1 table: `users`
 
-6. - You can run `DESCRIBE userInfo;` to check that the table has been set up correctly.
+6. - You can run `DESCRIBE users;` to check that the table has been set up correctly.
 
 
 ## Deploy

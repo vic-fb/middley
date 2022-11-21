@@ -5,7 +5,7 @@ const db = require('../model/database/helper');
 
 // GET all
 router.get('/', async (req, res) => {
-  db('SELECT * FROM userInfo;')
+  db('SELECT * FROM users;')
     .then((results) => {
       res.send(results.data);
     })
@@ -17,7 +17,7 @@ router.get('/:id', async (req, res) => {
   const userId = req.params.id;
 
   try {
-    const results = await db(`SELECT * FROM userInfo WHERE id = ${userId}`);
+    const results = await db(`SELECT * FROM users WHERE id = ${userId}`);
     const users = results.data;
     if (users.length === 0) {
       res.status(404).send({ error: 'User not found' });

@@ -66,7 +66,11 @@ function App() {
               <Options activities={activities} />)}
           />
           <Route path="/routes" element={<RoutesPage address1={address1} address2={address2} />} />
-          <Route path="/profile" element={<Profile user={user} />} />
+          <Route
+            path="/profile"
+            element={user && (
+            <Profile user={user} />)}
+          />
         </Routes>
       </div>
     </ChakraProvider>
