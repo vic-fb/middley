@@ -4,7 +4,7 @@ import {
   FormErrorMessage,
   Input,
   Container,
-  Button, Heading, Text, Link, useToast,
+  Button, Heading, Text, Link, useToast, VStack,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -60,25 +60,29 @@ function Login({ setUser }) {
 
   return (
     <Container>
-      <Heading as="h1">Welcome!</Heading>
-      <Heading as="h2">Sign into your account</Heading>
-      <form onSubmit={handleSubmit}>
-        <FormControl isRequired>
-          <FormLabel>Email address</FormLabel>
-          <Input type="email" name="email" onChange={handleChange} value={email} />
-          <FormErrorMessage>Email is required.</FormErrorMessage>
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>Password</FormLabel>
-          <Input type="password" name="password" onChange={handleChange} value={password} />
-          <FormErrorMessage>Email is required.</FormErrorMessage>
-        </FormControl>
-        <Button type="submit" isLoading={loading}>Submit</Button>
-      </form>
-      <Text>
-        {'Not yet registered? Sign up '}
-        <Link as={RouteLink} to="/signup">here</Link>
-      </Text>
+      <VStack spacing="24px">
+        <Heading as="h1" size="lg">Welcome!</Heading>
+        <Heading as="h2" size="md">Sign into your account</Heading>
+        <form onSubmit={handleSubmit}>
+          <VStack spacing="24px">
+            <FormControl isRequired>
+              <FormLabel>Email address</FormLabel>
+              <Input type="email" name="email" onChange={handleChange} value={email} />
+              <FormErrorMessage>Email is required.</FormErrorMessage>
+            </FormControl>
+            <FormControl isRequired>
+              <FormLabel>Password</FormLabel>
+              <Input type="password" name="password" onChange={handleChange} value={password} />
+              <FormErrorMessage>Email is required.</FormErrorMessage>
+            </FormControl>
+            <Button py="1" type="submit" isLoading={loading}>Submit</Button>
+          </VStack>
+        </form>
+        <Text>
+          {'Not yet registered? Sign up '}
+          <Link as={RouteLink} to="/signup">here</Link>
+        </Text>
+      </VStack>
     </Container>
   );
 }
