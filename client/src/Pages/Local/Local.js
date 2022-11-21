@@ -1,94 +1,103 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './Local.css';
-import { BsFillHouseDoorFill, BsFillBriefcaseFill } from 'react-icons/bs';
-import { HiOutlineLocationMarker } from 'react-icons/hi';
 import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  Input, Container, Button, Heading,
+  Input,
+  Container,
+  Button,
+  Heading,
 } from '@chakra-ui/react';
+import { BsFillHouseDoorFill, BsFillBriefcaseFill } from 'react-icons/bs';
+import { HiOutlineLocationMarker } from 'react-icons/hi';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 
-function Local() {
-  const nav = useNavigate();
-
-  // handle the form submission
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    nav('/Activities');
+function Local({ setAddress1, setAddress2, handleSubmit, address1, address2 }) {
+  const handleAddress1 = (e) => {
+    setAddress1(e.target.value);
   };
 
-  const handleClick = (event) => {
-    event.preventDefault();
-    nav('/Options'); // this is the path to the Options page but should give the form the user home adress
-    console.log('The icon was clicked.');
+  const handleAddress2 = (e) => {
+    setAddress2(e.target.value);
   };
 
   return (
     <Container>
-      <Heading as="h2">LOCATION 1</Heading>
+      <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
+        <BreadcrumbItem>
+          <BreadcrumbLink as={Link} to="/">
+            Home
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem isCurrentPage>
+          <BreadcrumbLink as={Link} to="/local">
+            Local
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+      </Breadcrumb>
+
+      <Heading as="h1" size="2xl" mb="4">
+        Find Midway Point
+      </Heading>
       <form onSubmit={handleSubmit}>
-        <FormControl isRequired>
-          <FormLabel>ADRESS</FormLabel>
-          <Input type="text" />
+        <FormControl id="address1" isRequired>
+          <FormLabel>Address 1</FormLabel>
+          <Input
+            type="text"
+            placeholder="Enter address"
+            value={address1}
+            onChange={handleAddress1}
+          />
         </FormControl>
-        <FormControl isRequired>
-          <FormLabel>POSTAL CODE</FormLabel>
-          <Input type="text" />
-          <FormErrorMessage>postal code is required</FormErrorMessage>
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>COUNTRY</FormLabel>
-          <Input type="text" />
-          <FormErrorMessage>country is required</FormErrorMessage>
-        </FormControl>
+
         <div className="user-icons">
-          <div className="home-icon" role="presentation" onClick={handleClick}>
+          <div className="home-icon" role="presentation">
             <BsFillHouseDoorFill />
           </div>
-          <div className="work-icon" role="presentation" onClick={handleClick}>
+          <div className="work-icon" role="presentation">
             <BsFillBriefcaseFill />
           </div>
-          <div className="currentLocation-icon" role="presentation" onClick={handleClick}>
+          <div className="currentLocation-icon" role="presentation">
             <HiOutlineLocationMarker />
           </div>
-
         </div>
 
         <br />
-        <Heading as="h2">LOCATION 2</Heading>
-        <FormControl isRequired>
-          <FormLabel>ADRESS</FormLabel>
-          <Input type="text" />
+
+        <FormControl id="address2" isRequired>
+          <FormLabel>Address 2</FormLabel>
+          <Input
+            type="text"
+            placeholder="Enter address"
+            value={address2}
+            onChange={handleAddress2}
+          />
         </FormControl>
-        <FormControl isRequired>
-          <FormLabel>POSTAL CODE</FormLabel>
-          <Input type="text" />
-          <FormErrorMessage>postal code is required</FormErrorMessage>
-        </FormControl>
-        <FormControl isRequired>
-          <FormLabel>COUNTRY</FormLabel>
-          <Input type="text" />
-          <FormErrorMessage>country is required</FormErrorMessage>
-        </FormControl>
+
         <div className="user-icons">
-          <div className="home-icon" role="presentation" onClick={handleClick}>
+          <div className="home-icon" role="presentation">
             <BsFillHouseDoorFill />
           </div>
-          <div className="work-icon" role="presentation" onClick={handleClick}>
+          <div className="work-icon" role="presentation">
             <BsFillBriefcaseFill />
           </div>
-          <div className="currentLocation-icon" role="presentation" onClick={handleClick}>
+          <div className="currentLocation-icon" role="presentation">
             <HiOutlineLocationMarker />
           </div>
-
         </div>
-        <br />
-        <Button type="submit">CHOOSE ACTIVITIES</Button>
+
+        <Button type="submit" colorScheme="teal" mt="4">
+          Submit
+        </Button>
       </form>
+      <div />
     </Container>
   );
 }
+
 export default Local;

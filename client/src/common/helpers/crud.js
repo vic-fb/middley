@@ -3,7 +3,7 @@ import { getUserToken } from './localFunctions';
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
-const post = (path, body) => {
+export const post = (path, body) => {
   const options = {
     method: 'POST',
     headers: {
@@ -17,11 +17,31 @@ const post = (path, body) => {
     options.headers.Authorization = `Bearer ${token}`;
   }
   return fetch(route, options)
-    .then((response) => response.json())
     .then((response) => {
-      if (!response.ok) { throw new Error(response.message); }
-      return response;
+      if (!response.ok) {
+        throw new Error(response.message);
+      }
+      return response.json();
     });
 };
 
-export default post;
+export const get = (path) => {
+  const route = apiUrl + path;
+  const token = getUserToken();
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+    },
+  };
+  if (token) {
+    options.headers.Authorization = `Bearer ${token}`;
+  }
+  return fetch(route, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(response.message);
+      }
+      return response.json();
+    });
+};

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import opencage from 'opencage-api-client';
 
 const OCD_API_KEY = process.env.REACT_APP_OCD_API_KEY; // the API key is stored in the .env file
@@ -35,22 +34,23 @@ async function geocode(address) {
   } catch (err) {
     myresponse.error = err.message;
   }
-
-  console.log('geocode myresponse:', myresponse);
-
   return myresponse;
 }
+
 // arr1 will contain latitude for location 1 and longitude for location 1
 // arr2 will contain latitude for location 2 and longitude for location 2
-async function midpoint(arr1, arr2) {
-  // create var midlat = lat1 + lat2 (from arrays) divided by 2
-  const midlat = arr1[0] + arr2[0] / 2;
-  // create var midlng = lng1 + lng2 (from arrays) divided by 2
-  const midlng = arr1[1] + arr2[1] / 2;
-  // create array containing midlat and midlng
-  const midarr = [midlat, midlng];
-  // return new array with both
-  return midarr;
+
+async function getMidpoint(address1, address2) {
+  const response1 = await geocode(address1);
+  const response2 = await geocode(address2);
+  if (response1.ok && response2.ok) {
+    const midLat = (response1.data.latLng[0] + response2.data.latLng[0]) / 2;
+    // create var midLat = lat1 + lat2 (from array) divided by 2
+    const midLng = (response1.data.latLng[1] + response2.data.latLng[1]) / 2;
+    // create var midLng = lng1 + lng2 (from array) divided by 2
+    return [midLat, midLng]; // return new array containing midlat and midlng
+  }
+  throw new Error('Error calculating midpoint');
 }
 
-export default { geocode, midpoint };
+export default getMidpoint;
