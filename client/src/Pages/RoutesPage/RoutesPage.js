@@ -1,6 +1,5 @@
 // import the address1 and address2 values from the app.js file
 
-import { React, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './RoutesPage.css';
 import {
@@ -11,6 +10,7 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Container,
+  Button,
 } from '@chakra-ui/react';
 
 import { ChevronRightIcon } from '@chakra-ui/icons';
@@ -23,7 +23,8 @@ function RoutesPage() {
   }
 
   const routes = [
-    // this array is a test that will be used to display the routes between the user adress and the chosen option adress.
+    // this array is a test that will be used to display the routes
+    // between the user address and the chosen option address.
     {
       id: 1,
       route:
@@ -36,12 +37,19 @@ function RoutesPage() {
     },
   ];
 
-  // in the return statement below, the routes array will be mapped to display the routes between the user adress and the chosen option adress.
+  // in the return statement below, the routes array will be mapped to display the routes between
+  // the user adress and the chosen option adress.
   // the routes will be displayed in a grid with 2 columns and 3 rows.
-  // the first row will be the adress of the user, the second row will be the adress of the chosen option and the third row will be the route between the two.
-  // the user and friend will each be handed their navigation link to the route via the google maps url. The links must be able to share the route with the other person.
-  // the user will be able to click on the route to see the route in google maps. ( if this could be done in the app itself, that would be ideal. )
+  // eslint-disable-next-line max-len
+  // the first row will be the adress of the user, the second row will be the adress of the chosen option
+  // and the third row will be the route between the two.
+  // eslint-disable-next-line max-len
+  // the user and friend will each be handed their navigation link to the route via the google maps url.
+  // The links must be able to share the route with the other person.
+  // the user will be able to click on the route to see the route in google maps.
+  // ( if this could be done in the app itself, that would be ideal. )
   // display address1 and address2 from the local.json file
+
   return (
     <Container>
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
@@ -113,7 +121,7 @@ function RoutesPage() {
             </AspectRatio>
           </GridItem>
         </Grid>
-        <button onClick={returnHomeClick}>Return Home</button>
+        <Button onClick={returnHomeClick}>Return Home</Button>
       </div>
     </Container>
   );
@@ -140,7 +148,7 @@ function RoutesPage() {
 //    <button onClick={returnHomeClick}>Return Home</button>
 //   </div>
 //  );
-//}
+// }
 
 //   return (
 //     <div className="routes-container">
