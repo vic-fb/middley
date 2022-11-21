@@ -1,11 +1,11 @@
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`(
     `id` INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    `username` VARCHAR(100) NOT NULL DEFAULT '',
-    `email` VARCHAR(100) NOT NULL DEFAULT '',
-    `password` VARCHAR(255) NOT NULL DEFAULT '',
-    `home` VARCHAR(255) NULL,
-    `work` VARCHAR(255) NULL
+    `username` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(100) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `home` VARCHAR(255) NOT NULL DEFAULT '',
+    `work` VARCHAR(255) NOT NULL DEFAULT ''
 );
 
 INSERT INTO `users` (username, email, password, home, work) VALUES
