@@ -52,6 +52,7 @@ async function getActivities(category, latitude, longitude) {
   console.log(yelpUrl);
   const response = await fetch(yelpUrl, options);
   const data = await response.json();
+  console.log(data, response);
   return data.businesses.map(
     ({
       name,
