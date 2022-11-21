@@ -27,6 +27,8 @@ function getOptions(category, latitude = 59.3251172, longitude = 18.0710935) {
     .catch((error) => { console.log(error); });
 }
 
+// fetch('activites/latitude/longitude/category')
+
 router.get('/:category', async (req, res) => {
   const { category } = req.params;
   getOptions(category)
