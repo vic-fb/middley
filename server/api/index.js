@@ -7,7 +7,7 @@ const indexRouter = require('../routes');
 const activitiesRouter = require('../routes/activities');
 
 app.use(cors({
-  origin: 'https://fs-22-team3.vercel.app/',
+  origin: '*',
 }));
 app.use('/api', indexRouter);
 app.use('/api/users', usersRouter);
