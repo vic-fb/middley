@@ -15,6 +15,7 @@ import getMidpoint from './common/helpers/geocode';
 import Profile from './Pages/Profile/Profile';
 import { getUserToken } from './common/helpers/localFunctions';
 import { silentUserLogin } from './common/helpers/auth';
+import { getUsers } from './common/helpers/users';
 
 function App() {
   const [activities, setActivities] = useState('');
@@ -38,6 +39,8 @@ function App() {
     setMidpoint(midpointArray); // return new array with both
     nav('/activities'); // navigate to activities page with midpoint as prop
   };
+
+  console.log(getUsers());
 
   return (
     <ChakraProvider>
