@@ -25,7 +25,6 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
-
   try {
     const results = await db(`SELECT * FROM userInfo WHERE email = '${email}'`);
     console.log(results);
@@ -38,15 +37,35 @@ router.post('/login', async (req, res) => {
       if (passwordsEqual) {
         const payload = { userId: user.id };
         const token = jwt.sign(payload, SECRET_KEY);
-        delete user.password;
         res.send({
           message: 'Login succeeded',
           token,
-          user,
+          id: payload.userId,
         });
       } else {
         res.status(401).send({ error: 'Login failed' });
       }
+    }
+  } catch (err) {
+    res.status(500).send({ error: err.message });
+  }
+});
+
+router.post('/silent-login', async (req, res) => {
+  const { token } = req.body;
+  const decoded = jwt.verify(token, SECRET_KEY);
+  const { userId } = decoded;
+  try {
+    const results = await db(`SELECT * FROM users WHERE id = '${userId}'`);
+    if (results.data.length === 0) {
+      res.status(401).send({ error: 'Login failed' });
+    } else {
+      const { password, id, ...userData } = results.data[0]; // the user's row/record from the DB
+      res.send({
+        message: 'Login succeeded',
+        token,
+        user: { id, ...userData },
+      });
     }
   } catch (err) {
     res.status(500).send({ error: err.message });

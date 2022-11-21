@@ -10,9 +10,10 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Link as RouteLink } from 'react-router-dom';
 import { userLogin } from '../../common/helpers/auth';
-import { saveUserInfo } from '../../common/helpers/localFunctions';
+import { saveUserToken } from '../../common/helpers/localFunctions';
+import { getUserById } from '../../common/helpers/users';
 
-function Login() {
+function Login({ setUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -37,8 +38,9 @@ function Login() {
     try {
       setLoading(true);
       const response = await userLogin(password, email);
-      // I would prefer only saving token in local and saving user as state/context
-      saveUserInfo(response.token, response.user);
+      saveUserToken(response.token);
+      const currentUser = await getUserById(response.id);
+      setUser(currentUser);
       navigate('/');
     } catch (error) {
       toast({
