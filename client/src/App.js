@@ -50,7 +50,8 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route
             path="/options"
-            element={<Options activities={activities} />}
+            element={activities && (
+              <Options activities={activities} />)}
           />
           <Route path="/routes" element={<RoutesPage address1={address1} address2={address2} />} />
 
