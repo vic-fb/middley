@@ -1,28 +1,48 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { GiWorld } from 'react-icons/gi';
-import { Button } from '@chakra-ui/react';
-import { getUser } from '../../helpers/localFunctions';
+import { RiLogoutCircleRLine } from 'react-icons/ri';
+import {
+  Button, Flex, Spacer, ButtonGroup,
+} from '@chakra-ui/react';
+import { useNavigate } from 'react-router';
+import { removeUserToken } from '../../helpers/localFunctions';
 // import styles from './Navbar.module.css';
 
-function Navbar() {
-  const user = getUser();
+function Navbar({ user, setUser }) {
+  const navigate = useNavigate();
+
+  function doLogout() {
+    removeUserToken();
+    navigate('/login');
+    setUser(null);
+  }
 
   return (
     <nav className="navbar">
-      <Button lefticon={<GiWorld />} as={Link} to="/" variant="ghost">
-        Home
-      </Button>
-      {!user && (
-        <Button as={Link} to="/login" variant="ghost">
-          Log In
+      <Flex minWidth="max-content" alignItems="center" gap="2">
+        <Button lefticon={<GiWorld />} as={Link} to="/" variant="ghost">
+          Home
         </Button>
-      )}
-      {user && (
-        <Button as={Link} to="/profile" variant="ghost">
-          Profile
-        </Button>
-      )}
+        <Spacer />
+        <ButtonGroup gap="1">
+          {!user && (
+            <Button as={Link} to="/login" variant="ghost">
+              Log In
+            </Button>
+          )}
+          {user && (
+            <Button as={Link} to="/profile" variant="ghost">
+              Profile
+            </Button>
+          )}
+          {user && (
+            <Button variant="ghost" onClick={doLogout}>
+              <RiLogoutCircleRLine />
+            </Button>
+          )}
+        </ButtonGroup>
+      </Flex>
     </nav>
   );
 }

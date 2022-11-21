@@ -50,7 +50,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2 }) {
           <Input
             type="text"
             placeholder="Enter address"
-            value={address1} // should I take this out?
+            value={address1}
             onChange={handleAddress1}
           />
         </FormControl>
@@ -74,7 +74,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2 }) {
           <Input
             type="text"
             placeholder="Enter address"
-            value={address2} // should I take this out?
+            value={address2}
             onChange={handleAddress2}
           />
         </FormControl>

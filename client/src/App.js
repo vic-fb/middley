@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
 import styles from './App.module.css';
@@ -12,13 +12,25 @@ import Login from './Pages/Login/Login';
 import Options from './Pages/Options/Options';
 import RoutesPage from './Pages/RoutesPage/RoutesPage';
 import getMidpoint from './common/helpers/geocode';
+import Profile from './Pages/Profile/Profile';
+import { getUserToken } from './common/helpers/localFunctions';
+import { silentUserLogin } from './common/helpers/auth';
 
 function App() {
   const [activities, setActivities] = useState('');
   const [midpoint, setMidpoint] = useState([]);
   const [address1, setAddress1] = useState('');
   const [address2, setAddress2] = useState('');
+  const [user, setUser] = useState(null);
   const nav = useNavigate();
+
+  useEffect(() => {
+    const token = getUserToken();
+    if (token) {
+      silentUserLogin(token)
+        .then((response) => setUser(response.user));
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +42,7 @@ function App() {
   return (
     <ChakraProvider>
       <div className={styles.App}>
-        <Navbar />
+        <Navbar setUser={setUser} user={user} />
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -46,7 +58,7 @@ function App() {
               />
             )}
           />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/signup" element={<Signup />} />
           <Route
             path="/options"
@@ -54,7 +66,7 @@ function App() {
               <Options activities={activities} />)}
           />
           <Route path="/routes" element={<RoutesPage address1={address1} address2={address2} />} />
-
+          <Route path="/profile" element={<Profile user={user} />} />
         </Routes>
       </div>
     </ChakraProvider>
