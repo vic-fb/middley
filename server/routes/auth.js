@@ -13,7 +13,7 @@ router.post('/register', async (req, res) => {
 
   try {
     const sql = `
-            INSERT INTO userInfo (username, email, password)
+            INSERT INTO users (username, email, password)
             VALUES ('${username}', '${email}', '${hashedPassword}')
         `;
     await db(sql);
@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
   try {
-    const results = await db(`SELECT * FROM userInfo WHERE email = '${email}'`);
+    const results = await db(`SELECT * FROM users WHERE email = '${email}'`);
     console.log(results);
     if (results.data.length === 0) {
       res.status(401).send({ error: 'Login failed' });
