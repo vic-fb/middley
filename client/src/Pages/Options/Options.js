@@ -1,4 +1,3 @@
-// import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Options.css';
 import {
@@ -14,101 +13,40 @@ import {
 
 function Options({ activities }) {
   const nav = useNavigate();
-
-  // return options.map((option) => ( in return statement below to display api data in cards on page
-
   return (
     <div className="card-container">
-      <Card
-        direction={{ base: 'column', sm: 'row' }}
-        overflow="hidden"
-        variant="outline"
-        onClick={() => nav('/Routes')}
-      >
-        <Image
-          objectFit="cover"
-          maxW={{ base: '100%', sm: '200px' }}
-          src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-          alt="Caffe Latte"
-        />
+      {activities.slice(0, 5).map((activity) => (
+        <Card
+          direction={{ base: 'column', sm: 'row' }}
+          overflow="hidden"
+          variant="outline"
+          onClick={() => nav('/Routes')}
+          key={`key${activity.name}`}
+        >
+          <Image
+            objectFit="cover"
+            maxW={{ base: '100%', sm: '200px' }}
+            src={activity.imgUrl}
+            alt={activity.name}
+          />
 
-        <Stack>
-          <CardBody>
-            <Heading size="md">{activities}</Heading>
+          <Stack>
+            <CardBody>
+              <Heading size="md">{activity.name}</Heading>
 
-            <Text py="2">
-              Caffè latte is a coffee beverage of Italian origin made with
-              espresso and steamed milk.
-            </Text>
-          </CardBody>
+              <Text py="2">
+                {activity.displayAddress}
+              </Text>
+            </CardBody>
 
-          <CardFooter>
-            <Button variant="solid" colorScheme="blue">
-              GO
-            </Button>
-          </CardFooter>
-        </Stack>
-      </Card>
-      <Card
-        direction={{ base: 'column', sm: 'row' }}
-        overflow="hidden"
-        variant="outline"
-        onClick={() => nav('/Results')}
-      >
-        <Image
-          objectFit="cover"
-          maxW={{ base: '100%', sm: '200px' }}
-          src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-          alt="Caffe Latte"
-        />
-
-        <Stack>
-          <CardBody>
-            <Heading size="md">OPTION 2</Heading>
-
-            <Text py="2">
-              Caffè latte is a coffee beverage of Italian origin made with
-              espresso and steamed milk.
-            </Text>
-          </CardBody>
-
-          <CardFooter>
-            <Button variant="solid" colorScheme="blue">
-              GO
-            </Button>
-          </CardFooter>
-        </Stack>
-      </Card>
-      <Card
-        direction={{ base: 'column', sm: 'row' }}
-        overflow="hidden"
-        variant="outline"
-        onClick={() => nav('/Results')}
-      >
-        <Image
-          objectFit="cover"
-          maxW={{ base: '100%', sm: '200px' }}
-          src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-          alt="Caffe Latte"
-        />
-
-        <Stack>
-          <CardBody>
-            <Heading size="md">OPTION 3</Heading>
-
-            <Text py="2">
-              Caffè latte is a coffee beverage of Italian origin made with
-              espresso and steamed milk.
-            </Text>
-          </CardBody>
-
-          <CardFooter>
-            <Button variant="solid" colorScheme="blue">
-              GO
-            </Button>
-          </CardFooter>
-        </Stack>
-      </Card>
+            <CardFooter>
+              <Button variant="solid" colorScheme="blue">
+                GO
+              </Button>
+            </CardFooter>
+          </Stack>
+        </Card>
+      ))}
     </div>
   );
 }
