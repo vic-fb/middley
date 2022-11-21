@@ -32,7 +32,7 @@ module.exports = function db(query) {
           results.error = error;
           console.log(error);
           reject(error);
-          con.end();
+          con.destroy();
           return;
         }
 
@@ -41,7 +41,7 @@ module.exports = function db(query) {
             results.error = 'Action not complete';
             console.log(err);
             reject(err);
-            con.end();
+            con.destroy();
             return;
           }
 
@@ -57,7 +57,7 @@ module.exports = function db(query) {
           results.data.push(result[0]);
         }
 
-        con.end();
+        con.destroy();
         resolve(results);
       });
     });
