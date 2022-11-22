@@ -45,3 +45,25 @@ export const get = (path) => {
       return response.json();
     });
 };
+
+export const put = (path, body) => {
+  const options = {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  };
+  const route = apiUrl + path;
+  const token = getUserToken();
+  if (token) {
+    options.headers.Authorization = `Bearer ${token}`;
+  }
+  return fetch(route, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(response.message);
+      }
+      return response.json();
+    });
+};

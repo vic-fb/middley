@@ -7,8 +7,9 @@ import {
 import { BsFillBriefcaseFill, BsFillHouseDoorFill } from 'react-icons/bs';
 import React, { useState } from 'react';
 import EditableControls from './components/EditableControls';
+import { getUserById, updateUserAddress } from '../../common/helpers/users';
 
-function Profile({ user }) {
+function Profile({ user, setUser }) {
   const [home, setHome] = useState(user.home);
   const [work, setWork] = useState(user.work);
 
@@ -20,8 +21,11 @@ function Profile({ user }) {
     setWork(input);
   };
 
-  const handleSubmit = () => {
-    console.log(home, work);
+  const handleSubmit = async () => {
+    await updateUserAddress(user.id, home, work);
+    const currentUser = await getUserById(user.id);
+    setUser(currentUser);
+    console.log(currentUser);
   };
 
   return (
