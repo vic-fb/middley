@@ -11,7 +11,7 @@ import Signup from './Pages/Signup/Signup';
 import Login from './Pages/Login/Login';
 import Options from './Pages/Options/Options';
 import RoutesPage from './Pages/RoutesPage/RoutesPage';
-import getMidpoint from './common/helpers/geocode';
+import { getMidpoint } from './common/helpers/geocode';
 import Profile from './Pages/Profile/Profile';
 import { getUserToken } from './common/helpers/localFunctions';
 import { silentUserLogin } from './common/helpers/auth';

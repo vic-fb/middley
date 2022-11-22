@@ -16,6 +16,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
 import UserIcons from './components/UserIcons';
 import getCurrentLocation from '../../common/helpers/geolocation';
+import { revgeocode } from '../../common/helpers/geocode';
 
 function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, user }) {
   const handleAddress1 = (e) => {
@@ -26,8 +27,16 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
     setAddress2(e.target.value);
   };
 
-  getCurrentLocation()
-    .then((location) => console.log(location));
+  const setCurrentAddress = async () => {
+    const location = await getCurrentLocation();
+    const response = await revgeocode(location);
+    if (response.data) {
+      // decide where we want it
+      setAddress1(response.data.formatted_address);
+    } else {
+      console.log('We could not find your location');
+    }
+  };
 
   return (
     <Container>
@@ -59,7 +68,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
             />
           </FormControl>
 
-          <UserIcons user={user} />
+          <UserIcons user={user} setCurrentAddress={setCurrentAddress} />
           <FormControl id="address2" isRequired>
             <FormLabel>Address 2</FormLabel>
             <Input

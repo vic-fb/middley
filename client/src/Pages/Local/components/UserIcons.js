@@ -1,7 +1,7 @@
 import { BsFillBriefcaseFill, BsFillHouseDoorFill } from 'react-icons/bs';
 import { HiOutlineLocationMarker } from 'react-icons/hi';
 
-function UserIcons({ user }) {
+function UserIcons({ user, setCurrentAddress }) {
   return (
     <div className="user-icons">
       {user && (
@@ -14,7 +14,7 @@ function UserIcons({ user }) {
         <BsFillBriefcaseFill />
       </div>
       )}
-      <div className="currentLocation-icon" role="presentation">
+      <div className="currentLocation-icon" role="presentation" onClick={setCurrentAddress}>
         <HiOutlineLocationMarker />
       </div>
     </div>
