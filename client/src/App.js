@@ -49,7 +49,20 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/global" element={<GlobalView />} />
 
-          <Route path="/local" element={<Local setMidpoint={setMidpoint} setAddress1={setAddress1} setAddress2={setAddress2} handleSubmit={handleSubmit} address1={address1} address2={address2} />} />
+          <Route
+            path="/local"
+            element={(
+              <Local
+                setMidpoint={setMidpoint}
+                setAddress1={setAddress1}
+                setAddress2={setAddress2}
+                handleSubmit={handleSubmit}
+                address1={address1}
+                address2={address2}
+                user={user}
+              />
+          )}
+          />
           <Route
             path="/activities"
             element={(
