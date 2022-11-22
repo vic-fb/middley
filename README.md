@@ -62,7 +62,7 @@ DB_PASS=(your password)
 ```
 (If you don't have this file yet, make sure to set it up before moving on to the next step.)
 
-4. - In a separate terminal go to the project folder and run `npm run migrate`.
+4. - In a separate terminal go to the project folder server and run `npm run migrate`.
 
 5. - In your MySQL terminal window, run `USE userdata;` then `SHOW TABLES;`. Your database should contain 1 table: `users`
 
