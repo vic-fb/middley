@@ -15,7 +15,7 @@ import {
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
 import UserIcons from './components/UserIcons';
-// import getCurrentLocation from '../../common/helpers/geolocation';
+import getCurrentLocation from '../../common/helpers/geolocation';
 
 function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, user }) {
   const handleAddress1 = (e) => {
@@ -26,8 +26,8 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
     setAddress2(e.target.value);
   };
 
-  // getCurrentLocation()
-  // .then((location) => console.log(location));
+  getCurrentLocation()
+    .then((location) => console.log(location));
 
   return (
     <Container>
