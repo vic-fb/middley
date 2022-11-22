@@ -15,13 +15,13 @@ import getMidpoint from './common/helpers/geocode';
 import Profile from './Pages/Profile/Profile';
 import { getUserToken } from './common/helpers/localFunctions';
 import { silentUserLogin } from './common/helpers/auth';
-import { getUsers } from './common/helpers/users';
 
 function App() {
   const [activities, setActivities] = useState('');
   const [midpoint, setMidpoint] = useState([]);
   const [address1, setAddress1] = useState('');
   const [address2, setAddress2] = useState('');
+  const [activity, setActivity] = useState(null);
   const [user, setUser] = useState(null);
   const nav = useNavigate();
 
@@ -39,8 +39,6 @@ function App() {
     setMidpoint(midpointArray); // return new array with both
     nav('/activities'); // navigate to activities page with midpoint as prop
   };
-
-  console.log(getUsers());
 
   return (
     <ChakraProvider>
@@ -66,13 +64,14 @@ function App() {
           <Route
             path="/options"
             element={activities && (
-              <Options activities={activities} />)}
+              <Options activities={activities} setActivity={setActivity} />)}
           />
-          <Route path="/routes" element={<RoutesPage address1={address1} address2={address2} />} />
+          <Route path="/routes" element={<RoutesPage address1={address1} address2={address2} activity={activity} />} />
           <Route
             path="/profile"
             element={user && (
-            <Profile user={user} />)}
+            <Profile user={user} />
+            )}
           />
         </Routes>
       </div>
