@@ -17,6 +17,7 @@ import {
   BreadcrumbLink,
   Container,
 } from '@chakra-ui/react';
+import { FaRegSadCry } from 'react-icons/fa';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import yelpLogo from '../../common/assets/yelp_logo.png';
 import star0 from '../../common/assets/YelpStars/small_0.png';
@@ -54,25 +55,28 @@ function Options({ activities }) {
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
-
         <BreadcrumbItem>
           <BreadcrumbLink as={Link} to="/local">
             Local
           </BreadcrumbLink>
         </BreadcrumbItem>
-
         <BreadcrumbItem>
           <BreadcrumbLink as={Link} to="/activities">
             Activites
           </BreadcrumbLink>
         </BreadcrumbItem>
-
         <BreadcrumbItem isCurrentPage>
           <BreadcrumbLink as={Link} to="/Options">
             Options
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
+
+      {activities && activities.length === 0 && (
+        <Heading>
+          Sorry, no activities available <FaRegSadCry />{' '}
+        </Heading>
+      )}
 
       <div className="card-container">
         {activities.slice(0, 5).map((activity) => (
