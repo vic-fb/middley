@@ -1,4 +1,5 @@
-import { get } from './crud';
+import { get, put } from './crud';
 
 export const getUserById = (id) => get(`/users/${id}`);
-export const getUsers = () => get('/users');
+
+export const updateUserAddress = (id, home, work) => put(`/users/${id}`, { home, work });
