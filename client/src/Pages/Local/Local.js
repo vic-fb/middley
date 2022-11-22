@@ -27,7 +27,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
   };
 
   getCurrentLocation()
-    .then((location) => console.log(location));
+    .then((location) => setAddress1(location.join()));
 
   return (
     <Container>
