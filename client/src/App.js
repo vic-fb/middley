@@ -83,7 +83,7 @@ function App() {
           <Route
             path="/profile"
             element={user && (
-            <Profile user={user} />
+            <Profile user={user} setUser={setUser} />
             )}
           />
         </Routes>
