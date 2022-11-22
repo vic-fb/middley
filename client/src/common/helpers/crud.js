@@ -3,8 +3,6 @@ import { getUserToken } from './localFunctions';
 
 const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
-console.log(apiUrl);
-
 export const post = (path, body) => {
   const options = {
     method: 'POST',

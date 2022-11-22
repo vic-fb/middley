@@ -43,8 +43,13 @@ const yelpStars = {
   5: star5,
 };
 
-function Options({ activities }) {
+function Options({ activities, setActivity }) {
   const nav = useNavigate();
+
+  function handleClick(activity) {
+    setActivity(activity);
+    nav('/routes');
+  }
 
   return (
     <Container>
@@ -80,8 +85,8 @@ function Options({ activities }) {
             direction={{ base: 'column', sm: 'row' }}
             overflow="hidden"
             variant="outline"
-            onClick={() => nav('/Routes')}
-            key={`key${activity.name}`}
+            onClick={() => handleClick(activity)}
+            key={activity.displayAddress}
           >
             <Image
               objectFit="cover"

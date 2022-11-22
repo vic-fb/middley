@@ -16,36 +16,20 @@ import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import getActivities from '../../common/helpers/activities';
 
-// eslint-disable-next-line react/prop-types
 function Activities({ midpointValue, setActivities }) {
   const nav = useNavigate();
 
   const handleClick = async (event, category) => {
     event.preventDefault();
     nav('/Options');
-    console.log('The icon was clicked.');
     const options = await getActivities(
       midpointValue[0],
       midpointValue[1],
       category,
     );
-    console.log(midpointValue, category);
+    // console.log(midpointValue, category);
     setActivities(options);
   };
-
-  // const ifEat = () => {
-  //   fetch ('/api/eat', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({ eat: 'eat' }),
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log('Success:', data);
-  //     })
-  //     .catch((error) => {
 
   return (
     <Container>

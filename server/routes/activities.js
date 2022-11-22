@@ -49,10 +49,9 @@ async function getActivities(category, latitude, longitude) {
   //   // what to do when we don't have a mapping?
   //   return 'No activity found';
   // }
-  console.log(yelpUrl);
+
   const response = await fetch(yelpUrl, options);
   const data = await response.json();
-  console.log(data, response);
   return data.businesses.map(
     ({
       name,
