@@ -74,7 +74,7 @@ function Options({ activities }) {
 
       {activities && activities.length === 0 && (
         <Heading>
-          Sorry, no activities available <FaRegSadCry />{' '}
+          Sorry, no activities available <FaRegSadCry />
         </Heading>
       )}
 
