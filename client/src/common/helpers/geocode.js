@@ -1,6 +1,6 @@
 import opencage from 'opencage-api-client';
 
-const OCD_API_KEY = process.env.REACT_APP_OCD_API_KEY; // the API key is stored in the .env file
+const OCD_API_KEY = process.env.REACT_APP_OCD_API_KEY;
 
 async function geocode(address) {
   const geoParams = {
