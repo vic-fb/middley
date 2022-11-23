@@ -61,12 +61,12 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
         </BreadcrumbItem>
       </Breadcrumb>
       <Heading as="h1" size="2xl" mb="4">
-        Find Midway Point
+      GET MIDDLE POINT
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>
           <FormControl id="address1" isRequired>
-            <FormLabel>Address 1</FormLabel>
+            <FormLabel> Adress One </FormLabel>
             <Input
               type="text"
               placeholder="Enter address"
@@ -74,13 +74,14 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
               onChange={handleAddress1}
             />
           </FormControl>
+          <br />
           <UserIcons
             user={user}
             setCurrentAddress={setCurrentAddress}
             setSavedAddress={setSavedAddress}
           />
           <FormControl id="address2" isRequired>
-            <FormLabel>Address 2</FormLabel>
+            <FormLabel>Adress Two</FormLabel>
             <Input
               type="text"
               placeholder="Enter address"
@@ -91,7 +92,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
         </VStack>
 
         <Button type="submit" mt="4">
-          Submit
+          GO
         </Button>
       </form>
     </Container>

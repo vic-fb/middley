@@ -15,10 +15,13 @@ function Home() {
           src={MeetintheMiddle}
           alt="A map with two pins emitting an arrow each. They are pointing to a heart in the middle of the map."
         />
-        <Heading className={styles.MITMTitle} p={4} fontSize="6xl">
-          Meet in the Middle
+        < br />
+        < br />
+        <Heading className={styles.MITMTitle} p={4} fontSize="5xl">
+          MATES of the MIDDLE
         </Heading>
-
+        < br />
+        < br />
         <HStack>
           <Button
             size="lg"
@@ -29,7 +32,7 @@ function Home() {
             colorScheme="linkedin"
             variant="outline"
           >
-            Local
+            GO LOCAL
           </Button>
           <Button
             size="lg"
@@ -40,7 +43,7 @@ function Home() {
             colorScheme="linkedin"
             variant="outline"
           >
-            Global
+            GO GLOBAL
           </Button>
         </HStack>
       </VStack>
