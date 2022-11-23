@@ -2,7 +2,7 @@ import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
   fonts: {
-    heading: '"Montserrat Alternates", sans-serif',
+    heading: '"Lato", sans-serif',
     body: '"Montserrat Alternates", sans-serif',
   },
   colors: {

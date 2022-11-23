@@ -13,10 +13,13 @@ function Home() {
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5MRALgb4vgJEXZCN67pAWBgSjrfcqym0qQseIfSjmkugK-LQEol7QX95mSzcMVXm1QlY&usqp=CAU"
           alt="Globa with points"
         />
-        <Heading className={styles.MITMTitle} p={4} fontSize="6xl">
-          Meet in the Middle
+        < br />
+        < br />
+        <Heading className={styles.MITMTitle} p={4} fontSize="5xl">
+          MATES of the MIDDLE
         </Heading>
-
+        < br />
+        < br />
         <HStack>
           <Button
             size="lg"
@@ -27,7 +30,7 @@ function Home() {
             colorScheme="linkedin"
             variant="outline"
           >
-            Local
+            LOCAL
           </Button>
           <Button
             size="lg"
@@ -38,7 +41,7 @@ function Home() {
             colorScheme="linkedin"
             variant="outline"
           >
-            Global
+            GLOBAL
           </Button>
         </HStack>
       </VStack>
