@@ -63,64 +63,6 @@ function Activities({ midpointValue, setActivities }) {
 
       <div className="Activities">
         <Heading>ACTIVITIES</Heading>
-        {/* <div className="Activities-container">
-          <div
-            className="Activities-icon"
-            role="presentation"
-            onClick={(event) => handleClick(event, 'eat')}
-          >
-            <IoRestaurantSharp />
-            <p>EAT</p>
-          </div>
-          <div
-            className="Activities-icon"
-            role="presentation"
-            onClick={(event) => handleClick(event, 'drink')}
-          >
-            <BiDrink />
-            <p>DRINK</p>
-          </div>
-          <div
-            className="Activities-icon"
-            role="presentation"
-            onClick={(event) => handleClick(event, 'outdoor')}
-          >
-            <SiForestry />
-            <p>OUTDOOR</p>
-          </div>
-          <div
-            className="Activities-icon"
-            role="presentation"
-            onClick={(event) => handleClick(event, 'music')}
-          >
-            <HiOutlineMusicNote />
-            <p>MUSIC</p>
-          </div>
-          <div
-            className="Activities-icon"
-            role="presentation"
-            onClick={(event) => handleClick(event, 'spa')}
-          >
-            <MdOutlineSpa />
-            <p>SPA</p>
-          </div>
-          <div
-            className="Activities-icon"
-            role="presentation"
-            onClick={(event) => handleClick(event, 'fitness')}
-          >
-            <CgGym />
-            <p>FITNESS</p>
-          </div>
-          <div
-            className="Activities-icon"
-            role="presentation"
-            onClick={(event) => handleClick(event, 'surprise')}
-          >
-            <GiPerspectiveDiceSixFacesRandom />
-            <p>SURPRISE</p>
-          </div>
-        </div> */}
         <SimpleGrid
           spacing={4}
           templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
