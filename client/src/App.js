@@ -15,6 +15,9 @@ import { getMidpoint } from './common/helpers/geocode';
 import Profile from './Pages/Profile/Profile';
 import { getUserToken } from './common/helpers/localFunctions';
 import { silentUserLogin } from './common/helpers/auth';
+import '@fontsource/montserrat-alternates/400.css';
+import '@fontsource/montserrat-alternates/700.css';
+import theme from './brandTheme';
 
 function App() {
   const [activities, setActivities] = useState('');
@@ -41,7 +44,7 @@ function App() {
   };
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <div className={styles.App}>
         <Navbar setUser={setUser} user={user} />
 
