@@ -48,7 +48,7 @@ function Activities({ midpointValue, setActivities }) {
 
         <BreadcrumbItem isCurrentPage>
           <BreadcrumbLink as={Link} to="/activities">
-            Activites
+            Activities
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
