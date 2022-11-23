@@ -1,9 +1,13 @@
-import { ChevronRightIcon } from '@chakra-ui/icons';
+import { ChevronRightIcon, TimeIcon } from '@chakra-ui/icons';
 import {
+  Box,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
+  Button,
   Container,
+  Heading,
+  SimpleGrid,
 } from '@chakra-ui/react';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -31,12 +35,19 @@ function GlobalView() {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <div className="Home">
-        <h1>Coming soon!</h1>
-        <button className="Home" type="button" onClick={returnHomeClick}>
-          Return Home
-        </button>
-      </div>
+      <SimpleGrid columns={1} spacingX={10}>
+        <Box height="80px">
+          <Heading py="4">Coming soon!</Heading>
+        </Box>
+        <Box height="80px">
+          <TimeIcon boxSize={8} />
+        </Box>
+        <Box height="80px">
+          <Button className="Home" type="button" onClick={returnHomeClick}>
+            Return Home
+          </Button>
+        </Box>
+      </SimpleGrid>
     </Container>
   );
 }

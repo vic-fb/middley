@@ -18,26 +18,10 @@ function Home() {
         </Heading>
 
         <HStack>
-          <Button
-            size="lg"
-            as={Link}
-            to="/local"
-            p={8}
-            fontSize="2xl"
-            colorScheme="linkedin"
-            variant="outline"
-          >
+          <Button size="lg" as={Link} to="/local" p={8} fontSize="2xl">
             Local
           </Button>
-          <Button
-            size="lg"
-            as={Link}
-            to="/global"
-            p={8}
-            fontSize="2xl"
-            colorScheme="linkedin"
-            variant="outline"
-          >
+          <Button size="lg" as={Link} to="/global" p={8} fontSize="2xl">
             Global
           </Button>
         </HStack>
