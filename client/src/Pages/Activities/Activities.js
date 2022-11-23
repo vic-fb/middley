@@ -7,11 +7,10 @@ import {
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
   Heading,
-  SimpleGrid,
   Text,
-  Button,
+  Grid,
+  GridItem,
 } from '@chakra-ui/react';
 import { IoRestaurantSharp } from 'react-icons/io5';
 import { BiDrink } from 'react-icons/bi';
@@ -62,131 +61,144 @@ function Activities({ midpointValue, setActivities, setLoading }) {
       </Breadcrumb>
 
       <div className="Activities">
-        <Heading>ACTIVITIES</Heading>
-        <SimpleGrid
-          spacing={4}
-          templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+        <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+          ACTIVITIES
+        </Heading>
+        <Grid
+          gap={6}
+          templateColumns={{
+            base: 'repeat(1, 1fr)',
+            sm: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+          }}
         >
-          <Card
-            role="presentation"
-            onClick={(event) => handleClick(event, 'eat')}
-            align="center"
-          >
-            <CardHeader>
-              <Heading size="xl">
-                <IoRestaurantSharp />
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <Text fontSize="lg">EAT</Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View Options</Button>
-            </CardFooter>
-          </Card>
-          <Card
-            role="presentation"
-            onClick={(event) => handleClick(event, 'drink')}
-            align="center"
-          >
-            <CardHeader>
-              <Heading size="xl">
-                <BiDrink />
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <Text fontSize="lg">DRINK</Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View Options</Button>
-            </CardFooter>
-          </Card>
-          <Card
-            role="presentation"
-            onClick={(event) => handleClick(event, 'outdoor')}
-            align="center"
-          >
-            <CardHeader>
-              <Heading size="xl">
-                <SiForestry />
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <Text fontSize="lg">OUTDOOR</Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View Options</Button>
-            </CardFooter>
-          </Card>
-          <Card
-            role="presentation"
-            onClick={(event) => handleClick(event, 'music')}
-            align="center"
-          >
-            <CardHeader>
-              <Heading size="xl">
-                <HiOutlineMusicNote />
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <Text fontSize="lg">MUSIC</Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View Options</Button>
-            </CardFooter>
-          </Card>
-          <Card
-            role="presentation"
-            onClick={(event) => handleClick(event, 'spa')}
-            align="center"
-          >
-            <CardHeader>
-              <Heading size="xl">
-                <MdOutlineSpa />
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <Text fontSize="lg">SPA</Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View Options</Button>
-            </CardFooter>
-          </Card>
-          <Card
-            role="presentation"
-            onClick={(event) => handleClick(event, 'fitness')}
-            align="center"
-          >
-            <CardHeader>
-              <Heading size="xl">
-                <CgGym />
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <Text fontSize="lg">FITNESS</Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View Options</Button>
-            </CardFooter>
-          </Card>
-          <Card
-            role="presentation"
-            onClick={(event) => handleClick(event, 'surprise')}
-            align="center"
-          >
-            <CardHeader>
-              <Heading size="xl">
-                <GiPerspectiveDiceSixFacesRandom />
-              </Heading>
-            </CardHeader>
-            <CardBody>
-              <Text fontSize="lg">SURPRISE</Text>
-            </CardBody>
-            <CardFooter>
-              <Button>View Options</Button>
-            </CardFooter>
-          </Card>
-        </SimpleGrid>
+          <GridItem>
+            <Card
+              role="presentation"
+              onClick={(event) => handleClick(event, 'eat')}
+              align="center"
+              variant="elevated"
+              backgroundColor="rgba(215,212,224,0.2)"
+            >
+              <CardHeader>
+                <Heading>
+                  <IoRestaurantSharp boxSize={10} />
+                </Heading>
+              </CardHeader>
+              <CardBody>
+                <Text fontSize="xl">EAT</Text>
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem>
+            <Card
+              role="presentation"
+              onClick={(event) => handleClick(event, 'drink')}
+              align="center"
+              variant="elevated"
+              backgroundColor="rgba(215,212,224,0.2)"
+            >
+              <CardHeader>
+                <Heading>
+                  <BiDrink boxSize={10} />
+                </Heading>
+              </CardHeader>
+              <CardBody>
+                <Text fontSize="xl">DRINK</Text>
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem>
+            <Card
+              role="presentation"
+              onClick={(event) => handleClick(event, 'outdoor')}
+              align="center"
+              variant="elevated"
+              backgroundColor="rgba(215,212,224,0.2)"
+            >
+              <CardHeader>
+                <Heading>
+                  <SiForestry boxSize={10} />
+                </Heading>
+              </CardHeader>
+              <CardBody>
+                <Text fontSize="xl">OUTDOOR</Text>
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem>
+            <Card
+              role="presentation"
+              onClick={(event) => handleClick(event, 'music')}
+              align="center"
+              variant="elevated"
+              backgroundColor="rgba(215,212,224,0.2)"
+            >
+              <CardHeader>
+                <Heading>
+                  <HiOutlineMusicNote boxSize={10} />
+                </Heading>
+              </CardHeader>
+              <CardBody>
+                <Text fontSize="xl">MUSIC</Text>
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem>
+            <Card
+              role="presentation"
+              onClick={(event) => handleClick(event, 'spa')}
+              align="center"
+              variant="elevated"
+              backgroundColor="rgba(215,212,224,0.2)"
+            >
+              <CardHeader>
+                <Heading>
+                  <MdOutlineSpa boxSize={10} />
+                </Heading>
+              </CardHeader>
+              <CardBody>
+                <Text fontSize="xl">SPA</Text>
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem>
+            <Card
+              role="presentation"
+              onClick={(event) => handleClick(event, 'fitness')}
+              align="center"
+              variant="elevated"
+              backgroundColor="rgba(215,212,224,0.2)"
+            >
+              <CardHeader>
+                <Heading>
+                  <CgGym boxSize={10} />
+                </Heading>
+              </CardHeader>
+              <CardBody>
+                <Text fontSize="xl">FITNESS</Text>
+              </CardBody>
+            </Card>
+          </GridItem>
+          <GridItem colSpan={{ base: 1, sm: 2, md: 3 }}>
+            <Card
+              role="presentation"
+              onClick={(event) => handleClick(event, 'surprise')}
+              align="center"
+              variant="elevated"
+              backgroundColor="rgba(215,212,224,0.2)"
+            >
+              <CardHeader>
+                <Heading>
+                  <GiPerspectiveDiceSixFacesRandom boxSize={10} />
+                </Heading>
+              </CardHeader>
+              <CardBody>
+                <Text fontSize="xl">SURPRISE</Text>
+              </CardBody>
+            </Card>
+          </GridItem>
+        </Grid>
       </div>
     </Container>
   );
