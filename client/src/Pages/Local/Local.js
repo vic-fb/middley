@@ -83,7 +83,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
             <FormLabel>My Friend's Address</FormLabel>
             <Input
               type="text"
-              placeholder="- Enter address, city -" 
+              placeholder="- Enter address, city -"
               value={address2}
               onChange={handleAddress2}
             />
