@@ -27,7 +27,7 @@ function Activities({ midpointValue, setActivities }) {
       midpointValue[1],
       category,
     );
-    // console.log(midpointValue, category);
+
     setActivities(options);
   };
 
@@ -48,7 +48,7 @@ function Activities({ midpointValue, setActivities }) {
 
         <BreadcrumbItem isCurrentPage>
           <BreadcrumbLink as={Link} to="/activities">
-            Activites
+            Activities
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
