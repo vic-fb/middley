@@ -1,4 +1,5 @@
 import { useNavigate, Link } from 'react-router-dom';
+import './Activities.css';
 import {
   Breadcrumb,
   BreadcrumbItem,
