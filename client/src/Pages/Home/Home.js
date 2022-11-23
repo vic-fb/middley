@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 import { Button, Heading, HStack, Image, VStack } from '@chakra-ui/react';
 
 import styles from './Home.module.css';
+import MeetintheMiddle from '../../common/assets/App Logo/MeetintheMiddle.png';
 
 function Home() {
   return (
     <div className={styles.Home}>
       <VStack>
         <Image
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5MRALgb4vgJEXZCN67pAWBgSjrfcqym0qQseIfSjmkugK-LQEol7QX95mSzcMVXm1QlY&usqp=CAU"
-          alt="Globa with points"
+          className={styles.MeetintheMiddle}
+          src={MeetintheMiddle}
+          alt="A map with two pins emitting an arrow each. They are pointing to a heart in the middle of the map."
         />
         < br />
         < br />
