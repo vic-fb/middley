@@ -22,14 +22,13 @@ function RoutesPage({ activity }) {
 
   const searchString = encodeURI(`${activity.name} ${activity.displayAddress}`);
 
-  function shareDirections() {
+  async function shareDirections() {
     const directions = {
-      text: 'Our app name',
       title: `Let's meet at ${activity.name}`,
+      text: 'I picked this place using "NAME OF OUR APP"',
       url: `https://www.google.com/maps/search/?api=1&query=${searchString}`,
     };
-    navigator.canShare(directions);
-    navigator.share(directions);
+    await navigator.share(directions);
   }
 
   const routes = {
