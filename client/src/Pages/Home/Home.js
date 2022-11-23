@@ -32,7 +32,7 @@ function Home() {
             colorScheme="linkedin"
             variant="outline"
           >
-            LOCAL
+            GO LOCAL
           </Button>
           <Button
             size="lg"
@@ -43,7 +43,7 @@ function Home() {
             colorScheme="linkedin"
             variant="outline"
           >
-            GLOBAL
+            GO GLOBAL
           </Button>
         </HStack>
       </VStack>
