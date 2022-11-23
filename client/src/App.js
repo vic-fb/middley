@@ -11,10 +11,13 @@ import Signup from './Pages/Signup/Signup';
 import Login from './Pages/Login/Login';
 import Options from './Pages/Options/Options';
 import RoutesPage from './Pages/RoutesPage/RoutesPage';
-import getMidpoint from './common/helpers/geocode';
+import { getMidpoint } from './common/helpers/geocode';
 import Profile from './Pages/Profile/Profile';
 import { getUserToken } from './common/helpers/localFunctions';
 import { silentUserLogin } from './common/helpers/auth';
+import '@fontsource/montserrat-alternates/400.css';
+import '@fontsource/montserrat-alternates/700.css';
+import theme from './brandTheme';
 
 function App() {
   const [activities, setActivities] = useState('');
@@ -23,6 +26,7 @@ function App() {
   const [address2, setAddress2] = useState('');
   const [activity, setActivity] = useState(null);
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
   const nav = useNavigate();
 
   useEffect(() => {
@@ -41,7 +45,7 @@ function App() {
   };
 
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <div className={styles.App}>
         <Navbar setUser={setUser} user={user} />
 
@@ -69,6 +73,7 @@ function App() {
               <Activities
                 setActivities={setActivities}
                 midpointValue={midpoint}
+                setLoading={setLoading}
               />
             )}
           />
@@ -77,13 +82,13 @@ function App() {
           <Route
             path="/options"
             element={activities && (
-              <Options activities={activities} setActivity={setActivity} />)}
+              <Options activities={activities} setActivity={setActivity} loading={loading} />)}
           />
           <Route path="/routes" element={<RoutesPage address1={address1} address2={address2} activity={activity} />} />
           <Route
             path="/profile"
             element={user && (
-            <Profile user={user} />
+            <Profile user={user} setUser={setUser} />
             )}
           />
         </Routes>
