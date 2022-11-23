@@ -90,7 +90,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
           </FormControl>
         </VStack>
 
-        <Button type="submit" colorScheme="teal" mt="4">
+        <Button type="submit" mt="4">
           Submit
         </Button>
       </form>
