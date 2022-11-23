@@ -46,12 +46,12 @@ function ActivitiesList({ activities, setActivity }) {
 
   return (
     <div>
+      <Heading mb="4">OPTIONS</Heading>
       {activities && activities.length === 0 && (
         <Heading>
           Sorry, no activities available <FaRegSadCry />
         </Heading>
       )}
-      <Heading mb="4">OPTIONS</Heading>
       <Stack gap={0.5}>
         {activities.slice(0, 5).map((activity) => (
           <Card
