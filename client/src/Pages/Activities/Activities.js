@@ -82,7 +82,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
             >
               <CardHeader>
                 <Heading>
-                  <IoRestaurantSharp boxSize={10} />
+                  <IoRestaurantSharp boxsize={10} />
                 </Heading>
               </CardHeader>
               <CardBody>
@@ -100,7 +100,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
             >
               <CardHeader>
                 <Heading>
-                  <BiDrink boxSize={10} />
+                  <BiDrink boxsize={10} />
                 </Heading>
               </CardHeader>
               <CardBody>
@@ -118,7 +118,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
             >
               <CardHeader>
                 <Heading>
-                  <SiForestry boxSize={10} />
+                  <SiForestry boxsize={10} />
                 </Heading>
               </CardHeader>
               <CardBody>
@@ -136,7 +136,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
             >
               <CardHeader>
                 <Heading>
-                  <HiOutlineMusicNote boxSize={10} />
+                  <HiOutlineMusicNote boxsize={10} />
                 </Heading>
               </CardHeader>
               <CardBody>
@@ -154,7 +154,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
             >
               <CardHeader>
                 <Heading>
-                  <MdOutlineSpa boxSize={10} />
+                  <MdOutlineSpa boxsize={10} />
                 </Heading>
               </CardHeader>
               <CardBody>
@@ -172,7 +172,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
             >
               <CardHeader>
                 <Heading>
-                  <CgGym boxSize={10} />
+                  <CgGym boxsize={10} />
                 </Heading>
               </CardHeader>
               <CardBody>
@@ -190,7 +190,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
             >
               <CardHeader>
                 <Heading>
-                  <GiPerspectiveDiceSixFacesRandom boxSize={10} />
+                  <GiPerspectiveDiceSixFacesRandom boxsize={10} />
                 </Heading>
               </CardHeader>
               <CardBody>
