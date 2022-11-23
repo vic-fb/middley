@@ -4,7 +4,8 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  Container, Flex,
+  Container,
+  Flex,
   Spinner,
 } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
@@ -12,7 +13,7 @@ import ActivitiesList from './components/ActivitiesList';
 
 function Options({ activities, setActivity, loading }) {
   return (
-    <Container>
+    <Container maxW="container.md">
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
         <BreadcrumbItem>
           <BreadcrumbLink as={Link} to="/">
@@ -36,17 +37,13 @@ function Options({ activities, setActivity, loading }) {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      {loading
-        ? (
-          <Flex alignItems="center" flexDirection="column">
-            <Spinner
-              thickness="5px"
-              speed="0.65s"
-              size="xl"
-            />
-          </Flex>
-        )
-        : (<ActivitiesList activities={activities} setActivity={setActivity} />)}
+      {loading ? (
+        <Flex alignItems="center" flexDirection="column">
+          <Spinner thickness="5px" speed="0.65s" size="xl" />
+        </Flex>
+      ) : (
+        <ActivitiesList activities={activities} setActivity={setActivity} />
+      )}
     </Container>
   );
 }

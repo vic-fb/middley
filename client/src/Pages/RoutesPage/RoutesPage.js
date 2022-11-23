@@ -8,6 +8,8 @@ import {
   Container,
   Button,
   Heading,
+  Flex,
+  Spacer,
 } from '@chakra-ui/react';
 
 import { ChevronRightIcon } from '@chakra-ui/icons';
@@ -17,13 +19,24 @@ function RoutesPage({ activity }) {
   function returnHomeClick() {
     nav('/');
   }
+
   const searchString = encodeURI(`${activity.name} ${activity.displayAddress}`);
+
+  async function shareDirections() {
+    const directions = {
+      title: `Let's meet at ${activity.name}`,
+      text: 'I picked this place using "NAME OF OUR APP"',
+      url: `https://www.google.com/maps/search/?api=1&query=${searchString}`,
+    };
+    await navigator.share(directions);
+  }
+
   const routes = {
     route1: `https://www.google.com/maps/embed/v1/place?key=AIzaSyBY04gyee_CumsNrdlgV8_P9exvWMgSTc8&q=${searchString}`,
   };
 
   return (
-    <Container>
+    <Container minH="100vh">
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
         <BreadcrumbItem>
           <BreadcrumbLink as={Link} to="/">
@@ -55,9 +68,9 @@ function RoutesPage({ activity }) {
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
-
-      <div className="routes-page">
+      <Flex flexDirection="column" justifyContent="space-evenly">
         <Heading as="h1">ROUTES</Heading>
+>
         <Heading as="h2">'{activity.name}'</Heading>
         <AspectRatio maxW="600px" ratio={4 / 3}>
           <iframe
@@ -70,9 +83,12 @@ function RoutesPage({ activity }) {
             loading="lazy"
           />
         </AspectRatio>
-
-        <Button onClick={returnHomeClick}>Return Home</Button>
-      </div>
+        <Flex my="35px">
+          <Button onClick={shareDirections}>Share directions</Button>
+          <Spacer />
+          <Button onClick={returnHomeClick} variant="ghost">Return Home</Button>
+        </Flex>
+      </Flex>
     </Container>
   );
 }
