@@ -15,13 +15,13 @@ function Home() {
           src={MeetintheMiddle}
           alt="A map with two pins emitting an arrow each. They are pointing to a heart in the middle of the map."
         />
-        < br />
-        < br />
+        <br />
+        <br />
         <Heading className={styles.MITMTitle} p={4} fontSize="5xl">
           MATES of the MIDDLE
         </Heading>
-        < br />
-        < br />
+        <br />
+        <br />
         <HStack>
 
           <Button size="lg" as={Link} to="/local" p={8} fontSize="2xl">

@@ -36,7 +36,7 @@ function Profile({ user, setUser }) {
 
   return (
     <Container>
-      <Stack>git add . 
+      <Stack>git add .
         <Heading as="h1" size="xl">{`Hi, ${capitalize(user.username)}`}</Heading>
         <Heading as="h2" size="md">Home</Heading>
         <HStack>
