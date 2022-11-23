@@ -18,7 +18,7 @@ function Home() {
         <br />
         <br />
         <Heading className={styles.MITMTitle} p={4} fontSize="5xl">
-          MATES in the MIDDLE
+         APP NAME
         </Heading>
         <br />
         <br />

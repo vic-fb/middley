@@ -3,4 +3,15 @@
     margin-top: 1rem;
     font-size: 300%;
     cursor: pointer;
+    color: #5C5474;
 }
+.userIcons:hover {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+

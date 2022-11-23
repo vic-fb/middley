@@ -69,8 +69,8 @@ function RoutesPage({ activity }) {
         </BreadcrumbItem>
       </Breadcrumb>
       <Flex flexDirection="column" justifyContent="space-evenly">
-        <Heading as="h1">ROUTES</Heading>
-        <Heading as="h2">'{activity.name}'</Heading>
+        <Heading as="h1">Lets go to {activity.name}! </Heading>
+        <br />
         <AspectRatio maxW="600px" ratio={4 / 3}>
           <iframe
             title="map"
