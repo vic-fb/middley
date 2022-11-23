@@ -18,7 +18,7 @@ import { ChevronRightIcon } from '@chakra-ui/icons';
 
 function RoutesPage({ activity }) {
   const nav = useNavigate();
-  console.log(activity);
+  // console.log(activity);
 
   function returnHomeClick() {
     nav('/');
