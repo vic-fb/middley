@@ -69,7 +69,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
             <FormLabel> My Address </FormLabel>
             <Input
               type="text"
-              placeholder="Enter address"
+              placeholder="- Enter address, city -"
               value={address1}
               onChange={handleAddress1}
             />
@@ -84,7 +84,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
             <FormLabel>My Friend's Address</FormLabel>
             <Input
               type="text"
-              placeholder="Enter address"
+              placeholder="- Enter address, city -" 
               value={address2}
               onChange={handleAddress2}
             />
@@ -92,7 +92,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
         </VStack>
 
         <Button type="submit" mt="4">
-          GO
+          GO TO THE MIDDLE
         </Button>
       </form>
     </Container>
