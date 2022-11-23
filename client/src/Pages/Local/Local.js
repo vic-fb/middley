@@ -31,10 +31,17 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
     const location = await getCurrentLocation();
     const response = await revgeocode(location);
     if (response.data) {
-      // decide where we want it
       setAddress1(response.data.formatted_address);
     } else {
       console.log('We could not find your location');
+    }
+  };
+
+  const setSavedAddress = (option) => {
+    if (user[option]) {
+      setAddress1(user[option]);
+    } else {
+      console.log(`You have not saved a ${option} address yet`);
     }
   };
 
@@ -67,8 +74,11 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
               onChange={handleAddress1}
             />
           </FormControl>
-
-          <UserIcons user={user} setCurrentAddress={setCurrentAddress} />
+          <UserIcons
+            user={user}
+            setCurrentAddress={setCurrentAddress}
+            setSavedAddress={setSavedAddress}
+          />
           <FormControl id="address2" isRequired>
             <FormLabel>Address 2</FormLabel>
             <Input
