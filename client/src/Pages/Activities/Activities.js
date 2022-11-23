@@ -5,6 +5,14 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   Container,
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Heading,
+  SimpleGrid,
+  Text,
+  Button,
 } from '@chakra-ui/react';
 import { IoRestaurantSharp } from 'react-icons/io5';
 import { BiDrink } from 'react-icons/bi';
@@ -32,7 +40,7 @@ function Activities({ midpointValue, setActivities }) {
   };
 
   return (
-    <Container>
+    <Container maxW="container.md">
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
         <BreadcrumbItem>
           <BreadcrumbLink as={Link} to="/">
@@ -54,65 +62,131 @@ function Activities({ midpointValue, setActivities }) {
       </Breadcrumb>
 
       <div className="Activities">
-        <h6>ACTIVITIES</h6>
-        <div className="Activities-container">
-          <div
-            className="Activities-icon"
+        <Heading>ACTIVITIES</Heading>
+        <SimpleGrid
+          spacing={4}
+          templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+        >
+          <Card
             role="presentation"
             onClick={(event) => handleClick(event, 'eat')}
+            align="center"
           >
-            <IoRestaurantSharp />
-            <p>EAT</p>
-          </div>
-          <div
-            className="Activities-icon"
+            <CardHeader>
+              <Heading size="xl">
+                <IoRestaurantSharp />
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text fontSize="lg">EAT</Text>
+            </CardBody>
+            <CardFooter>
+              <Button>View Options</Button>
+            </CardFooter>
+          </Card>
+          <Card
             role="presentation"
             onClick={(event) => handleClick(event, 'drink')}
+            align="center"
           >
-            <BiDrink />
-            <p>DRINK</p>
-          </div>
-          <div
-            className="Activities-icon"
+            <CardHeader>
+              <Heading size="xl">
+                <BiDrink />
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text fontSize="lg">DRINK</Text>
+            </CardBody>
+            <CardFooter>
+              <Button>View Options</Button>
+            </CardFooter>
+          </Card>
+          <Card
             role="presentation"
             onClick={(event) => handleClick(event, 'outdoor')}
+            align="center"
           >
-            <SiForestry />
-            <p>OUTDOOR</p>
-          </div>
-          <div
-            className="Activities-icon"
+            <CardHeader>
+              <Heading size="xl">
+                <SiForestry />
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text fontSize="lg">OUTDOOR</Text>
+            </CardBody>
+            <CardFooter>
+              <Button>View Options</Button>
+            </CardFooter>
+          </Card>
+          <Card
             role="presentation"
             onClick={(event) => handleClick(event, 'music')}
+            align="center"
           >
-            <HiOutlineMusicNote />
-            <p>MUSIC</p>
-          </div>
-          <div
-            className="Activities-icon"
+            <CardHeader>
+              <Heading size="xl">
+                <HiOutlineMusicNote />
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text fontSize="lg">MUSIC</Text>
+            </CardBody>
+            <CardFooter>
+              <Button>View Options</Button>
+            </CardFooter>
+          </Card>
+          <Card
             role="presentation"
             onClick={(event) => handleClick(event, 'spa')}
+            align="center"
           >
-            <MdOutlineSpa />
-            <p>SPA</p>
-          </div>
-          <div
-            className="Activities-icon"
+            <CardHeader>
+              <Heading size="xl">
+                <MdOutlineSpa />
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text fontSize="lg">SPA</Text>
+            </CardBody>
+            <CardFooter>
+              <Button>View Options</Button>
+            </CardFooter>
+          </Card>
+          <Card
             role="presentation"
             onClick={(event) => handleClick(event, 'fitness')}
+            align="center"
           >
-            <CgGym />
-            <p>FITNESS</p>
-          </div>
-          <div
-            className="Activities-icon"
+            <CardHeader>
+              <Heading size="xl">
+                <CgGym />
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text fontSize="lg">FITNESS</Text>
+            </CardBody>
+            <CardFooter>
+              <Button>View Options</Button>
+            </CardFooter>
+          </Card>
+          <Card
             role="presentation"
             onClick={(event) => handleClick(event, 'surprise')}
+            align="center"
           >
-            <GiPerspectiveDiceSixFacesRandom />
-            <p>SURPRISE</p>
-          </div>
-        </div>
+            <CardHeader>
+              <Heading size="xl">
+                <GiPerspectiveDiceSixFacesRandom />
+              </Heading>
+            </CardHeader>
+            <CardBody>
+              <Text fontSize="lg">SURPRISE</Text>
+            </CardBody>
+            <CardFooter>
+              <Button>View Options</Button>
+            </CardFooter>
+          </Card>
+        </SimpleGrid>
       </div>
     </Container>
   );
