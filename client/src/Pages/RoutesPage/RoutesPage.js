@@ -57,7 +57,7 @@ function RoutesPage({ activity }) {
       </Breadcrumb>
 
       <div className="routes-page">
-        <Heading as="h1">Routes</Heading>
+        <Heading as="h1">ROUTES</Heading>
         <Heading as="h2">'{activity.name}'</Heading>
         <AspectRatio maxW="600px" ratio={4 / 3}>
           <iframe
