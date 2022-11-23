@@ -1,5 +1,4 @@
 import React from 'react';
-import './Local.css';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -61,7 +60,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
         </BreadcrumbItem>
       </Breadcrumb>
       <Heading as="h1" size="2xl" mb="4">
-      FIND HALFWAY POINT
+        FIND HALFWAY POINT
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>
@@ -84,7 +83,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
             <FormLabel>My Friend's Address</FormLabel>
             <Input
               type="text"
-              placeholder="- Enter address, city -" 
+              placeholder="- Enter address, city -"
               value={address2}
               onChange={handleAddress2}
             />
