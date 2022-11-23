@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import './Local.css';
 import {
@@ -61,13 +62,14 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
         </BreadcrumbItem>
       </Breadcrumb>
       <Heading as="h1" size="2xl" mb="4">
-      GET MIDDLE POINT
+        GET MIDDLE POINT
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>
           <FormControl id="address1" isRequired>
             <FormLabel> Adress One </FormLabel>
             <Input
+              backgroundColor="rgba(215,212,224,0.2)"
               type="text"
               placeholder="Enter address"
               value={address1}
@@ -83,6 +85,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
           <FormControl id="address2" isRequired>
             <FormLabel>Adress Two</FormLabel>
             <Input
+              backgroundColor="rgba(215,212,224,0.2)"
               type="text"
               placeholder="Enter address"
               value={address2}

@@ -67,12 +67,12 @@ function Login({ setUser }) {
           <VStack spacing="24px">
             <FormControl isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input type="email" name="email" onChange={handleChange} value={email} />
+              <Input backgroundColor="rgba(215,212,224,0.2)" type="email" name="email" onChange={handleChange} value={email} />
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
             <FormControl isRequired>
               <FormLabel>Password</FormLabel>
-              <Input type="password" name="password" onChange={handleChange} value={password} />
+              <Input backgroundColor="rgba(215,212,224,0.2)" type="password" name="password" onChange={handleChange} value={password} />
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
             <Button py="1" type="submit" isLoading={loading}>Submit</Button>
