@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {
   Breadcrumb,
@@ -23,19 +22,20 @@ import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import getActivities from '../../common/helpers/activities';
 
-function Activities({ midpointValue, setActivities }) {
+function Activities({ midpointValue, setActivities, setLoading }) {
   const nav = useNavigate();
 
   const handleClick = async (event, category) => {
     event.preventDefault();
+    setLoading(true);
     nav('/Options');
     const options = await getActivities(
       midpointValue[0],
       midpointValue[1],
       category,
     );
-
     setActivities(options);
+    setLoading(false);
   };
 
   return (

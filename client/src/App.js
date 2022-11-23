@@ -26,6 +26,7 @@ function App() {
   const [address2, setAddress2] = useState('');
   const [activity, setActivity] = useState(null);
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
   const nav = useNavigate();
 
   useEffect(() => {
@@ -72,6 +73,7 @@ function App() {
               <Activities
                 setActivities={setActivities}
                 midpointValue={midpoint}
+                setLoading={setLoading}
               />
             )}
           />
@@ -80,7 +82,7 @@ function App() {
           <Route
             path="/options"
             element={activities && (
-              <Options activities={activities} setActivity={setActivity} />)}
+              <Options activities={activities} setActivity={setActivity} loading={loading} />)}
           />
           <Route path="/routes" element={<RoutesPage address1={address1} address2={address2} activity={activity} />} />
           <Route

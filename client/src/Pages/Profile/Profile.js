@@ -28,10 +28,16 @@ function Profile({ user, setUser }) {
     console.log(currentUser);
   };
 
+  // capitalize first letter of the username for display purposes only (not for database)
+  const capitalize = (s) => {
+    if (typeof s !== 'string') return '';
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  };
+
   return (
     <Container>
-      <Stack>
-        <Heading as="h1" size="xl">{`Hi, ${user.username}`}</Heading>
+      <Stack>git add . 
+        <Heading as="h1" size="xl">{`Hi, ${capitalize(user.username)}`}</Heading>
         <Heading as="h2" size="md">Home</Heading>
         <HStack>
           <BsFillHouseDoorFill />
