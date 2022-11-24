@@ -39,37 +39,36 @@ function RoutesPage({ activity }) {
     <Container minH="100vh">
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/">
+          <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/local">
+          <BreadcrumbLink as={Link} to="/local" color="#DCDCDC">
             Local
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/activities">
+          <BreadcrumbLink as={Link} to="/activities" color="#DCDCDC">
             Activites
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/Options">
+          <BreadcrumbLink as={Link} to="/Options" color="#DCDCDC">
             Options
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink as={Link} to="/Routes">
+          <BreadcrumbLink as={Link} to="/Routes" color="#DCDCDC">
             Routes
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
       <Flex flexDirection="column" justifyContent="space-evenly">
-
         <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
           Let's go to {activity.name}!
         </Heading>
@@ -88,7 +87,7 @@ function RoutesPage({ activity }) {
         <Flex my="35px">
           <Button onClick={shareDirections}>Share directions</Button>
           <Spacer />
-          <Button onClick={returnHomeClick} variant="ghost">
+          <Button onClick={returnHomeClick} variant="ghost" color="#DCDCDC">
             Return Home
           </Button>
         </Flex>

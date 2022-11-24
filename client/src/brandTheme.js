@@ -25,8 +25,8 @@ const theme = extendTheme({
     mitmPurple: {
       50: '#B0A1C7',
       100: '#5C5474',
-      200: '#5C5474',
-      300: '#5C5474',
+      200: '#45346E',
+      300: '#45346E',
       400: '#5C5474',
       500: '#5C5474',
       600: '#51367D',
@@ -38,23 +38,28 @@ const theme = extendTheme({
     Button: defineStyleConfig({
       variants: {
         solid: {
-          color: 'white',
-          backgroundColor: 'mitmPurple.500',
+          color: 'black',
+          backgroundColor: '#F6E6E8',
           _hover: {
-            color: 'white',
-            backgroundColor: 'mitmPurple.500',
+            color: 'black',
+            backgroundColor: '#F6E6E8',
+          },
+        },
+        ghost: {
+          _hover: {
+            color: 'black',
           },
         },
       },
     }),
-    Input: defineStyleConfig({
-      variants: {
-        outline: {
-          color: 'black',
-          background: 'mitmPurple.50',
-        },
-      },
-    }),
+    // Input: defineStyleConfig({
+    //   variants: {
+    //     outline: {
+    //       color: 'black',
+    //       background: 'mitmPurple.50',
+    //     },
+    //   },
+    // }),
     Heading: defineStyleConfig({
       baseStyle: {
         color: '#DCDCDC',
@@ -66,6 +71,11 @@ const theme = extendTheme({
       },
     }),
     FormLabel: defineStyleConfig({
+      baseStyle: {
+        color: '#DCDCDC',
+      },
+    }),
+    BreadcrumbLink: defineStyleConfig({
       baseStyle: {
         color: '#DCDCDC',
       },
