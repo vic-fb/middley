@@ -81,7 +81,9 @@ function Signup() {
               backgroundColor="#D4BBDD"
               color="black"
             />
-            <FormHelperText>What shall we call you?</FormHelperText>
+            <FormHelperText color="#DCDCDC">
+              What shall we call you?
+            </FormHelperText>
             <FormErrorMessage>Name is required.</FormErrorMessage>
           </FormControl>
           <FormControl isRequired>
@@ -94,8 +96,12 @@ function Signup() {
               backgroundColor="#D4BBDD"
               color="black"
             />
-            <FormHelperText>We&apos;ll never share your email.</FormHelperText>
-            <FormErrorMessage>Email is required.</FormErrorMessage>
+            <FormHelperText color="#DCDCDC">
+              We&apos;ll never share your email.
+            </FormHelperText>
+            <FormErrorMessage color="black">
+              Email is required.
+            </FormErrorMessage>
           </FormControl>
           <FormControl isRequired>
             <FormLabel>Password</FormLabel>
