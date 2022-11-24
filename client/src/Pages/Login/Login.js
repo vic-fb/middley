@@ -81,6 +81,8 @@ function Login({ setUser }) {
                 name="email"
                 onChange={handleChange}
                 value={email}
+                backgroundColor="mitmPurple.50"
+                color="black"
               />
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
@@ -91,6 +93,8 @@ function Login({ setUser }) {
                 name="password"
                 onChange={handleChange}
                 value={password}
+                backgroundColor="mitmPurple.50"
+                color="black"
               />
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
@@ -100,9 +104,10 @@ function Login({ setUser }) {
           </VStack>
         </form>
         <Text>
-        'Not registered yet?'
-          <Link as={RouteLink} to="/signup">Sign up here</Link>
-
+          Not registered yet?
+          <Link as={RouteLink} to="/signup">
+            Sign up here
+          </Link>
         </Text>
       </VStack>
     </Container>

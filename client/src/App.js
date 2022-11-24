@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import styles from './App.module.css';
 import Home from './Pages/Home/Home';
 import Local from './Pages/Local/Local';
@@ -32,8 +32,7 @@ function App() {
   useEffect(() => {
     const token = getUserToken();
     if (token) {
-      silentUserLogin(token)
-        .then((response) => setUser(response.user));
+      silentUserLogin(token).then((response) => setUser(response.user));
     }
   }, []);
 
@@ -46,7 +45,7 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <div className={styles.App}>
+      <Box backgroundColor="mitmPurple.600" minH="100vh" className={styles.App}>
         <Navbar setUser={setUser} user={user} />
 
         <Routes>
@@ -55,7 +54,7 @@ function App() {
 
           <Route
             path="/local"
-            element={(
+            element={
               <Local
                 setMidpoint={setMidpoint}
                 setAddress1={setAddress1}
@@ -65,34 +64,48 @@ function App() {
                 address2={address2}
                 user={user}
               />
-          )}
+            }
           />
           <Route
             path="/activities"
-            element={(
+            element={
               <Activities
                 setActivities={setActivities}
                 midpointValue={midpoint}
                 setLoading={setLoading}
               />
-            )}
+            }
           />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/signup" element={<Signup />} />
           <Route
             path="/options"
-            element={activities && (
-              <Options activities={activities} setActivity={setActivity} loading={loading} />)}
+            element={
+              activities && (
+                <Options
+                  activities={activities}
+                  setActivity={setActivity}
+                  loading={loading}
+                />
+              )
+            }
           />
-          <Route path="/routes" element={<RoutesPage address1={address1} address2={address2} activity={activity} />} />
+          <Route
+            path="/routes"
+            element={
+              <RoutesPage
+                address1={address1}
+                address2={address2}
+                activity={activity}
+              />
+            }
+          />
           <Route
             path="/profile"
-            element={user && (
-            <Profile user={user} setUser={setUser} />
-            )}
+            element={user && <Profile user={user} setUser={setUser} />}
           />
         </Routes>
-      </div>
+      </Box>
     </ChakraProvider>
   );
 }

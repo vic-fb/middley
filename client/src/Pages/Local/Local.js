@@ -69,7 +69,6 @@ function Local({
 
       <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
         Find The Middle
-
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>
@@ -77,9 +76,12 @@ function Local({
             <FormLabel> My Address </FormLabel>
             <Input
               type="text"
+              variant="outline"
               placeholder="- Enter address, city -"
               value={address1}
               onChange={handleAddress1}
+              backgroundColor="mitmPurple.50"
+              color="black"
             />
           </FormControl>
           <br />
@@ -95,6 +97,8 @@ function Local({
               placeholder="- Enter address, city -"
               value={address2}
               onChange={handleAddress2}
+              backgroundColor="mitmPurple.50"
+              color="black"
             />
           </FormControl>
         </VStack>
