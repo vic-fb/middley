@@ -4,17 +4,17 @@
   "name": "Mates in the Middle",
   "icons": [
     {
-      "src": "logos/64.png",
+      "src": "/logos/64.png",
       "sizes": "64x64",
       "type": "image/png"
     },
     {
-      "src": "logos/192.png",
+      "src": "/logos/192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logos/512.png",
+      "src": "/logos/512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
