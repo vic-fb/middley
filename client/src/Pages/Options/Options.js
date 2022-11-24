@@ -16,22 +16,22 @@ function Options({ activities, setActivity, loading }) {
     <Container maxW="container.md">
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/">
+          <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/local">
+          <BreadcrumbLink as={Link} to="/local" color="#DCDCDC">
             Local
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/activities">
+          <BreadcrumbLink as={Link} to="/activities" color="#DCDCDC">
             Activites
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink as={Link} to="/Options">
+          <BreadcrumbLink as={Link} to="/Options" color="#DCDCDC">
             Options
           </BreadcrumbLink>
         </BreadcrumbItem>

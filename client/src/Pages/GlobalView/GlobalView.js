@@ -23,13 +23,13 @@ function GlobalView() {
     <Container>
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/">
+          <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink as={Link} to="/global">
+          <BreadcrumbLink as={Link} to="/global" color="#DCDCDC">
             Global
           </BreadcrumbLink>
         </BreadcrumbItem>

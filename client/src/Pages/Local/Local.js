@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import {
   Breadcrumb,
@@ -58,13 +59,13 @@ function Local({
     <Container>
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/">
+          <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink as={Link} to="/local">
+          <BreadcrumbLink as={Link} to="/local" color="#DCDCDC">
             Local
           </BreadcrumbLink>
         </BreadcrumbItem>
@@ -83,7 +84,7 @@ function Local({
               placeholder="- Enter address, city -"
               value={address1}
               onChange={handleAddress1}
-              backgroundColor="mitmPurple.50"
+              backgroundColor="#D4BBDD"
               color="black"
             />
           </FormControl>
@@ -100,7 +101,7 @@ function Local({
               placeholder="- Enter address, city -"
               value={address2}
               onChange={handleAddress2}
-              backgroundColor="mitmPurple.50"
+              backgroundColor="#D4BBDD"
               color="black"
             />
           </FormControl>
