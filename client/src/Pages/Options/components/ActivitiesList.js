@@ -8,6 +8,8 @@ import {
   CardHeader,
   StackDivider,
   Box,
+  Button,
+  VStack,
 } from '@chakra-ui/react';
 import { FaRegSadCry } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -46,13 +48,15 @@ function ActivitiesList({ activities, setActivity }) {
 
   return (
     <div>
-      <Heading mb="4">OPTIONS</Heading>
+      <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+        Why not try...
+      </Heading>
       {activities && activities.length === 0 && (
         <Heading>
           Sorry, no activities available <FaRegSadCry />
         </Heading>
       )}
-      <Stack gap={0.5}>
+      <Stack gap={0.5} display="flex">
         {activities.slice(0, 5).map((activity) => (
           <Card
             direction={{ base: 'column', sm: 'row' }}
@@ -96,14 +100,19 @@ function ActivitiesList({ activities, setActivity }) {
                     <Heading size="xs" textTransform="uppercase">
                       Rating
                     </Heading>
-                    <Text py="1" fontSize="sm">
+                    {/* <Text py="1" fontSize="sm">
                       {activity.rating} / 5
-                    </Text>
-                    <Image src={yelpStars[activity.rating]} />
+                    </Text> */}
+                    <Image py="1" src={yelpStars[activity.rating]} />
                     <Text py="1" fontSize="sm">
                       {activity.reviewCount} ratings
                     </Text>
                     <Image maxW="40px" src={yelpLogo} />
+                    <VStack>
+                      <Button alignSelf="flex-end" px={8}>
+                        Go!
+                      </Button>
+                    </VStack>
                   </Box>
                 </Stack>
               </CardBody>
