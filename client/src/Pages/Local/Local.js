@@ -78,7 +78,6 @@ function Local({
           <FormControl id="address1" isRequired>
             <FormLabel> My Address </FormLabel>
             <Input
-              backgroundColor="rgba(215,212,224,0.2)"
               type="text"
               variant="outline"
               placeholder="- Enter address, city -"
