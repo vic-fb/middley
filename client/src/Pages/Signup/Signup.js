@@ -78,7 +78,7 @@ function Signup() {
               type="text"
               name="username"
               onChange={handleChange}
-              backgroundColor="mitmPurple.50"
+              backgroundColor="#D4BBDD"
               color="black"
             />
             <FormHelperText>What shall we call you?</FormHelperText>
@@ -91,7 +91,7 @@ function Signup() {
               name="email"
               onChange={handleChange}
               value={email}
-              backgroundColor="mitmPurple.50"
+              backgroundColor="#D4BBDD"
               color="black"
             />
             <FormHelperText>We&apos;ll never share your email.</FormHelperText>
@@ -104,7 +104,7 @@ function Signup() {
               name="password"
               onChange={handleChange}
               value={password}
-              backgroundColor="mitmPurple.50"
+              backgroundColor="#D4BBDD"
               color="black"
             />
             <FormErrorMessage>Password is required.</FormErrorMessage>

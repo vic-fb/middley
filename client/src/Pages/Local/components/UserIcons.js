@@ -19,7 +19,6 @@ function UserIcons({ user, setCurrentAddress, setSavedAddress }) {
             <BsFillBriefcaseFill />
           </div>
         </Tooltip>
-
       )}
       <Tooltip label="Current location">
         <div role="presentation" onClick={setCurrentAddress}>
