@@ -18,7 +18,14 @@ import UserIcons from './components/UserIcons';
 import getCurrentLocation from '../../common/helpers/geolocation';
 import { revgeocode } from '../../common/helpers/geocode';
 
-function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, user }) {
+function Local({
+  setAddress1,
+  setAddress2,
+  handleSubmit,
+  address1,
+  address2,
+  user,
+}) {
   const handleAddress1 = (e) => {
     setAddress1(e.target.value);
   };
@@ -60,8 +67,8 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
-      <Heading as="h1" size="2xl" mb="4">
-        GET MIDDLE POINT
+      <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+        Find The Middle
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>

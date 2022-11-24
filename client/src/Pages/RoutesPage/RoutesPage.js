@@ -69,8 +69,12 @@ function RoutesPage({ activity }) {
         </BreadcrumbItem>
       </Breadcrumb>
       <Flex flexDirection="column" justifyContent="space-evenly">
-        <Heading as="h1">Routes</Heading>
-        <Heading as="h2">'{activity.name}'</Heading>
+        <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+          Routes
+        </Heading>
+        <Heading pb={4} fontSize={{ base: '20px', md: '24px', lg: '40px' }}>
+          {activity.name}
+        </Heading>
         <AspectRatio maxW="600px" ratio={4 / 3}>
           <iframe
             title="map"
@@ -85,7 +89,9 @@ function RoutesPage({ activity }) {
         <Flex my="35px">
           <Button onClick={shareDirections}>Share directions</Button>
           <Spacer />
-          <Button onClick={returnHomeClick} variant="ghost">Return Home</Button>
+          <Button onClick={returnHomeClick} variant="ghost">
+            Return Home
+          </Button>
         </Flex>
       </Flex>
     </Container>

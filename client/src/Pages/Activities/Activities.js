@@ -62,7 +62,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
 
       <div className="Activities">
         <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
-          ACTIVITIES
+          Activites
         </Heading>
         <Grid
           gap={6}
