@@ -23,11 +23,17 @@ function Home() {
         <br />
         <br />
         <HStack>
-
           <Button size="lg" as={Link} to="/local" p={8} fontSize="1xl">
             LOCAL
           </Button>
-          <Button size="lg" as={Link} to="/global" p={8} fontSize="1xl">
+          <Button
+            variant="solid"
+            size="lg"
+            as={Link}
+            to="/global"
+            p={8}
+            fontSize="1xl"
+          >
             WORLD
           </Button>
         </HStack>

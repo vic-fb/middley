@@ -76,22 +76,30 @@ function Login({ setUser }) {
           <VStack spacing="24px">
             <FormControl isRequired>
               <FormLabel>Email address</FormLabel>
+
               <Input
                 type="email"
                 name="email"
                 onChange={handleChange}
                 value={email}
+                backgroundColor="mitmPurple.50"
+                color="black"
               />
+
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
             <FormControl isRequired>
               <FormLabel>Password</FormLabel>
+
               <Input
                 type="password"
                 name="password"
                 onChange={handleChange}
                 value={password}
+                backgroundColor="mitmPurple.50"
+                color="black"
               />
+
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
             <Button py="1" type="submit" isLoading={loading}>
@@ -100,9 +108,10 @@ function Login({ setUser }) {
           </VStack>
         </form>
         <Text>
-        'Not registered yet?'
-          <Link as={RouteLink} to="/signup">Sign up here</Link>
-
+          Not registered yet?
+          <Link as={RouteLink} to="/signup">
+            Sign up here
+          </Link>
         </Text>
       </VStack>
     </Container>

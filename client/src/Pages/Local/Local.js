@@ -78,10 +78,14 @@ function Local({
           <FormControl id="address1" isRequired>
             <FormLabel> My Address </FormLabel>
             <Input
+              backgroundColor="rgba(215,212,224,0.2)"
               type="text"
+              variant="outline"
               placeholder="- Enter address, city -"
               value={address1}
               onChange={handleAddress1}
+              backgroundColor="mitmPurple.50"
+              color="black"
             />
           </FormControl>
           <br />
@@ -97,10 +101,11 @@ function Local({
               placeholder="- Enter address, city -"
               value={address2}
               onChange={handleAddress2}
+              backgroundColor="mitmPurple.50"
+              color="black"
             />
           </FormControl>
         </VStack>
-
         <Button type="submit" mt="4">
           GO TO THE MIDDLE
         </Button>

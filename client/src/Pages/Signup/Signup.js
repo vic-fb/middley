@@ -74,7 +74,13 @@ function Signup() {
         <VStack spacing="24px">
           <FormControl isRequired>
             <FormLabel>Name</FormLabel>
-            <Input type="text" name="username" onChange={handleChange} />
+            <Input
+              type="text"
+              name="username"
+              onChange={handleChange}
+              backgroundColor="mitmPurple.50"
+              color="black"
+            />
             <FormHelperText>What shall we call you?</FormHelperText>
             <FormErrorMessage>Name is required.</FormErrorMessage>
           </FormControl>
@@ -85,6 +91,8 @@ function Signup() {
               name="email"
               onChange={handleChange}
               value={email}
+              backgroundColor="mitmPurple.50"
+              color="black"
             />
             <FormHelperText>We&apos;ll never share your email.</FormHelperText>
             <FormErrorMessage>Email is required.</FormErrorMessage>
@@ -96,6 +104,8 @@ function Signup() {
               name="password"
               onChange={handleChange}
               value={password}
+              backgroundColor="mitmPurple.50"
+              color="black"
             />
             <FormErrorMessage>Password is required.</FormErrorMessage>
           </FormControl>
