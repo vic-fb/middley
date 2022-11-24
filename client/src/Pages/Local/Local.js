@@ -18,7 +18,14 @@ import UserIcons from './components/UserIcons/UserIcons';
 import getCurrentLocation from '../../common/helpers/geolocation';
 import { revgeocode } from '../../common/helpers/geocode';
 
-function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, user }) {
+function Local({
+  setAddress1,
+  setAddress2,
+  handleSubmit,
+  address1,
+  address2,
+  user,
+}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const handleAddress1 = (e) => {
@@ -44,8 +51,6 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
       setAddress1(user[option]);
     } else {
       onOpen();
-
-      // console.log(`You have not saved a ${option} address yet`);
     }
   };
 
@@ -64,8 +69,8 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
-      <Heading as="h1" size="2xl" mb="4">
-        FIND HALFWAY POINT
+      <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+        Find The Middle
       </Heading>
       <Dialog isOpen={isOpen} onClose={onClose} />
       <form onSubmit={handleSubmit}>
