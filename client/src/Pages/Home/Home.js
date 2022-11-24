@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button, Heading, HStack, Image, VStack } from '@chakra-ui/react';
 
 import styles from './Home.module.css';
-import MeetintheMiddle from '../../common/assets/App Logo/MeetintheMiddle.png';
+import MeetintheMiddle from '../../common/assets/AppLogo/MeetintheMiddle.png';
 
 function Home() {
   return (

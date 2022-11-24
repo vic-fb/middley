@@ -9,15 +9,18 @@ import {
   Container,
   Button,
   Heading,
-  VStack,
+  VStack, useDisclosure,
 } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
-import UserIcons from './components/UserIcons';
+import Dialog from './components/Dialog/Dialog';
+import UserIcons from './components/UserIcons/UserIcons';
 import getCurrentLocation from '../../common/helpers/geolocation';
 import { revgeocode } from '../../common/helpers/geocode';
 
 function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, user }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const handleAddress1 = (e) => {
     setAddress1(e.target.value);
   };
@@ -40,7 +43,9 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
     if (user[option]) {
       setAddress1(user[option]);
     } else {
-      console.log(`You have not saved a ${option} address yet`);
+      onOpen();
+
+      // console.log(`You have not saved a ${option} address yet`);
     }
   };
 
@@ -62,6 +67,7 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
       <Heading as="h1" size="2xl" mb="4">
         FIND HALFWAY POINT
       </Heading>
+      <Dialog isOpen={isOpen} onClose={onClose} />
       <form onSubmit={handleSubmit}>
         <VStack>
           <FormControl id="address1" isRequired>
