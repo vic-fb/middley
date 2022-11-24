@@ -1,19 +1,20 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "app_name": "MIM",
+  "short_name": "MIM",
+  "name": "Mates in the Middle",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "logos/64.png",
+      "sizes": "64x64",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
+      "src": "logos/192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "logos/512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
