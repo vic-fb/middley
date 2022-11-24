@@ -6,7 +6,7 @@ const theme = extendTheme({
     useSystemColorMode: false,
   },
   fonts: {
-    heading: '"consolas", sans-serif',
+    heading: '"monaco", sans-serif',
     body: '"monaco", sans-serif',
   },
   colors: {

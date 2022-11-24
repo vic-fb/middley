@@ -76,6 +76,7 @@ function Login({ setUser }) {
           <VStack spacing="24px">
             <FormControl isRequired>
               <FormLabel>Email address</FormLabel>
+
               <Input
                 type="email"
                 name="email"
@@ -84,10 +85,12 @@ function Login({ setUser }) {
                 backgroundColor="mitmPurple.50"
                 color="black"
               />
+
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
             <FormControl isRequired>
               <FormLabel>Password</FormLabel>
+
               <Input
                 type="password"
                 name="password"
@@ -96,6 +99,7 @@ function Login({ setUser }) {
                 backgroundColor="mitmPurple.50"
                 color="black"
               />
+
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
             <Button py="1" type="submit" isLoading={loading}>

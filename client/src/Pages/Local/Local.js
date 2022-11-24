@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import {
   Breadcrumb,
@@ -67,14 +68,17 @@ function Local({
         </BreadcrumbItem>
       </Breadcrumb>
 
+
       <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
         Find The Middle
+
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>
           <FormControl id="address1" isRequired>
             <FormLabel> My Address </FormLabel>
             <Input
+              backgroundColor="rgba(215,212,224,0.2)"
               type="text"
               variant="outline"
               placeholder="- Enter address, city -"
@@ -93,6 +97,7 @@ function Local({
           <FormControl id="address2" isRequired>
             <FormLabel>My Friend's Address</FormLabel>
             <Input
+              backgroundColor="rgba(215,212,224,0.2)"
               type="text"
               placeholder="- Enter address, city -"
               value={address2}
