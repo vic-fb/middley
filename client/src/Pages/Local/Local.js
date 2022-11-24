@@ -68,13 +68,17 @@ function Local({
         </BreadcrumbItem>
       </Breadcrumb>
 
-
       <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
         Find The Middle
 
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>
+          <UserIcons
+            user={user}
+            setCurrentAddress={setCurrentAddress}
+            setSavedAddress={setSavedAddress}
+          />
           <FormControl id="address1" isRequired>
             <FormLabel> My Address </FormLabel>
             <Input
@@ -89,11 +93,6 @@ function Local({
             />
           </FormControl>
           <br />
-          <UserIcons
-            user={user}
-            setCurrentAddress={setCurrentAddress}
-            setSavedAddress={setSavedAddress}
-          />
           <FormControl id="address2" isRequired>
             <FormLabel>My Friend's Address</FormLabel>
             <Input
