@@ -10,11 +10,12 @@ import {
   Container,
   Button,
   Heading,
-  VStack,
+  VStack, useDisclosure,
 } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
-import UserIcons from './components/UserIcons';
+import Dialog from './components/Dialog/Dialog';
+import UserIcons from './components/UserIcons/UserIcons';
 import getCurrentLocation from '../../common/helpers/geolocation';
 import { revgeocode } from '../../common/helpers/geocode';
 
@@ -26,6 +27,8 @@ function Local({
   address2,
   user,
 }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   const handleAddress1 = (e) => {
     setAddress1(e.target.value);
   };
@@ -48,7 +51,7 @@ function Local({
     if (user[option]) {
       setAddress1(user[option]);
     } else {
-      console.log(`You have not saved a ${option} address yet`);
+      onOpen();
     }
   };
 
@@ -67,10 +70,10 @@ function Local({
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
-
       <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
         Find The Middle
       </Heading>
+      <Dialog isOpen={isOpen} onClose={onClose} />
       <form onSubmit={handleSubmit}>
         <VStack>
           <FormControl id="address1" isRequired>
@@ -103,7 +106,6 @@ function Local({
             />
           </FormControl>
         </VStack>
-
         <Button type="submit" mt="4">
           GO TO THE MIDDLE
         </Button>
