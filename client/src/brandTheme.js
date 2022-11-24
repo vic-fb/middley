@@ -75,11 +75,6 @@ const theme = extendTheme({
         color: '#DCDCDC',
       },
     }),
-    BreadcrumbLink: defineStyleConfig({
-      baseStyle: {
-        color: '#DCDCDC',
-      },
-    }),
   },
 });
 
