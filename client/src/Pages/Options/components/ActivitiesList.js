@@ -1,13 +1,16 @@
-import { Heading, Card,
+import {
+  Heading,
+  Card,
   CardBody,
-  CardFooter,
   Text,
-  Button,
   Image,
   Stack,
   CardHeader,
   StackDivider,
-  Box } from '@chakra-ui/react';
+  Box,
+  Button,
+  VStack,
+} from '@chakra-ui/react';
 import { FaRegSadCry } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import star0 from '../../../common/assets/YelpStars/small_0.png';
@@ -45,33 +48,37 @@ function ActivitiesList({ activities, setActivity }) {
 
   return (
     <div>
+      <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+        Why not try...
+      </Heading>
       {activities && activities.length === 0 && (
         <Heading>
           Sorry, no activities available <FaRegSadCry />
         </Heading>
       )}
-      <div className="card-container">
+      <Stack gap={0.5} display="flex">
         {activities.slice(0, 5).map((activity) => (
           <Card
             direction={{ base: 'column', sm: 'row' }}
             overflow="hidden"
-            variant="outline"
+            variant="elevated"
+            backgroundColor="rgba(215,212,224,0.2)"
             onClick={() => handleClick(activity)}
             key={activity.displayAddress}
           >
             <Image
               objectFit="cover"
-              maxW={{ base: '100%', sm: '200px' }}
-              // maxH={{ base: '100%', sm: '200px' }}
+              maxW={{ base: '100%', sm: '33%' }}
+              maxH={{ base: '200px', sm: '100%' }}
               src={activity.imgUrl}
               alt={activity.name}
             />
-            <Stack>
-              <CardHeader>
+            <Stack flex="1" spacing="4" py="6">
+              <CardHeader py="0">
                 <Heading size="md">{activity.name}</Heading>
               </CardHeader>
 
-              <CardBody>
+              <CardBody py="0">
                 <Stack divider={<StackDivider />} spacing="2">
                   <Box>
                     <Heading size="xs" textTransform="uppercase">
@@ -93,27 +100,26 @@ function ActivitiesList({ activities, setActivity }) {
                     <Heading size="xs" textTransform="uppercase">
                       Rating
                     </Heading>
-                    <Text py="1" fontSize="sm">
+                    {/* <Text py="1" fontSize="sm">
                       {activity.rating} / 5
-                    </Text>
-                    <Image src={yelpStars[activity.rating]} />
+                    </Text> */}
+                    <Image py="1" src={yelpStars[activity.rating]} />
                     <Text py="1" fontSize="sm">
                       {activity.reviewCount} ratings
                     </Text>
                     <Image maxW="40px" src={yelpLogo} />
+                    <VStack>
+                      <Button alignSelf="flex-end" px={8}>
+                        Go!
+                      </Button>
+                    </VStack>
                   </Box>
                 </Stack>
               </CardBody>
-
-              <CardFooter>
-                <Button variant="solid" colorScheme="blue">
-                  GO
-                </Button>
-              </CardFooter>
             </Stack>
           </Card>
         ))}
-      </div>
+      </Stack>
     </div>
   );
 }

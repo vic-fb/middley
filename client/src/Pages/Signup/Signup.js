@@ -3,7 +3,11 @@ import {
   FormLabel,
   FormErrorMessage,
   FormHelperText,
-  Input, Container, Button, Heading, VStack,
+  Input,
+  Container,
+  Button,
+  Heading,
+  VStack,
   // useToast,
 } from '@chakra-ui/react';
 import { useState } from 'react';
@@ -43,12 +47,12 @@ function Signup() {
       navigate('/login');
       console.log(response);
     } catch (error) {
-    //   toast({
-    //     title: 'Signup failed',
-    //     status: 'error',
-    //     duration: 9000,
-    //     isClosable: true,
-    //   });
+      //   toast({
+      //     title: 'Signup failed',
+      //     status: 'error',
+      //     duration: 9000,
+      //     isClosable: true,
+      //   });
     }
     setLoading(false);
   }
@@ -60,28 +64,54 @@ function Signup() {
 
   return (
     <Container centerContent>
-      <Heading as="h1" size="lg">Welcome!</Heading>
-      <Heading as="h2" size="md">Create your account</Heading>
+      <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+        Welcome!
+      </Heading>
+      <Heading pb={4} fontSize={{ base: '20px', md: '24px', lg: '40px' }}>
+        Create your account
+      </Heading>
       <form onSubmit={handleSubmit} style={{ marginTop: '24px' }}>
         <VStack spacing="24px">
           <FormControl isRequired>
             <FormLabel>Name</FormLabel>
-            <Input type="text" name="username" onChange={handleChange} />
+            <Input
+              type="text"
+              name="username"
+              onChange={handleChange}
+              backgroundColor="mitmPurple.50"
+              color="black"
+            />
             <FormHelperText>What shall we call you?</FormHelperText>
             <FormErrorMessage>Name is required.</FormErrorMessage>
           </FormControl>
           <FormControl isRequired>
             <FormLabel>Email address</FormLabel>
-            <Input type="email" name="email" onChange={handleChange} value={email} />
+            <Input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              value={email}
+              backgroundColor="mitmPurple.50"
+              color="black"
+            />
             <FormHelperText>We&apos;ll never share your email.</FormHelperText>
             <FormErrorMessage>Email is required.</FormErrorMessage>
           </FormControl>
           <FormControl isRequired>
             <FormLabel>Password</FormLabel>
-            <Input type="password" name="password" onChange={handleChange} value={password} />
+            <Input
+              type="password"
+              name="password"
+              onChange={handleChange}
+              value={password}
+              backgroundColor="mitmPurple.50"
+              color="black"
+            />
             <FormErrorMessage>Password is required.</FormErrorMessage>
           </FormControl>
-          <Button type="submit" isLoading={loading}>Submit</Button>
+          <Button type="submit" isLoading={loading}>
+            Submit
+          </Button>
         </VStack>
       </form>
     </Container>

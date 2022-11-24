@@ -20,6 +20,8 @@
     "react/jsx-one-expression-per-line": "off",
     "react/no-unescaped-entities": "off",
     "react/jsx-props-no-spreading": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "react/jsx-wrap-multilines": "off",
+    "no-trailing-spaces": "off"
   }
 }

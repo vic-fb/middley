@@ -4,7 +4,12 @@ import {
   FormErrorMessage,
   Input,
   Container,
-  Button, Heading, Text, Link, useToast, VStack,
+  Button,
+  Heading,
+  Text,
+  Link,
+  useToast,
+  VStack,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
@@ -61,26 +66,52 @@ function Login({ setUser }) {
   return (
     <Container>
       <VStack spacing="24px">
-        <Heading as="h1" size="lg">Welcome!</Heading>
-        <Heading as="h2" size="md">Sign into your account</Heading>
+        <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+          Welcome!
+        </Heading>
+        <Heading as="h2" size="md">
+          Sign into your account
+        </Heading>
         <form onSubmit={handleSubmit}>
           <VStack spacing="24px">
             <FormControl isRequired>
               <FormLabel>Email address</FormLabel>
-              <Input backgroundColor="rgba(215,212,224,0.2)" type="email" name="email" onChange={handleChange} value={email} />
+
+              <Input
+                type="email"
+                name="email"
+                onChange={handleChange}
+                value={email}
+                backgroundColor="mitmPurple.50"
+                color="black"
+              />
+
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
             <FormControl isRequired>
               <FormLabel>Password</FormLabel>
-              <Input backgroundColor="rgba(215,212,224,0.2)" type="password" name="password" onChange={handleChange} value={password} />
+
+              <Input
+                type="password"
+                name="password"
+                onChange={handleChange}
+                value={password}
+                backgroundColor="mitmPurple.50"
+                color="black"
+              />
+
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
-            <Button py="1" type="submit" isLoading={loading}>Submit</Button>
+            <Button py="1" type="submit" isLoading={loading}>
+              Submit
+            </Button>
           </VStack>
         </form>
         <Text>
-          {'Not yet registered? Sign up '}
-          <Link as={RouteLink} to="/signup">here</Link>
+          Not registered yet?
+          <Link as={RouteLink} to="/signup">
+            Sign up here
+          </Link>
         </Text>
       </VStack>
     </Container>

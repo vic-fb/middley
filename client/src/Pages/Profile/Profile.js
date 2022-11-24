@@ -2,7 +2,11 @@ import {
   Editable,
   EditableInput,
   EditablePreview,
-  Stack, Heading, HStack, Container, Spacer,
+  Stack,
+  Heading,
+  HStack,
+  Container,
+  Spacer,
 } from '@chakra-ui/react';
 import { BsFillBriefcaseFill, BsFillHouseDoorFill } from 'react-icons/bs';
 import React, { useState } from 'react';
@@ -36,12 +40,24 @@ function Profile({ user, setUser }) {
 
   return (
     <Container>
-      <Stack>git add . 
-        <Heading as="h1" size="xl">{`Hi, ${capitalize(user.username)}`}</Heading>
-        <Heading as="h2" size="md">Home</Heading>
+
+      <Stack>
+        git add .
+        <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+          {`Hi, ${capitalize(user.username)}`}
+        </Heading>
+        <Heading as="h2" size="md">
+          Home
+        </Heading>
+
         <HStack>
           <BsFillHouseDoorFill />
-          <Editable defaultValue={home} name="home" onChange={handleChangeHome} onSubmit={handleSubmit}>
+          <Editable
+            defaultValue={home}
+            name="home"
+            onChange={handleChangeHome}
+            onSubmit={handleSubmit}
+          >
             <HStack>
               <EditablePreview />
               <EditableInput />
@@ -50,10 +66,17 @@ function Profile({ user, setUser }) {
           </Editable>
         </HStack>
         <Spacer />
-        <Heading as="h2" size="md">Work</Heading>
+        <Heading as="h2" size="md">
+          Work
+        </Heading>
         <HStack>
           <BsFillBriefcaseFill />
-          <Editable defaultValue={work} name="work" onChange={handleChangeWork} onSubmit={handleSubmit}>
+          <Editable
+            defaultValue={work}
+            name="work"
+            onChange={handleChangeWork}
+            onSubmit={handleSubmit}
+          >
             <HStack>
               <EditablePreview />
               <EditableInput />

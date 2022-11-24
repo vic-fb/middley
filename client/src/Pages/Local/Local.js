@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import React from 'react';
-import './Local.css';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -19,7 +18,14 @@ import UserIcons from './components/UserIcons';
 import getCurrentLocation from '../../common/helpers/geolocation';
 import { revgeocode } from '../../common/helpers/geocode';
 
-function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, user }) {
+function Local({
+  setAddress1,
+  setAddress2,
+  handleSubmit,
+  address1,
+  address2,
+  user,
+}) {
   const handleAddress1 = (e) => {
     setAddress1(e.target.value);
   };
@@ -61,19 +67,25 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
-      <Heading as="h1" size="2xl" mb="4">
-        GET MIDDLE POINT
+
+
+      <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+        Find The Middle
+
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>
           <FormControl id="address1" isRequired>
-            <FormLabel> Adress One </FormLabel>
+            <FormLabel> My Address </FormLabel>
             <Input
               backgroundColor="rgba(215,212,224,0.2)"
               type="text"
-              placeholder="Enter address"
+              variant="outline"
+              placeholder="- Enter address, city -"
               value={address1}
               onChange={handleAddress1}
+              backgroundColor="mitmPurple.50"
+              color="black"
             />
           </FormControl>
           <br />
@@ -83,19 +95,21 @@ function Local({ setAddress1, setAddress2, handleSubmit, address1, address2, use
             setSavedAddress={setSavedAddress}
           />
           <FormControl id="address2" isRequired>
-            <FormLabel>Adress Two</FormLabel>
+            <FormLabel>My Friend's Address</FormLabel>
             <Input
               backgroundColor="rgba(215,212,224,0.2)"
               type="text"
-              placeholder="Enter address"
+              placeholder="- Enter address, city -"
               value={address2}
               onChange={handleAddress2}
+              backgroundColor="mitmPurple.50"
+              color="black"
             />
           </FormControl>
         </VStack>
 
         <Button type="submit" mt="4">
-          GO
+          GO TO THE MIDDLE
         </Button>
       </form>
     </Container>

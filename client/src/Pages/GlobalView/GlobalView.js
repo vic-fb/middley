@@ -37,7 +37,9 @@ function GlobalView() {
 
       <SimpleGrid columns={1} spacingX={10}>
         <Box height="80px">
-          <Heading py="4">Coming soon!</Heading>
+          <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+            Coming soon!
+          </Heading>
         </Box>
         <Box height="80px">
           <TimeIcon boxSize={8} />
