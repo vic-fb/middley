@@ -56,13 +56,13 @@ function Local({
     <Container>
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/">
+          <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink as={Link} to="/local">
+          <BreadcrumbLink as={Link} to="/local" color="#DCDCDC">
             Local
           </BreadcrumbLink>
         </BreadcrumbItem>
@@ -70,7 +70,6 @@ function Local({
 
       <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
         Find The Middle
-
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>
@@ -82,13 +81,12 @@ function Local({
           <FormControl id="address1" isRequired>
             <FormLabel> My Address </FormLabel>
             <Input
-              backgroundColor="rgba(215,212,224,0.2)"
               type="text"
               variant="outline"
               placeholder="- Enter address, city -"
               value={address1}
               onChange={handleAddress1}
-              backgroundColor="mitmPurple.50"
+              backgroundColor="#D4BBDD"
               color="black"
             />
           </FormControl>
@@ -96,12 +94,11 @@ function Local({
           <FormControl id="address2" isRequired>
             <FormLabel>My Friend's Address</FormLabel>
             <Input
-              backgroundColor="rgba(215,212,224,0.2)"
               type="text"
               placeholder="- Enter address, city -"
               value={address2}
               onChange={handleAddress2}
-              backgroundColor="mitmPurple.50"
+              backgroundColor="#D4BBDD"
               color="black"
             />
           </FormControl>

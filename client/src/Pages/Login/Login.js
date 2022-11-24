@@ -82,7 +82,7 @@ function Login({ setUser }) {
                 name="email"
                 onChange={handleChange}
                 value={email}
-                backgroundColor="mitmPurple.50"
+                backgroundColor="#D4BBDD"
                 color="black"
               />
 
@@ -96,7 +96,7 @@ function Login({ setUser }) {
                 name="password"
                 onChange={handleChange}
                 value={password}
-                backgroundColor="mitmPurple.50"
+                backgroundColor="#D4BBDD"
                 color="black"
               />
 

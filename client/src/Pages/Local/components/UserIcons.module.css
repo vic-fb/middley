@@ -1,17 +1,13 @@
-.userIcons  {
-    display: flex;
-    margin-top: 1rem;
-    font-size: 300%;
-    cursor: pointer;
-    color: #B0A1C7;
+
+.userIcons {
+  display: flex;
+  margin-top: 1rem;
+  font-size: 300%;
+  cursor: pointer;
+  color: #dcdcdc;
+
 }
 .userIcons:hover {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
-
-
-
-
-
-

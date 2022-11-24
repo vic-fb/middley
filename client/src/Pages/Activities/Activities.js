@@ -51,19 +51,19 @@ function Activities({ midpointValue, setActivities, setLoading }) {
     <Container maxW="container.md">
       <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/">
+          <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
             Home
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/local">
+          <BreadcrumbLink as={Link} to="/local" color="#DCDCDC">
             Local
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink as={Link} to="/activities">
+          <BreadcrumbLink as={Link} to="/activities" color="#DCDCDC">
             Activities
           </BreadcrumbLink>
         </BreadcrumbItem>
@@ -82,10 +82,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
           }}
         >
           <GridItem>
-            <Card
-              onClick={(event) => handleClick(event, 'eat')}
-              {...cardProps}
-            >
+            <Card onClick={(event) => handleClick(event, 'eat')} {...cardProps}>
               <CardHeader>
                 <Heading>
                   <IoRestaurantSharp boxsize={10} />
@@ -142,10 +139,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
             </Card>
           </GridItem>
           <GridItem>
-            <Card
-              onClick={(event) => handleClick(event, 'spa')}
-              {...cardProps}
-            >
+            <Card onClick={(event) => handleClick(event, 'spa')} {...cardProps}>
               <CardHeader>
                 <Heading>
                   <MdOutlineSpa boxsize={10} />
