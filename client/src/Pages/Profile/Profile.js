@@ -40,6 +40,7 @@ function Profile({ user, setUser }) {
 
   return (
     <Container>
+
       <Stack>
         git add .
         <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
@@ -48,6 +49,7 @@ function Profile({ user, setUser }) {
         <Heading as="h2" size="md">
           Home
         </Heading>
+
         <HStack>
           <BsFillHouseDoorFill />
           <Editable

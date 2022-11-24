@@ -1,5 +1,4 @@
 import React from 'react';
-import './Local.css';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -67,16 +66,18 @@ function Local({
           </BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
+
       <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
         Find The Middle
+
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack>
           <FormControl id="address1" isRequired>
-            <FormLabel> Adress One </FormLabel>
+            <FormLabel> My Address </FormLabel>
             <Input
               type="text"
-              placeholder="Enter address"
+              placeholder="- Enter address, city -"
               value={address1}
               onChange={handleAddress1}
             />
@@ -88,10 +89,10 @@ function Local({
             setSavedAddress={setSavedAddress}
           />
           <FormControl id="address2" isRequired>
-            <FormLabel>Adress Two</FormLabel>
+            <FormLabel>My Friend's Address</FormLabel>
             <Input
               type="text"
-              placeholder="Enter address"
+              placeholder="- Enter address, city -"
               value={address2}
               onChange={handleAddress2}
             />
@@ -99,7 +100,7 @@ function Local({
         </VStack>
 
         <Button type="submit" mt="4">
-          GO
+          GO TO THE MIDDLE
         </Button>
       </form>
     </Container>

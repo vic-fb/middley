@@ -18,17 +18,17 @@ function Home() {
         <br />
         <br />
         <Heading className={styles.MITMTitle} p={4} fontSize="5xl">
-          MATES of the MIDDLE
+          APP NAME
         </Heading>
         <br />
         <br />
         <HStack>
 
-          <Button size="lg" as={Link} to="/local" p={8} fontSize="2xl">
-            Local
+          <Button size="lg" as={Link} to="/local" p={8} fontSize="1xl">
+            LOCAL
           </Button>
-          <Button size="lg" as={Link} to="/global" p={8} fontSize="2xl">
-            Global
+          <Button size="lg" as={Link} to="/global" p={8} fontSize="1xl">
+            WORLD
           </Button>
         </HStack>
       </VStack>

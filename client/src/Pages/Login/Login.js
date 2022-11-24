@@ -100,10 +100,9 @@ function Login({ setUser }) {
           </VStack>
         </form>
         <Text>
-          {'Not yet registered? Sign up '}
-          <Link as={RouteLink} to="/signup">
-            here
-          </Link>
+        'Not registered yet?'
+          <Link as={RouteLink} to="/signup">Sign up here</Link>
+
         </Text>
       </VStack>
     </Container>

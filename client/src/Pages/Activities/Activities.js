@@ -20,6 +20,7 @@ import { MdOutlineSpa } from 'react-icons/md';
 import { CgGym } from 'react-icons/cg';
 import { GiPerspectiveDiceSixFacesRandom } from 'react-icons/gi';
 import { ChevronRightIcon } from '@chakra-ui/icons';
+import styles from './Activities.module.css';
 import getActivities from '../../common/helpers/activities';
 
 function Activities({ midpointValue, setActivities, setLoading }) {
@@ -36,6 +37,14 @@ function Activities({ midpointValue, setActivities, setLoading }) {
     );
     setActivities(options);
     setLoading(false);
+  };
+
+  const cardProps = {
+    className: styles.card,
+    role: 'presentation',
+    align: 'center',
+    variant: 'elevated',
+    backgroundColor: 'rgba(215,212,224,0.2)',
   };
 
   return (
@@ -60,7 +69,7 @@ function Activities({ midpointValue, setActivities, setLoading }) {
         </BreadcrumbItem>
       </Breadcrumb>
 
-      <div className="Activities">
+      <div>
         <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
           Activites
         </Heading>
@@ -74,11 +83,8 @@ function Activities({ midpointValue, setActivities, setLoading }) {
         >
           <GridItem>
             <Card
-              role="presentation"
               onClick={(event) => handleClick(event, 'eat')}
-              align="center"
-              variant="elevated"
-              backgroundColor="rgba(215,212,224,0.2)"
+              {...cardProps}
             >
               <CardHeader>
                 <Heading>
@@ -92,11 +98,8 @@ function Activities({ midpointValue, setActivities, setLoading }) {
           </GridItem>
           <GridItem>
             <Card
-              role="presentation"
               onClick={(event) => handleClick(event, 'drink')}
-              align="center"
-              variant="elevated"
-              backgroundColor="rgba(215,212,224,0.2)"
+              {...cardProps}
             >
               <CardHeader>
                 <Heading>
@@ -110,11 +113,8 @@ function Activities({ midpointValue, setActivities, setLoading }) {
           </GridItem>
           <GridItem>
             <Card
-              role="presentation"
               onClick={(event) => handleClick(event, 'outdoor')}
-              align="center"
-              variant="elevated"
-              backgroundColor="rgba(215,212,224,0.2)"
+              {...cardProps}
             >
               <CardHeader>
                 <Heading>
@@ -128,11 +128,8 @@ function Activities({ midpointValue, setActivities, setLoading }) {
           </GridItem>
           <GridItem>
             <Card
-              role="presentation"
               onClick={(event) => handleClick(event, 'music')}
-              align="center"
-              variant="elevated"
-              backgroundColor="rgba(215,212,224,0.2)"
+              {...cardProps}
             >
               <CardHeader>
                 <Heading>
@@ -146,11 +143,8 @@ function Activities({ midpointValue, setActivities, setLoading }) {
           </GridItem>
           <GridItem>
             <Card
-              role="presentation"
               onClick={(event) => handleClick(event, 'spa')}
-              align="center"
-              variant="elevated"
-              backgroundColor="rgba(215,212,224,0.2)"
+              {...cardProps}
             >
               <CardHeader>
                 <Heading>
@@ -164,11 +158,8 @@ function Activities({ midpointValue, setActivities, setLoading }) {
           </GridItem>
           <GridItem>
             <Card
-              role="presentation"
               onClick={(event) => handleClick(event, 'fitness')}
-              align="center"
-              variant="elevated"
-              backgroundColor="rgba(215,212,224,0.2)"
+              {...cardProps}
             >
               <CardHeader>
                 <Heading>
@@ -182,11 +173,8 @@ function Activities({ midpointValue, setActivities, setLoading }) {
           </GridItem>
           <GridItem colSpan={{ base: 1, sm: 2, md: 3 }}>
             <Card
-              role="presentation"
               onClick={(event) => handleClick(event, 'surprise')}
-              align="center"
-              variant="elevated"
-              backgroundColor="rgba(215,212,224,0.2)"
+              {...cardProps}
             >
               <CardHeader>
                 <Heading>
