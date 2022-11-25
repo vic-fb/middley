@@ -36,14 +36,18 @@ function GlobalView() {
       </Breadcrumb>
 
       <SimpleGrid columns={1} spacingX={10}>
-        <Box height="80px">
-          <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
-            Coming soon!
+        <Box>
+          <Heading
+            pt={8}
+            pb={10}
+            fontSize={{ base: '24px', md: '40px', lg: '56px' }}
+          >
+            Coming soon! <TimeIcon color="#DCDCDC" />
           </Heading>
         </Box>
-        <Box height="80px">
-          <TimeIcon boxSize={8} />
-        </Box>
+        {/* <Box pt={6} height="80px">
+          <TimeIcon boxSize={8} color="#DCDCDC" />
+        </Box> */}
         <Box height="80px">
           <Button className="Home" type="button" onClick={returnHomeClick}>
             Return Home

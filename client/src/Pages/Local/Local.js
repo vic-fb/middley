@@ -10,7 +10,8 @@ import {
   Container,
   Button,
   Heading,
-  VStack, useDisclosure,
+  VStack,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
@@ -71,7 +72,7 @@ function Local({
         </BreadcrumbItem>
       </Breadcrumb>
       <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
-        Find The Middle
+        Where are you?
       </Heading>
       <Dialog isOpen={isOpen} onClose={onClose} />
       <form onSubmit={handleSubmit}>
@@ -82,7 +83,7 @@ function Local({
             setSavedAddress={setSavedAddress}
           />
           <FormControl id="address1" isRequired>
-            <FormLabel> My Address </FormLabel>
+            <FormLabel> My Location </FormLabel>
             <Input
               type="text"
               variant="outline"
@@ -95,7 +96,7 @@ function Local({
           </FormControl>
           <br />
           <FormControl id="address2" isRequired>
-            <FormLabel>My Friend's Address</FormLabel>
+            <FormLabel>My Friend's Location</FormLabel>
             <Input
               type="text"
               placeholder="- Enter address, city -"
@@ -107,7 +108,7 @@ function Local({
           </FormControl>
         </VStack>
         <Button type="submit" mt="4">
-          GO TO THE MIDDLE
+          CHOOSE AN ACTIVITY
         </Button>
       </form>
     </Container>

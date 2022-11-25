@@ -70,7 +70,6 @@ async function getActivities(category, latitude, longitude) {
       reviewCount,
     }),
   );
-  // return data;
 }
 
 router.get('/:latitude/:longitude/:category', async (req, res) => {
