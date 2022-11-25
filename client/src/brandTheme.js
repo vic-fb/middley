@@ -10,18 +10,6 @@ const theme = extendTheme({
     body: '"monaco", sans-serif',
   },
   colors: {
-    // transparent: 'transparent',
-    // black: '#000',
-    // white: '#51367D', // background color
-    // grey: {
-    //   50: '#f7fafc',
-    //   // ...
-    //   500: '#5C5474', // button background
-
-    //   800: '#FFFFFF', // text color
-    // },
-
-    // ...
     mitmPurple: {
       50: '#B0A1C7',
       100: '#5C5474',

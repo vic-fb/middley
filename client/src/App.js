@@ -15,8 +15,8 @@ import { getMidpoint } from './common/helpers/geocode';
 import Profile from './Pages/Profile/Profile';
 import { getUserToken } from './common/helpers/localFunctions';
 import { silentUserLogin } from './common/helpers/auth';
-import '@fontsource/montserrat-alternates/400.css';
-import '@fontsource/montserrat-alternates/700.css';
+// import '@fontsource/montserrat-alternates/400.css';
+// import '@fontsource/montserrat-alternates/700.css';
 import theme from './brandTheme';
 
 function App() {
@@ -102,7 +102,11 @@ function App() {
           />
           <Route
             path="/profile"
-            element={user && <Profile user={user} setUser={setUser} />}
+            element={user
+              && <Profile 
+                user={user}
+                setUser={setUser}
+              />}
           />
         </Routes>
       </Box>

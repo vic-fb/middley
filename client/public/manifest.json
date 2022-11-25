@@ -1,12 +1,12 @@
 {
-  "app_name": "MIM",
-  "short_name": "MIM",
-  "name": "Mates in the Middle",
+  "app_name": "MiM",
+  "short_name": "MiM",
+  "name": "MiM",
   "icons": [
     {
-      "src": "/logos/64.png",
+      "src": "/logos/logo.ico",
       "sizes": "64x64",
-      "type": "image/png"
+      "type": "image/icon"
     },
     {
       "src": "/logos/192.png",
@@ -22,5 +22,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#B0A1C7"
 }
