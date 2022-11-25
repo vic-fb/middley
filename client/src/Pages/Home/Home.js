@@ -18,7 +18,7 @@ function Home() {
         <br />
         <br />
         <Heading className={styles.MITMTitle} p={4} fontSize="5xl">
-          MiM
+          Middley
         </Heading>
         <br />
         <br />
