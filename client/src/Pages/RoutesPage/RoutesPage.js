@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import './RoutesPage.css';
 import {
   AspectRatio,
@@ -15,6 +16,7 @@ import {
 import { ChevronRightIcon } from '@chakra-ui/icons';
 
 function RoutesPage({ activity }) {
+  const [share, setShare] = useState(false);
   const nav = useNavigate();
   function returnHomeClick() {
     nav('/');
@@ -22,13 +24,21 @@ function RoutesPage({ activity }) {
 
   const searchString = encodeURI(`${activity.name} ${activity.displayAddress}`);
 
-  async function shareDirections() {
-    const directions = {
-      title: `Let's meet at ${activity.name}`,
-      text: 'I picked this place using "NAME OF OUR APP"',
-      url: `https://www.google.com/maps/search/?api=1&query=${searchString}`,
-    };
-    await navigator.share(directions);
+  const place = {
+    title: `Let's meet at ${activity.name}`,
+    text: 'I picked this place using "NAME OF OUR APP"',
+    url: `https://www.google.com/maps/search/?api=1&query=${searchString}`,
+  };
+  
+  function canShare() {
+    const result = navigator.canShare(place);
+    setShare(result);
+  }
+
+  canShare();
+  
+  async function sharePlace() {
+    await navigator.share(place);
   }
 
   const routes = {
@@ -85,7 +95,7 @@ function RoutesPage({ activity }) {
           />
         </AspectRatio>
         <Flex my="35px">
-          <Button onClick={shareDirections}>Share directions</Button>
+          {share && <Button onClick={sharePlace}>Share place</Button>}
           <Spacer />
           <Button onClick={returnHomeClick} variant="ghost" color="#DCDCDC">
             Return Home
