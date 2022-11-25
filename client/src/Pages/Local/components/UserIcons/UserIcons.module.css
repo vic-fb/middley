@@ -5,7 +5,7 @@
   cursor: pointer;
   color: #dcdcdc;
 }
-.userIcons:hover {
+.icon:hover {
   color: white;
   text-decoration: none;
 }
