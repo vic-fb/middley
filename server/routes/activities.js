@@ -12,7 +12,7 @@ async function getActivities(category, latitude, longitude) {
       Authorization: `Bearer ${YELP_API_KEY}`,
     },
   };
-  const radius = 400;
+  const radius = 300;
   const appToYelp = {
     eat: ['restaurants'],
     drink: [

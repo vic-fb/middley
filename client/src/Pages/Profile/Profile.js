@@ -12,6 +12,7 @@ import { BsFillBriefcaseFill, BsFillHouseDoorFill } from 'react-icons/bs';
 import React, { useState } from 'react';
 import EditableControls from './components/EditableControls';
 import { getUserById, updateUserAddress } from '../../common/helpers/users';
+import styles from './Profile.module.css';
 
 function Profile({ user, setUser }) {
   const [home, setHome] = useState(user.home);
@@ -40,9 +41,7 @@ function Profile({ user, setUser }) {
 
   return (
     <Container>
-
       <Stack>
-        git add .
         <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
           {`Hi, ${capitalize(user.username)}`}
         </Heading>
@@ -50,8 +49,8 @@ function Profile({ user, setUser }) {
           Home
         </Heading>
 
-        <HStack>
-          <BsFillHouseDoorFill />
+        <HStack className={styles.address}>
+          <BsFillHouseDoorFill className={styles.icon} />
           <Editable
             defaultValue={home}
             name="home"
@@ -69,8 +68,8 @@ function Profile({ user, setUser }) {
         <Heading as="h2" size="md">
           Work
         </Heading>
-        <HStack>
-          <BsFillBriefcaseFill />
+        <HStack className={styles.address}>
+          <BsFillBriefcaseFill className={styles.icon} />
           <Editable
             defaultValue={work}
             name="work"

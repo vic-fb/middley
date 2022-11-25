@@ -94,7 +94,23 @@ function Local({
               color="black"
             />
           </FormControl>
+<<<<<<< HEAD
           <br />
+||||||| 7944135b
+          <br />
+          <UserIcons
+            user={user}
+            setCurrentAddress={setCurrentAddress}
+            setSavedAddress={setSavedAddress}
+          />
+=======
+          <UserIcons
+            user={user}
+            setCurrentAddress={setCurrentAddress}
+            setSavedAddress={setSavedAddress}
+          />
+          <br />
+>>>>>>> main
           <FormControl id="address2" isRequired>
             <FormLabel>My Friend's Location</FormLabel>
             <Input
