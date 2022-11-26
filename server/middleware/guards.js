@@ -7,10 +7,8 @@ function _getToken(req) {
   if (!('authorization' in req.headers)) {
     return '';
   }
-
   const authHeader = req.headers.authorization;
   const [str, token] = authHeader.split(' ');
-
   return (str === 'Bearer') ? token : '';
 }
 
@@ -29,10 +27,9 @@ function ensureUserLoggedIn(req, res, next) {
 // user is logged in and accessing their own page
 function ensureSameUser(req, res, next) {
   const token = _getToken(req);
-
   try {
     const payload = jwt.verify(token, SECRET_KEY);
-    if (payload.userId === Number(req.params.userId)) {
+    if (payload.userId === Number(req.params.id)) {
       next();
     } else {
       res.status(403).send({ error: 'Forbidden' });
