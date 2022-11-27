@@ -12,13 +12,16 @@
 
 The frontend was created using [Create React App](https://create-react-app.dev/docs/making-a-progressive-web-app/)(CRA), as a Progressive Web Application.
 
-The app was depoyed on [Vercel](https://vercel.com/docs), as a CRA application and standalone Express.
+This app was depoyed on [Vercel](https://vercel.com/docs), as a CRA application and standalone Express.
 
 ## Installation instructions
 
 ### Client
 
-To start the application you can run `npm start` in the client folder. If it's the first time you're trying it out, don't forget to `npm install` first.
+In the client folder:
+
+1. Run `npm install`
+2. Run `npm start` to start the application
 
 ### Database
 
