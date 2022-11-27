@@ -10,9 +10,9 @@
 
 ## Tools used
 
-The frontend was created using Create React App, with a [Progressive Web Application template](https://create-react-app.dev/docs/making-a-progressive-web-app/).
+The frontend was created using [Create React App](https://create-react-app.dev/docs/making-a-progressive-web-app/)(CRA), as a Progressive Web Application.
 
-The app was depoyed on Vercel as a [Create React App](https://vercel.com/guides/deploying-react-with-vercel) and [Standalone Express](https://vercel.com/guides/using-express-with-vercel).
+The app was depoyed on [Vercel](https://vercel.com/docs), as a CRA application and standalone Express.
 
 ## Installation instructions
 
@@ -22,14 +22,13 @@ To start the application you can run `npm start` in the client folder. If it's t
 
 ### Database
 
-The local database we are using is called: userdata (name to be changed to app name later on)
-It has one table: userInfo
+The local database we are using is called: userdata. It has one table: users.
 
-1. - Open MySQL in your terminal by running `mysql -u root -p;`
+1. Open MySQL in your terminal by running `mysql -u root -p;`
 
-2. - Create a new database called "userdata": `CREATE DATABASE userdata;`
+2. Create a new database called "userdata": `CREATE DATABASE userdata;`
 
-3. - Create an `.env` file in the project folder which contains MySQL authentication information. For example:
+3. Create an `.env` file in the project folder which contains MySQL authentication information. For example:
 
 ```bash
 DB_HOST=localhost
@@ -37,7 +36,6 @@ DB_USER=root
 DB_NAME=userdata
 DB_PASS=(your password)
 ```
-(If you don't have this file yet, make sure to set it up before moving on to the next step.)
 
 4. - In a separate terminal go to the project folder server and run `npm run migrate`.
 
