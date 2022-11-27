@@ -10,15 +10,15 @@
 
 ## Tools used
 
+The frontend was created using Create React App, with a [Progressive Web Application template](https://create-react-app.dev/docs/making-a-progressive-web-app/).
+
+The app was depoyed on Vercel as a [Create React App](https://vercel.com/guides/deploying-react-with-vercel) and [Standalone Express](https://vercel.com/guides/using-express-with-vercel).
+
 ## Installation instructions
 
 ### Client
 
-The frontend was created using Create React App, with a [Progressive Web Application template](https://create-react-app.dev/docs/making-a-progressive-web-app/).
-
-To start the application you can run `npm start` in the client folder. Don't forget to `npm install` first.
-
-(this was depoyed on [Vercel as a Create React App](https://vercel.com/guides/deploying-react-with-vercel))
+To start the application you can run `npm start` in the client folder. If it's the first time you're trying it out, don't forget to `npm install` first.
 
 ### Database
 
@@ -46,8 +46,6 @@ DB_PASS=(your password)
 6. - You can run `DESCRIBE users;` to check that the table has been set up correctly.
 
 ### Server
-
-(this was deployed on [Vercel as Standalone Express](https://vercel.com/guides/using-express-with-vercel))
 
 
 
