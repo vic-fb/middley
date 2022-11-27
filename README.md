@@ -12,7 +12,7 @@
 
 The frontend was created using [Create React App](https://create-react-app.dev/docs/making-a-progressive-web-app/)(CRA), as a Progressive Web Application.
 
-This app was depoyed on [Vercel](https://vercel.com/docs), as a CRA application and standalone Express.
+This app was depoyed on [Vercel](https://vercel.com/docs), as a CRA application and standalone Express. A cloud mySQL database was created on [PlanetScale](https://planetscale.com/).
 
 ## Installation instructions
 
