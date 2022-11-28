@@ -6,6 +6,24 @@
 
 ## User Flow
 
+![User Flow Diagram](userFlow.png)
+
+The above diagram shows the updated (and current) user flow of our app. 
+
+The user can either start by logging in, choosing a local search of a worldwide search (not active yet).
+
+If clicking on the log in section, the user has the option to log in or sign up. Once logged in, the user can save their home and work address for future use.
+
+If clicking on the local view, the user is then asked to input two addresses. They can use the saved home/work address for the first input if desired. The second address should be the location of their friend.
+
+Once the midpoint is calculated, the user can choose from a variety of activities. 
+
+After choosing, they can see a few options of places around the middle of the two locations. They have reviews and price points to help choose.
+
+Once chosen, they can click 'Go!' to bring up a map. If they click on the map, it will open in Google Maps. If they click 'Share Place' this will generate a link to send to a friend, which will bring up the location on Google Maps on their phone. 
+
+Both parties will now be able to navigate to the chosen location with ease. 
+
 ## DB schema
 
 ## Tools used
