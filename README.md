@@ -30,7 +30,7 @@ Both parties will now be able to navigate to the chosen location with ease.
 
 ## Tools used
 
-The frontend was created using [Create React App](https://create-react-app.dev/docs/making-a-progressive-web-app/)(CRA), as a Progressive Web Application.
+The frontend was created using [Create React App](https://create-react-app.dev/docs/making-a-progressive-web-app/) (CRA), as a Progressive Web Application.
 
 This app was depoyed on [Vercel](https://vercel.com/docs), as a CRA application and standalone Express. A cloud mySQL database was created on [PlanetScale](https://planetscale.com/).
 
@@ -43,13 +43,18 @@ In the client folder:
 1. Run `npm install`
 2. Run `npm start` to start the application
 
+### Server
+
+1. Run `npm install`
+2. Run `npm start` to start the server
+
 ### Database
 
-The local database we are using is called: userdata. It has one table: users.
+The local database we are using is called userdata. It has one table: users.
 
 1. Open MySQL in your terminal by running `mysql -u root -p;`
 
-2. Create a new database called "userdata": `CREATE DATABASE userdata;`
+2. Create a new database: `CREATE DATABASE userdata;`
 
 3. Create an `.env` file in the project folder which contains MySQL authentication information. For example:
 
@@ -60,13 +65,11 @@ DB_NAME=userdata
 DB_PASS=(your password)
 ```
 
-4. - In a separate terminal go to the project folder server and run `npm run migrate`.
+4. In a separate terminal in the server folder, run `npm run migrate`
 
-5. - In your MySQL terminal window, run `USE userdata;` then `SHOW TABLES;`. Your database should contain 1 table: `users`
+5. In your MySQL terminal window, run `USE userdata;` then `SHOW TABLES;` (it should contain 1 table: `users`)
 
-6. - You can run `DESCRIBE users;` to check that the table has been set up correctly.
-
-### Server
+6. You can run `DESCRIBE users;` to check that the table has been set up correctly
 
 
 
