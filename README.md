@@ -12,7 +12,7 @@ Our motivation behind creating Middley was the wish to enable young urbanites to
 
 – spending quality time with friends –
 
-by enabling them to reduce the barriers of indecisiveness and lack of 
+by helping them transcend the barriers of indecisiveness and lack of 
 time and energy. 
 
 ## User Flow
