@@ -6,6 +6,15 @@ Middley is the perfect way to have your friends meet you half way. The app calcu
 
 ## Motivation
 
+A problem that deserves a solution: our research showed that Millennials and Gen Z are more connected than ever through social media and the like, and yet are often lonely and struggle to make decisions. 
+
+Our motivation behind creating Middley was the wish to enable young urbanites to do more of what they love 
+
+– spending quality time with friends –
+
+by enabling them to reduce the barriers of indecisiveness and lack of 
+time and energy. 
+
 ## User Flow
 
 ![User Flow Diagram](userFlow.png)
@@ -27,6 +36,8 @@ Once chosen, they can click 'Go!' to bring up a map. If they click on the map, i
 Both parties will now be able to navigate to the chosen location with ease. 
 
 ## DB schema
+
+![DB schema as seen on DrawSQL](client/src/common/assets/Userdata_drawSQL.png)
 
 ## Tools used
 
