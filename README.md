@@ -28,6 +28,8 @@ Both parties will now be able to navigate to the chosen location with ease.
 
 ## DB schema
 
+![DB schema as seen on DrawSQL](client/src/common/assets/Userdata_drawSQL.png)
+
 ## Tools used
 
 The frontend was created using [Create React App](https://create-react-app.dev/docs/making-a-progressive-web-app/) (CRA), as a Progressive Web Application.
