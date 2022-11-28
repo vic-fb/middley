@@ -27,7 +27,7 @@ function Options({ activities, setActivity, loading }) {
         </BreadcrumbItem>
         <BreadcrumbItem>
           <BreadcrumbLink as={Link} to="/activities" color="#DCDCDC">
-            Activites
+            Activities
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbItem isCurrentPage>

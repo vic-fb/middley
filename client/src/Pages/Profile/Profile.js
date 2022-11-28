@@ -30,7 +30,6 @@ function Profile({ user, setUser }) {
     await updateUserAddress(user.id, home, work);
     const currentUser = await getUserById(user.id);
     setUser(currentUser);
-    console.log(currentUser);
   };
 
   // capitalize first letter of the username for display purposes only (not for database)
