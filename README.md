@@ -2,11 +2,11 @@
 
 Spend less time having to decide where to meet, and spend more time meeting up.
 
-Middley is the perfect way to have your friends meet you half way. The app calculates the midway point between two locations and lets users filter-out their choice fatigue by displaying the perfect meet-up spots based on preferred activity types. You can try it out [here](https://fs-22-team3.vercel.app/).
+Middley is the perfect way to have your friends meet you halfway. The app calculates the midway point between two locations and lets users filter-out their choice fatigue by displaying the perfect meet-up spots based on preferred activity types. You can try it out [here](https://fs-22-team3.vercel.app/).
 
 ## Motivation
 
-A problem that deserves a solution: our research showed that Millennials and Gen Z are more connected than ever through social media and the like, and yet are often lonely and struggle to make decisions. 
+A problem that deserves a solution: our research showed that Millennials and Gen Z are more connected than ever through social media, and yet are often lonely and struggle to make decisions. 
 
 Our motivation behind creating Middley was the wish to enable young urbanites to do more of what they love 
 
