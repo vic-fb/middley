@@ -32,6 +32,8 @@ Both parties will now be able to navigate to the chosen location with ease.
 
 The frontend was created using [Create React App](https://create-react-app.dev/docs/making-a-progressive-web-app/) (CRA), as a Progressive Web Application.
 
+The backend was created using [Express](http://expressjs.com/).
+
 This app was depoyed on [Vercel](https://vercel.com/docs), as a CRA application and standalone Express. A cloud mySQL database was created on [PlanetScale](https://planetscale.com/).
 
 ## Installation instructions
@@ -44,6 +46,8 @@ In the client folder:
 2. Run `npm start` to start the application
 
 ### Server
+
+In the server folder:
 
 1. Run `npm install`
 2. Run `npm start` to start the server
