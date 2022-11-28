@@ -68,6 +68,8 @@ DB_PASS=(your password)
 
 6. - You can run `DESCRIBE users;` to check that the table has been set up correctly.
 
+![DB schema as seen on DrawSQL](client/src/common/assets/Userdata_drawSQL.png)
+
 
 ## Deploy
 
