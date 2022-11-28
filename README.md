@@ -17,7 +17,7 @@ time and energy.
 
 ## User Flow
 
-![User Flow Diagram](userFlow.png)
+![User Flow Diagram](client/src/common/assets/userFlow.png)
 
 The above diagram shows the updated (and current) user flow of our app. 
 
@@ -55,7 +55,7 @@ Other libraries and tools we used are:
 - [Json web token](https://jwt.io/)
 - Third Party APIs (OpenCage geocoding API, Yelp Fusion API, Google Maps Embed API)
 
-![img.png](img.png)
+![img.png](client/src/common/assets/img.png)
 
 ## Installation instructions
 
