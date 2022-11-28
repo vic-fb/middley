@@ -1,58 +1,68 @@
-# Creating a progressive web app
+# About Middley
 
-## Client
+Spend less time having to decide where to meet, and spend more time meeting up.
 
-The instructions below follow the create-react-app steps described [here](https://create-react-app.dev/docs/making-a-progressive-web-app/).
+Middley is the perfect way to have your friends meet you half way.  The app calculates the midway point between two locations and lets users filter-out their choice fatigue by displaying the perfect meet-up spots based on preferred activity types. You can try it out here:  https://fs-22-team3.vercel.app/.
 
-In the directory where you want to have your application, run: `npx create-react-app . --template cra-template-pwa`
+## Motivation
 
-To use the service worker, change the next line `serviceWorkerRegistration.unregister();` in `index.js` to `serviceWorkerRegistration.register();`
+## User Flow
 
-You can check the current version for deploy in your local by running 
-`npm run build`, and next `serve -s build`.
+![User Flow Diagram](userFlow.png)
 
-## Server
+The above diagram shows the updated (and current) user flow of our app. 
 
-To create the Express server, run `npx express-generator --no-view` and follow Jim's instructions for Express Scaffolding in the ProjectScaffolding PDF.
+The user can either start by logging in, choosing a local search of a worldwide search (not active yet).
 
-We need certain files in our server to be able to deploy the standalone Express server in Vercel.
-The following steps are based on [this](https://vercel.com/guides/using-express-with-vercel) instructions.
-Create a file `index.js` and add it to an `/api` folder in the server. It should contain:
+If clicking on the log in section, the user has the option to log in or sign up. Once logged in, the user can save their home and work address for future use.
 
-```javascript
-const app = require('express')();
-const cors = require('cors');
+If clicking on the local view, the user is then asked to input two addresses. They can use the saved home/work address for the first input if desired. The second address should be the location of their friend.
 
-// import any routes you need
-const usersRouter = require('../routes/users');
-const indexRouter = require("../routes");
+Once the midpoint is calculated, the user can choose from a variety of activities. 
 
-app.use(cors());
-// use your routes
-app.use('/api', indexRouter);
-app.use('/api/users', usersRouter);
+After choosing, they can see a few options of places around the middle of the two locations. They have reviews and price points to help choose.
 
-module.exports = app;
-```
+Once chosen, they can click 'Go!' to bring up a map. If they click on the map, it will open in Google Maps. If they click 'Share Place' this will generate a link to send to a friend, which will bring up the location on Google Maps on their phone. 
 
-Add a `vercel.json` file to push all traffic to `index.js`. It should contain:
+Both parties will now be able to navigate to the chosen location with ease. 
 
-```json
-{
-"rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
-}
-```
+## DB schema
 
-## Database
+![DB schema as seen on DrawSQL](client/src/common/assets/Userdata_drawSQL.png)
 
-The local database we are using is called: userdata (name to be changed to app name later on)
-It has one table: userInfo
+## Tools used
 
-1. - Open MySQL in your terminal by running `mysql -u root -p;`
+The frontend was created using [Create React App](https://create-react-app.dev/docs/making-a-progressive-web-app/) (CRA), as a Progressive Web Application.
 
-2. - Create a new database called "userdata": `CREATE DATABASE userdata;`
+The backend was created using [Express](http://expressjs.com/).
 
-3. - There is an `.env` file in the project folder which contains MySQL authentication information. For example:
+This app was depoyed on [Vercel](https://vercel.com/docs), as a CRA application and standalone Express. A cloud mySQL database was created on [PlanetScale](https://planetscale.com/).
+
+## Installation instructions
+
+### Client
+
+In the client folder:
+
+1. Run `npm install`
+2. Run `npm start` to start the application
+
+### Server
+
+In the server folder:
+
+1. Run `npm install`
+2. Run `npm start` to start the server
+
+### Database
+
+The local database we are using is called userdata. It has one table: users.
+
+1. Open MySQL in your terminal by running `mysql -u root -p;`
+
+2. Create a new database: `CREATE DATABASE userdata;`
+
+3. Create an `.env` file in the project folder which contains MySQL authentication information. For example:
 
 ```bash
 DB_HOST=localhost
@@ -60,36 +70,12 @@ DB_USER=root
 DB_NAME=userdata
 DB_PASS=(your password)
 ```
-(If you don't have this file yet, make sure to set it up before moving on to the next step.)
 
-4. - In a separate terminal go to the project folder server and run `npm run migrate`.
+4. In a separate terminal in the server folder, run `npm run migrate`
 
-5. - In your MySQL terminal window, run `USE userdata;` then `SHOW TABLES;`. Your database should contain 1 table: `users`
+5. In your MySQL terminal window, run `USE userdata;` then `SHOW TABLES;` (it should contain 1 table: `users`)
 
-6. - You can run `DESCRIBE users;` to check that the table has been set up correctly.
-
-![DB schema as seen on DrawSQL](client/src/common/assets/Userdata_drawSQL.png)
-
-
-## Deploy
-
-To deploy your application on Vercel, you can follow the steps [here](https://vercel.com/docs/concepts/git#deploying-a-git-repository).
-
-You will have to deploy the client selecting the 'Create React App' framework and deploy the server selecting 'Other'.
-
-*Don't forget to connect your client with the corresponding server!*
-
-When deploying the frontend, you should add an Environment Variable (REACT_APP_API_URL) for your server URL.
-In the frontend, you can add:
-
-```javascript
-const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
-```
-
-You should use this variable to build your fetch routes in the front (for example, apiUrl + '/api/users').
-
-## Add cloud database
-
+6. You can run `DESCRIBE users;` to check that the table has been set up correctly
 
 
 

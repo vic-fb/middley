@@ -1,33 +1,26 @@
 const express = require('express');
+const { ensureSameUser } = require('../middleware/guards');
 
 const router = express.Router();
 const db = require('../model/database/helper');
 
-router.get('/', async (req, res) => {
-  db('SELECT * FROM users;')
-    .then((results) => {
-      res.send(results.data);
-    })
-    .catch((err) => res.status(500).send(err));
-});
-
-router.get('/:id', async (req, res) => {
+router.get('/:id', ensureSameUser, async (req, res) => {
   const userId = req.params.id;
-
   try {
     const results = await db(`SELECT * FROM users WHERE id = ${userId}`);
     const users = results.data;
     if (users.length === 0) {
       res.status(404).send({ error: 'User not found' });
     } else {
-      res.send(users[0]);
+      const { password, email, ...user } = users[0];
+      res.send(user);
     }
   } catch (err) {
     res.status(500).send({ error: err.message });
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', ensureSameUser, async (req, res) => {
   const userId = req.params.id;
   const { home, work } = req.body;
 
@@ -42,10 +35,7 @@ router.put('/:id', async (req, res) => {
                 WHERE id = ${userId}
             `;
       await db(sql);
-      // next lines are unnecessary, could just send a message if response ok?
-      const myResult = await db(`SELECT * FROM users WHERE id = ${userId}`);
-      const user = myResult.data;
-      res.send(user);
+      res.send({ message: 'User updated' });
     }
   } catch (err) {
     res.status(500).send({ error: err.message });
