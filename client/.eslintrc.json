@@ -16,12 +16,7 @@
     "react/prop-types": "off",
     "react/jsx-no-bind": "off",
     "import/prefer-default-export": "off",
-    "object-curly-newline": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "react/no-unescaped-entities": "off",
     "react/jsx-props-no-spreading": "off",
-    "no-underscore-dangle": "off",
-    "react/jsx-wrap-multilines": "off",
-    "no-trailing-spaces": "off"
+    "no-underscore-dangle": "off"
   }
 }
