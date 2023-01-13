@@ -53,7 +53,8 @@ function ActivitiesList({ activities, setActivity }) {
       </Heading>
       {activities && activities.length === 0 && (
         <Heading>
-          Sorry, no activities available <FaRegSadCry />
+          Sorry, no activities available
+          <FaRegSadCry />
         </Heading>
       )}
       <Stack gap={0.5} display="flex">
@@ -105,7 +106,9 @@ function ActivitiesList({ activities, setActivity }) {
                     </Text> */}
                     <Image py="1" src={yelpStars[activity.rating]} />
                     <Text py="1" fontSize="sm">
-                      {activity.reviewCount} ratings
+                      {activity.reviewCount}
+                      {' '}
+                      ratings
                     </Text>
                     <Image maxW="40px" src={yelpLogo} />
                     <VStack>
