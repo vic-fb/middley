@@ -52,7 +52,7 @@ function App() {
 
           <Route
             path="/local"
-            element={
+            element={(
               <Local
                 setMidpoint={setMidpoint}
                 setAddress1={setAddress1}
@@ -62,17 +62,17 @@ function App() {
                 address2={address2}
                 user={user}
               />
-            }
+            )}
           />
           <Route
             path="/activities"
-            element={
+            element={(
               <Activities
                 setActivities={setActivities}
                 midpointValue={midpoint}
                 setLoading={setLoading}
               />
-            }
+            )}
           />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/signup" element={<Signup />} />
@@ -90,21 +90,23 @@ function App() {
           />
           <Route
             path="/routes"
-            element={
+            element={(
               <RoutesPage
                 address1={address1}
                 address2={address2}
                 activity={activity}
               />
-            }
+            )}
           />
           <Route
             path="/profile"
             element={user
-              && <Profile 
+              && (
+              <Profile
                 user={user}
                 setUser={setUser}
-              />}
+              />
+              )}
           />
         </Routes>
       </Box>

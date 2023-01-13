@@ -42,7 +42,8 @@ function GlobalView() {
             pb={10}
             fontSize={{ base: '24px', md: '40px', lg: '56px' }}
           >
-            Coming soon! <TimeIcon color="#DCDCDC" />
+            Coming soon!
+            <TimeIcon color="#DCDCDC" />
           </Heading>
         </Box>
         {/* <Box pt={6} height="80px">

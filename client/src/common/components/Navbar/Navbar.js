@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { GiWorld } from 'react-icons/gi';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
-import { Button, Flex, Spacer, ButtonGroup } from '@chakra-ui/react';
+import {
+  Button, Flex, Spacer, ButtonGroup,
+} from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 import { removeUserToken } from '../../helpers/localFunctions';
-// import styles from './Navbar.module.css';
 
 function Navbar({ user, setUser }) {
   const navigate = useNavigate();
