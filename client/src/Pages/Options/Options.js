@@ -1,42 +1,16 @@
-import { Link } from 'react-router-dom';
 import './Options.css';
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
   Container,
   Flex,
   Spinner,
 } from '@chakra-ui/react';
-import { ChevronRightIcon } from '@chakra-ui/icons';
 import ActivitiesList from './components/ActivitiesList';
+import CustomBreadcrumb from '../../common/components/CustomBreadcrumb/Breadcrumb';
 
 function Options({ activities, setActivity, loading }) {
   return (
     <Container maxW="container.md">
-      <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
-            Home
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/local" color="#DCDCDC">
-            Local
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/activities" color="#DCDCDC">
-            Activities
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink as={Link} to="/Options" color="#DCDCDC">
-            Options
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
-
+      <CustomBreadcrumb pages={[{ path: '/local', name: 'Local' }, { path: '/activities', name: 'Activities' }, { path: '/options', name: 'Options' }]} />
       {loading ? (
         <Flex alignItems="center" flexDirection="column">
           <Spinner thickness="5px" speed="0.65s" size="xl" />

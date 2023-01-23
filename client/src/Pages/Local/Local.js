@@ -1,9 +1,4 @@
-/* eslint-disable no-console */
-import React from 'react';
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
   FormControl,
   FormLabel,
   Input,
@@ -13,12 +8,11 @@ import {
   VStack,
   useDisclosure,
 } from '@chakra-ui/react';
-import { ChevronRightIcon } from '@chakra-ui/icons';
-import { Link } from 'react-router-dom';
 import Dialog from './components/Dialog/Dialog';
 import UserIcons from './components/UserIcons/UserIcons';
 import getCurrentLocation from '../../common/helpers/geolocation';
 import { revgeocode } from '../../common/helpers/geocode';
+import CustomBreadcrumb from '../../common/components/CustomBreadcrumb/Breadcrumb';
 
 function Local({
   setAddress1,
@@ -58,19 +52,7 @@ function Local({
 
   return (
     <Container>
-      <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
-            Home
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink as={Link} to="/local" color="#DCDCDC">
-            Local
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
+      <CustomBreadcrumb pages={[{ path: '/local', name: 'Local' }]} />
       <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
         Where are you?
       </Heading>
@@ -96,7 +78,7 @@ function Local({
           />
           <br />
           <FormControl id="address2" isRequired>
-            <FormLabel>My Friend's Location</FormLabel>
+            <FormLabel>My Friend&apos;s Location</FormLabel>
             <Input
               type="text"
               placeholder="- Enter address, city -"
