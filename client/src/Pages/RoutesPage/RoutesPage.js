@@ -29,6 +29,9 @@ function RoutesPage({ activity }) {
   };
 
   async function sharePlace() {
+    if (!navigator.canShare) {
+      await navigator.clipboard.writeText(place.url);
+    }
     await navigator.share(place);
   }
 
@@ -69,7 +72,7 @@ function RoutesPage({ activity }) {
       </Breadcrumb>
       <Flex flexDirection="column" justifyContent="space-evenly">
         <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
-          Let's go to {activity.name}!
+          {`Let's go to ${activity.name}!`}
         </Heading>
 
         <AspectRatio maxW="600px" ratio={4 / 3}>
