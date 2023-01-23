@@ -44,7 +44,9 @@ export async function revgeocode(latLng) {
     no_annotations: 1,
   };
 
-  const myresponse = { ok: false, data: null, status: 0, error: '' };
+  const myresponse = {
+    ok: false, data: null, status: 0, error: '',
+  };
   try {
     const response = await opencage.geocode(geoParams);
     if (response.status.code === 200) {
@@ -75,10 +77,8 @@ export async function getMidpoint(address1, address2) {
   const response2 = await geocode(address2);
   if (response1.ok && response2.ok) {
     const midLat = (response1.data.latLng[0] + response2.data.latLng[0]) / 2;
-    // create var midLat = lat1 + lat2 (from array) divided by 2
     const midLng = (response1.data.latLng[1] + response2.data.latLng[1]) / 2;
-    // create var midLng = lng1 + lng2 (from array) divided by 2
-    return [midLat, midLng]; // return new array containing midlat and midlng
+    return [midLat, midLng];
   }
   throw new Error('Error calculating midpoint');
 }
