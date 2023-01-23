@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import { Box, ChakraProvider } from '@chakra-ui/react';
-import styles from './App.module.css';
 import Home from './Pages/Home/Home';
 import Local from './Pages/Local/Local';
-import GlobalView from './Pages/GlobalView/GlobalView';
 import Navbar from './common/components/Navbar/Navbar';
 import Activities from './Pages/Activities/Activities';
 import Signup from './Pages/Signup/Signup';
@@ -43,13 +41,10 @@ function App() {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box backgroundColor="mitmPurple.600" minH="100vh" className={styles.App}>
+      <Box backgroundColor="mitmPurple.600" minH="100vh">
         <Navbar setUser={setUser} user={user} />
-
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/global" element={<GlobalView />} />
-
           <Route
             path="/local"
             element={(
