@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom';
-import './RoutesPage.css';
 import {
   AspectRatio,
   Breadcrumb,
@@ -14,7 +13,7 @@ import {
 
 import { ChevronRightIcon } from '@chakra-ui/icons';
 
-function RoutesPage({ activity }) {
+function Location({ activity }) {
   const nav = useNavigate();
   function returnHomeClick() {
     nav('/');
@@ -98,4 +97,4 @@ function RoutesPage({ activity }) {
   );
 }
 
-export default RoutesPage;
+export default Location;

@@ -17,7 +17,7 @@ time and energy.
 
 ## User Flow
 
-![User Flow Diagram](client/src/common/assets/userFlow.png)
+![User Flow Diagram](client/src/common/assets/user-flow.png)
 
 The above diagram shows the updated (and current) user flow of our app. 
 
@@ -37,7 +37,7 @@ Both parties will now be able to navigate to the chosen location with ease.
 
 ## DB schema
 
-![DB schema as seen on DrawSQL](client/src/common/assets/databaseScheme.png)
+![DB schema as seen on DrawSQL](client/src/common/assets/database-scheme.png)
 
 ## Tools used
 
@@ -55,7 +55,7 @@ Other libraries and tools we used are:
 - [Json web token](https://jwt.io/)
 - Third Party APIs (OpenCage geocoding API, Yelp Fusion API, Google Maps Embed API)
 
-![img.png](client/src/common/assets/techStack.png)
+![img.png](client/src/common/assets/tech-stack.png)
 
 ## Installation instructions
 
