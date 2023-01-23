@@ -8,8 +8,8 @@ import {
   VStack,
   useDisclosure,
 } from '@chakra-ui/react';
-import Dialog from './components/Dialog/Dialog';
-import UserIcons from './components/UserIcons/UserIcons';
+import Dialog from './components/dialog/Dialog';
+import UserIcons from './components/user-icons/UserIcons';
 import getCurrentLocation from '../../common/helpers/geolocation';
 import { revgeocode } from '../../common/helpers/geocode';
 import CustomBreadcrumb from '../../common/components/CustomBreadcrumb/Breadcrumb';

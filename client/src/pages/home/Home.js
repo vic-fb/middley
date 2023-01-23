@@ -2,21 +2,21 @@ import { Link } from 'react-router-dom';
 import {
   Button, Heading, HStack, Image, VStack,
 } from '@chakra-ui/react';
-import appLogo from '../../common/assets/appLogo.png';
+import appLogo from '../../common/assets/app-logo.png';
 import styles from './Home.module.css';
 
 function Home() {
   return (
-    <div className={styles.Home}>
+    <div>
       <VStack>
         <Image
-          className={styles.MeetintheMiddle}
+          className={styles.logo}
           src={appLogo}
           alt="A map with two pins, each with an arrow pointing to a heart in the middle of the map."
         />
         <br />
         <br />
-        <Heading className={styles.MITMTitle} p={4} fontSize="5xl">
+        <Heading p={4} fontSize="5xl">
           Middley
         </Heading>
         <br />

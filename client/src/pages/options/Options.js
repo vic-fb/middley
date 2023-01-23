@@ -1,4 +1,3 @@
-import './Options.css';
 import {
   Container,
   Flex,
