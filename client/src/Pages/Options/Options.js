@@ -4,7 +4,7 @@ import {
   Flex,
   Spinner,
 } from '@chakra-ui/react';
-import ActivitiesList from './components/ActivitiesList';
+import OptionsList from './components/OptionsList';
 import CustomBreadcrumb from '../../common/components/CustomBreadcrumb/Breadcrumb';
 
 function Options({ activities, setActivity, loading }) {
@@ -16,7 +16,7 @@ function Options({ activities, setActivity, loading }) {
           <Spinner thickness="5px" speed="0.65s" size="xl" />
         </Flex>
       ) : (
-        <ActivitiesList activities={activities} setActivity={setActivity} />
+        <OptionsList activities={activities} setActivity={setActivity} />
       )}
     </Container>
   );

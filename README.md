@@ -37,7 +37,7 @@ Both parties will now be able to navigate to the chosen location with ease.
 
 ## DB schema
 
-![DB schema as seen on DrawSQL](client/src/common/assets/Userdata_drawSQL.png)
+![DB schema as seen on DrawSQL](client/src/common/assets/databaseScheme.png)
 
 ## Tools used
 
@@ -55,7 +55,7 @@ Other libraries and tools we used are:
 - [Json web token](https://jwt.io/)
 - Third Party APIs (OpenCage geocoding API, Yelp Fusion API, Google Maps Embed API)
 
-![img.png](client/src/common/assets/img.png)
+![img.png](client/src/common/assets/techStack.png)
 
 ## Installation instructions
 
