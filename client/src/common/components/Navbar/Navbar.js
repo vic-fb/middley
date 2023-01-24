@@ -1,9 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import { GiWorld } from 'react-icons/gi';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
 import {
-  Button, Flex, Spacer, ButtonGroup,
+  Button, Spacer, ButtonGroup, Box, Flex,
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 import { removeUserToken } from '../../helpers/localFunctions';
@@ -18,37 +16,35 @@ function Navbar({ user, setUser }) {
   }
 
   return (
-    <nav className="navbar">
-      <Flex minWidth="max-content" alignItems="center" gap="2">
+    <Box maxW="900px" marginX="auto" height="100%">
+      <Flex height="100%" align="center" paddingX={2}>
         <Button
-          lefticon={<GiWorld />}
+          size="md"
           as={Link}
           to="/"
-          variant="ghost"
-          color="#DCDCDC"
         >
           Home
         </Button>
         <Spacer />
-        <ButtonGroup gap="1">
+        <ButtonGroup>
           {!user && (
-            <Button as={Link} to="/login" variant="ghost" color="#DCDCDC">
-              Log In
-            </Button>
+          <Button as={Link} to="/login" size="md">
+            Log In
+          </Button>
           )}
           {user && (
-            <Button as={Link} to="/profile" variant="ghost" color="#DCDCDC">
-              Profile
-            </Button>
+          <Button as={Link} to="/profile" size="md">
+            Profile
+          </Button>
           )}
           {user && (
-            <Button variant="ghost" onClick={doLogout} color="#DCDCDC">
-              <RiLogoutCircleRLine />
-            </Button>
+          <Button onClick={doLogout} size="md">
+            <RiLogoutCircleRLine />
+          </Button>
           )}
         </ButtonGroup>
       </Flex>
-    </nav>
+    </Box>
   );
 }
 
