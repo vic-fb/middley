@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import { Box, ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider, Flex } from '@chakra-ui/react';
+import theme from './brandTheme';
 import Home from './pages/home/Home';
 import Local from './pages/local/Local';
 import Navbar from './common/components/Navbar/Navbar';
@@ -8,12 +9,12 @@ import Activities from './pages/activities/Activities';
 import Signup from './pages/signup/Signup';
 import Login from './pages/login/Login';
 import Options from './pages/options/Options';
-import RoutesPage from './pages/location/Location';
+import Location from './pages/location/Location';
 import { getMidpoint } from './common/helpers/geocode';
 import Profile from './pages/profile/Profile';
 import { getUserToken } from './common/helpers/localFunctions';
 import { silentUserLogin } from './common/helpers/auth';
-import theme from './brandTheme';
+import styles from './App.module.css';
 
 function App() {
   const [activities, setActivities] = useState('');
@@ -35,14 +36,16 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const midpointArray = await getMidpoint(address1, address2);
-    setMidpoint(midpointArray); // return new array with both
-    nav('/activities'); // navigate to activities page with midpoint as prop
+    setMidpoint(midpointArray);
+    nav('/activities');
   };
 
   return (
     <ChakraProvider theme={theme}>
-      <Box backgroundColor="mitmPurple.600" minH="100vh">
+      <Box as="header" className={styles.header} backgroundColor="black">
         <Navbar setUser={setUser} user={user} />
+      </Box>
+      <Flex className={styles.main} as="main" direction="column" marginX="auto" justify="center">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
@@ -86,7 +89,7 @@ function App() {
           <Route
             path="/routes"
             element={(
-              <RoutesPage
+              <Location
                 address1={address1}
                 address2={address2}
                 activity={activity}
@@ -104,7 +107,7 @@ function App() {
               )}
           />
         </Routes>
-      </Box>
+      </Flex>
     </ChakraProvider>
   );
 }
