@@ -8,15 +8,15 @@ import { Link } from 'react-router-dom';
 
 function CustomBreadcrumb({ pages }) {
   return (
-    <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
+    <Breadcrumb separator={<ChevronRightIcon />} py="4">
       <BreadcrumbItem>
-        <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
+        <BreadcrumbLink as={Link} to="/">
           Home
         </BreadcrumbLink>
       </BreadcrumbItem>
       {pages.map((page) => (
         <BreadcrumbItem key={page.name}>
-          <BreadcrumbLink as={Link} to={page.path} color="#DCDCDC">
+          <BreadcrumbLink as={Link} to={page.path}>
             {page.name}
           </BreadcrumbLink>
         </BreadcrumbItem>
