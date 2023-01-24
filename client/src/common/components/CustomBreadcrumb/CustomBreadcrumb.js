@@ -15,7 +15,7 @@ function CustomBreadcrumb({ pages }) {
         </BreadcrumbLink>
       </BreadcrumbItem>
       {pages.map((page) => (
-        <BreadcrumbItem>
+        <BreadcrumbItem key={page.name}>
           <BreadcrumbLink as={Link} to={page.path} color="#DCDCDC">
             {page.name}
           </BreadcrumbLink>
