@@ -65,50 +65,44 @@ function Login({ setUser }) {
 
   return (
     <Container>
-      <VStack spacing="24px">
-        <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
-          Welcome!
-        </Heading>
-        <Heading as="h2" size="md">
-          Sign into your account
-        </Heading>
+      <VStack spacing={12}>
+        <VStack>
+          <Heading fontSize="5xl">
+            Welcome!
+          </Heading>
+          <Heading as="h2" size="md">
+            Sign into your account
+          </Heading>
+        </VStack>
         <form onSubmit={handleSubmit}>
-          <VStack spacing="24px">
+          <VStack spacing={6}>
             <FormControl isRequired>
               <FormLabel>Email address</FormLabel>
-
               <Input
                 type="email"
                 name="email"
                 onChange={handleChange}
                 value={email}
-                backgroundColor="#D4BBDD"
-                color="black"
               />
-
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
             <FormControl isRequired>
               <FormLabel>Password</FormLabel>
-
               <Input
                 type="password"
                 name="password"
                 onChange={handleChange}
                 value={password}
-                backgroundColor="#D4BBDD"
-                color="black"
               />
-
               <FormErrorMessage>Email is required.</FormErrorMessage>
             </FormControl>
-            <Button py="1" type="submit" isLoading={loading}>
+            <Button type="submit" isLoading={loading} my="60px">
               Submit
             </Button>
           </VStack>
         </form>
-        <Text>
-          Not registered yet?
+        <Text fontSize="xl">
+          {'Not registered yet? '}
           <Link as={RouteLink} to="/signup">
             Sign up here
           </Link>

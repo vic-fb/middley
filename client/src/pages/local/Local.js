@@ -12,7 +12,7 @@ import Dialog from './components/dialog/Dialog';
 import UserIcons from './components/user-icons/UserIcons';
 import getCurrentLocation from '../../common/helpers/geolocation';
 import { revgeocode } from '../../common/helpers/geocode';
-import CustomBreadcrumb from '../../common/components/CustomBreadcrumb/Breadcrumb';
+import CustomBreadcrumb from '../../common/components/CustomBreadcrumb/CustomBreadcrumb';
 
 function Local({
   setAddress1,
@@ -76,7 +76,6 @@ function Local({
             setCurrentAddress={setCurrentAddress}
             setSavedAddress={setSavedAddress}
           />
-          <br />
           <FormControl id="address2" isRequired>
             <FormLabel>My Friend&apos;s Location</FormLabel>
             <Input
