@@ -7,6 +7,7 @@ import {
   Heading,
   VStack,
   useDisclosure,
+  Flex,
 } from '@chakra-ui/react';
 import Dialog from './components/dialog/Dialog';
 import UserIcons from './components/user-icons/UserIcons';
@@ -58,24 +59,24 @@ function Local({
       </Heading>
       <Dialog isOpen={isOpen} onClose={onClose} />
       <form onSubmit={handleSubmit}>
-        <VStack>
+        <VStack spacing={12}>
           <FormControl id="address1" isRequired>
             <FormLabel> My Location </FormLabel>
-            <Input
-              type="text"
-              variant="outline"
-              placeholder="- Enter address, city -"
-              value={address1}
-              onChange={handleAddress1}
-              backgroundColor="#D4BBDD"
-              color="black"
-            />
+            <Flex>
+              <Input
+                type="text"
+                variant="outline"
+                placeholder="- Enter address, city -"
+                value={address1}
+                onChange={handleAddress1}
+              />
+              <UserIcons
+                user={user}
+                setCurrentAddress={setCurrentAddress}
+                setSavedAddress={setSavedAddress}
+              />
+            </Flex>
           </FormControl>
-          <UserIcons
-            user={user}
-            setCurrentAddress={setCurrentAddress}
-            setSavedAddress={setSavedAddress}
-          />
           <FormControl id="address2" isRequired>
             <FormLabel>My Friend&apos;s Location</FormLabel>
             <Input
@@ -83,8 +84,6 @@ function Local({
               placeholder="- Enter address, city -"
               value={address2}
               onChange={handleAddress2}
-              backgroundColor="#D4BBDD"
-              color="black"
             />
           </FormControl>
         </VStack>
