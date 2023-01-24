@@ -17,7 +17,7 @@ import { silentUserLogin } from './common/helpers/auth';
 import styles from './App.module.css';
 
 function App() {
-  const [activities, setActivities] = useState('');
+  const [activities, setActivities] = useState(null);
   const [midpoint, setMidpoint] = useState([]);
   const [address1, setAddress1] = useState('');
   const [address2, setAddress2] = useState('');
