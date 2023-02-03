@@ -17,7 +17,7 @@ function Home() {
         <Heading as="h1" fontSize="5xl">
           Middley
         </Heading>
-        <Button as={Link} to="/local" fontSize="xl" size="lg" variant="outline" border="4px" borderColor="red.300">
+        <Button as={Link} to="/local" fontSize="xl" size="lg" variant="outline" border="4px">
           Get started!
         </Button>
       </VStack>
