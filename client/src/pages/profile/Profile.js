@@ -41,7 +41,7 @@ function Profile({ user, setUser }) {
   return (
     <Container>
       <Stack>
-        <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+        <Heading pb={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
           {`Hi, ${capitalize(user.username)}`}
         </Heading>
         <Heading as="h2" size="md">

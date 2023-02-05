@@ -67,10 +67,10 @@ function Login({ setUser }) {
     <Container>
       <VStack spacing={12}>
         <VStack>
-          <Heading fontSize="5xl">
+          <Heading pb={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
             Welcome!
           </Heading>
-          <Heading as="h2" size="md">
+          <Heading pb={4} fontSize={{ base: '20px', md: '24px', lg: '40px' }}>
             Sign into your account
           </Heading>
         </VStack>

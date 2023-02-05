@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function CustomBreadcrumb({ pages }) {
   return (
-    <Breadcrumb separator={<ChevronRightIcon />} py="4">
+    <Breadcrumb py="0" separator={<ChevronRightIcon />}>
       <BreadcrumbItem>
         <BreadcrumbLink as={Link} to="/">
           Home

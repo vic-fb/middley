@@ -64,7 +64,7 @@ function Signup() {
 
   return (
     <Container centerContent>
-      <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+      <Heading pb={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
         Welcome!
       </Heading>
       <Heading pb={4} fontSize={{ base: '20px', md: '24px', lg: '40px' }}>
@@ -78,10 +78,9 @@ function Signup() {
               type="text"
               name="username"
               onChange={handleChange}
-              backgroundColor="#D4BBDD"
               color="black"
             />
-            <FormHelperText color="#DCDCDC">
+            <FormHelperText>
               What shall we call you?
             </FormHelperText>
             <FormErrorMessage>Name is required.</FormErrorMessage>
@@ -93,10 +92,9 @@ function Signup() {
               name="email"
               onChange={handleChange}
               value={email}
-              backgroundColor="#D4BBDD"
               color="black"
             />
-            <FormHelperText color="#DCDCDC">
+            <FormHelperText>
               We&apos;ll never share your email.
             </FormHelperText>
             <FormErrorMessage color="black">
@@ -110,7 +108,6 @@ function Signup() {
               name="password"
               onChange={handleChange}
               value={password}
-              backgroundColor="#D4BBDD"
               color="black"
             />
             <FormErrorMessage>Password is required.</FormErrorMessage>
