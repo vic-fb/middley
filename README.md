@@ -1,8 +1,11 @@
-# About Middley
+<img align="right" src="client/public/logos/favicon.ico" alt="middley-icon" height="70"/>
 
-Spend less time having to decide where to meet, and spend more time meeting up.
+# Middley
 
-Middley is the perfect way to have your friends meet you halfway. The app calculates the midway point between two locations and lets users filter-out their choice fatigue by displaying the perfect meet-up spots based on preferred activity types. You can try it out [here](https://middley.vercel.app/).
+---
+Middley is an app designed to help you meet your friends halfway. Based on two locations and a preferred activity type provided by the user, the app displays a few meet-up spots to choose from.
+
+### Try it out [here](https://middley.vercel.app/).
 
 ## Motivation
 
@@ -13,11 +16,28 @@ Our motivation behind creating Middley was the wish to enable young urbanites to
 – spending quality time with friends –
 
 by helping them transcend the barriers of indecisiveness and lack of 
-time and energy.
+time and energy. 
+
+
+## Usage
+
+The user can either start by logging in, choosing a local search or a worldwide search (not active yet).
+
+If clicking on the log in section, the user has the option to log in or sign up. Once logged in, the user can save their home and work address for future use.
+
+If clicking on the local view, the user is then asked to input two addresses. They can use the saved home/work address for the first input if desired. The second address should be the location of their friend.
+
+Once the midpoint is calculated, the user can choose from a variety of activities. 
+
+After choosing, they can see a few options of places around the middle of the two locations. They have reviews and price points to help choose.
+
+Once chosen, they can click 'Go!' to bring up a map. If they click on the map, it will open in Google Maps. If they click 'Share Place' this will generate a link to send to a friend, which will bring up the location on Google Maps on their phone. 
+
+Both parties will now be able to navigate to the chosen location with ease. 
 
 ## DB schema
 
-![DB schema as seen on DrawSQL](client/src/common/assets/database-scheme.png)
+![DB schema as seen on DrawSQL](client/src/common/assets/database-schema.png)
 
 ## Tools used
 
@@ -37,7 +57,9 @@ Other libraries and tools we used are:
 
 ![img.png](client/src/common/assets/tech-stack.png)
 
-## Installation instructions
+## Setup
+
+Clone this repo and get started following the next steps:
 
 ### Client
 1. Go to [OpenCage](https://opencagedata.com/api#quickstart) and get a free geocoding API key.
@@ -56,7 +78,7 @@ In the client folder:
     2.2. Create a new database called userdata: `CREATE DATABASE userdata;`\
     2.3. Create an `.env` file in the server folder with MySQL authentication information
 
-    ```bash
+    ```
     DB_HOST=localhost
     DB_USER=root
     DB_NAME=userdata
