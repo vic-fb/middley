@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   AspectRatio,
@@ -7,26 +8,29 @@ import {
   Flex,
   Spacer,
 } from '@chakra-ui/react';
+import { Context } from '../Provider';
 
-function Location({ activity }) {
+function Location() {
+  const { place } = useContext(Context);
   const nav = useNavigate();
+
   function returnHomeClick() {
     nav('/');
   }
 
-  const searchString = encodeURI(`${activity.name} ${activity.displayAddress}`);
+  const searchString = encodeURI(`${place.name} ${place.displayAddress}`);
 
-  const place = {
-    title: `Let's meet at ${activity.name}`,
+  const venue = {
+    title: `Let's meet at ${place.name}`,
     text: 'I picked this place using Middley',
     url: `https://www.google.com/maps/search/?api=1&query=${searchString}`,
   };
 
   async function sharePlace() {
     if (!navigator.canShare) {
-      await navigator.clipboard.writeText(place.url);
+      await navigator.clipboard.writeText(venue.url);
     }
-    await navigator.share(place);
+    await navigator.share(venue);
   }
 
   const routes = {
@@ -37,7 +41,7 @@ function Location({ activity }) {
     <Container minH="100vh">
       <Flex flexDirection="column" justifyContent="space-evenly">
         <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
-          {`Let's go to ${activity.name}!`}
+          {`Let's go to ${place.name}!`}
         </Heading>
 
         <AspectRatio maxW="600px" ratio={4 / 3}>

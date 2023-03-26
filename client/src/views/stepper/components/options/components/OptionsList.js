@@ -38,6 +38,7 @@ function OptionsList() {
             variant="elevated"
             backgroundColor="rgba(215,212,224,0.2)"
             onClick={() => setPlace(place)}
+            cursor="pointer"
             key={place.displayAddress}
           >
             <Image

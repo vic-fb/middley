@@ -30,7 +30,7 @@ function Provider(props) {
         options,
         updateOptions: (newOptions) => setOptions(newOptions),
         place,
-        updatePlace: (newPlace) => setPlace(newPlace),
+        setPlace,
       }}
     >
       {/* eslint-disable-next-line react/destructuring-assignment */}
