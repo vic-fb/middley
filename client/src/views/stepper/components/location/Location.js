@@ -1,17 +1,12 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   AspectRatio,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
   Container,
   Button,
   Heading,
   Flex,
   Spacer,
 } from '@chakra-ui/react';
-
-import { ChevronRightIcon } from '@chakra-ui/icons';
 
 function Location({ activity }) {
   const nav = useNavigate();
@@ -40,35 +35,6 @@ function Location({ activity }) {
 
   return (
     <Container minH="100vh">
-      <Breadcrumb separator={<ChevronRightIcon color="gray.500" />} py="4">
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/" color="#DCDCDC">
-            Home
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/local" color="#DCDCDC">
-            Local
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/activities" color="#DCDCDC">
-            Activities
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem>
-          <BreadcrumbLink as={Link} to="/Options" color="#DCDCDC">
-            Options
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-
-        <BreadcrumbItem isCurrentPage>
-          <BreadcrumbLink as={Link} to="/Routes" color="#DCDCDC">
-            Routes
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-      </Breadcrumb>
       <Flex flexDirection="column" justifyContent="space-evenly">
         <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
           {`Let's go to ${activity.name}!`}
