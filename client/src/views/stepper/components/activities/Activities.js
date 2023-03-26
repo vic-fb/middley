@@ -13,7 +13,6 @@ import {
   FaCocktail, FaTree, FaSpa, FaMusic,
 } from 'react-icons/fa';
 import { GiPerspectiveDiceSixFacesRandom, GiForkKnifeSpoon, GiGymBag } from 'react-icons/gi';
-import { getMidpoint } from '../../../../common/helpers/geocode';
 import { Context } from '../Provider';
 
 const categories = [
@@ -28,12 +27,11 @@ const categories = [
 
 function Activities() {
   const {
-    updateMidpoint, locations, category, updateCategory,
+    updateMidpoint, category, updateCategory,
   } = useContext(Context);
 
-  useEffect(async () => {
-    const midpoint = await getMidpoint(locations.address1, locations.address2);
-    updateMidpoint(midpoint);
+  useEffect(() => {
+    updateMidpoint();
   }, []);
 
   const cardProps = {
@@ -58,20 +56,23 @@ function Activities() {
             md: 'repeat(3, 1fr)',
           }}
         >
-          {categories.map(({ name, icon: Icon }) => (
-            <GridItem key={name} colSpan={name === 'SURPRISE' && { base: 1, sm: 2, md: 3 }}>
-              <Card onClick={() => updateCategory(name)} {...cardProps} border={category === name && '2px'} borderColor={category === name && '#8763D7'}>
-                <CardHeader>
-                  <Heading>
-                    <Icon boxsize={10} />
-                  </Heading>
-                </CardHeader>
-                <CardBody>
-                  <Text fontSize="xl">{name}</Text>
-                </CardBody>
-              </Card>
-            </GridItem>
-          ))}
+          {categories.map(({ name, icon: Icon }) => {
+            const isSelected = category === name.toLowerCase();
+            return (
+              <GridItem key={name} colSpan={name === 'SURPRISE' && { base: 1, sm: 2, md: 3 }}>
+                <Card onClick={() => updateCategory(name.toLowerCase())} {...cardProps} border={isSelected && '2px'} borderColor={isSelected && '#8763D7'}>
+                  <CardHeader>
+                    <Heading>
+                      <Icon boxsize={10} />
+                    </Heading>
+                  </CardHeader>
+                  <CardBody>
+                    <Text fontSize="xl">{name}</Text>
+                  </CardBody>
+                </Card>
+              </GridItem>
+            );
+          })}
         </Grid>
       </div>
     </Container>
