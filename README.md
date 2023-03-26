@@ -2,7 +2,7 @@
 
 Spend less time having to decide where to meet, and spend more time meeting up.
 
-Middley is the perfect way to have your friends meet you halfway. The app calculates the midway point between two locations and lets users filter-out their choice fatigue by displaying the perfect meet-up spots based on preferred activity types. You can try it out [here](https://fs-22-team3.vercel.app/).
+Middley is the perfect way to have your friends meet you halfway. The app calculates the midway point between two locations and lets users filter-out their choice fatigue by displaying the perfect meet-up spots based on preferred activity types. You can try it out [here](https://middley.vercel.app/).
 
 ## Motivation
 
