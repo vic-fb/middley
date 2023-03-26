@@ -11,17 +11,20 @@ import {
   useToast,
   VStack,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { Link as RouteLink } from 'react-router-dom';
 import { userLogin } from '../../common/helpers/auth';
 import { saveUserToken } from '../../common/helpers/localFunctions';
 import { getUserById } from '../../common/helpers/users';
+import { UserContext } from '../../common/UserProvider';
 
-function Login({ setUser }) {
+function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const { setUser } = useContext(UserContext);
+
   const navigate = useNavigate();
   const toast = useToast();
 

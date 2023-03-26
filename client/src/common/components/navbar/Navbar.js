@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { RiLogoutCircleRLine } from 'react-icons/ri';
 import {
@@ -5,8 +6,11 @@ import {
 } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 import { removeUserToken } from '../../helpers/localFunctions';
+import { UserContext } from '../../UserProvider';
 
-function Navbar({ user, setUser }) {
+function Navbar() {
+  const { user, setUser } = useContext(UserContext);
+
   const navigate = useNavigate();
 
   function doLogout() {
@@ -17,7 +21,7 @@ function Navbar({ user, setUser }) {
 
   return (
     <Box maxW="900px" marginX="auto" height="100%">
-      <Flex height="100%" align="center" paddingX={2}>
+      <Flex height="100%" align="center" px={2}>
         <Button
           size="md"
           as={Link}

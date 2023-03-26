@@ -1,11 +1,24 @@
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Box, Button, Heading, Image, VStack, Container,
 } from '@chakra-ui/react';
 import appLogo from '../../common/assets/app-logo.png';
+import { silentUserLogin } from '../../common/helpers/auth';
+import { getUserToken } from '../../common/helpers/localFunctions';
+import { UserContext } from '../../common/UserProvider';
 import styles from './Home.module.css';
 
 function Home() {
+  const { setUser } = useContext(UserContext);
+
+  useEffect(() => {
+    const token = getUserToken();
+    if (token) {
+      silentUserLogin(token).then((response) => setUser(response.user));
+    }
+  }, []);
+
   return (
     <Container>
       <VStack spacing={12}>

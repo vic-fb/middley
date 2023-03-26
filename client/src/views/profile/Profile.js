@@ -9,12 +9,14 @@ import {
   Spacer,
 } from '@chakra-ui/react';
 import { BsFillBriefcaseFill, BsFillHouseDoorFill } from 'react-icons/bs';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { UserContext } from '../../common/UserProvider';
 import EditableControls from './components/EditableControls';
 import { getUserById, updateUserAddress } from '../../common/helpers/users';
 import styles from './Profile.module.css';
 
-function Profile({ user, setUser }) {
+function Profile() {
+  const { user, setUser } = useContext(UserContext);
   const [home, setHome] = useState(user.home);
   const [work, setWork] = useState(user.work);
 
