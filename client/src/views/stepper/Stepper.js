@@ -45,8 +45,8 @@ function Stepper() {
             >
               Prev
             </Button>
-            <Button size="sm" onClick={nextStep}>
-              {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+            <Button size="sm" onClick={nextStep} isDisabled={activeStep === steps.length - 1}>
+              Next
             </Button>
           </Flex>
         )}
