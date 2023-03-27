@@ -2,17 +2,17 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   AspectRatio,
-  Container,
   Button,
   Heading,
   Flex,
-  Spacer,
+  Spacer, useToast,
 } from '@chakra-ui/react';
 import { Context } from '../Provider';
 
 function Location() {
   const { place } = useContext(Context);
   const nav = useNavigate();
+  const toast = useToast();
 
   function returnHomeClick() {
     nav('/');
@@ -28,7 +28,17 @@ function Location() {
 
   async function sharePlace() {
     if (!navigator.canShare) {
-      await navigator.clipboard.writeText(venue.url);
+      navigator.clipboard.writeText(venue.url).then(() => toast({
+        title: 'Google maps link copied to clipboard!',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      }), () => toast({
+        title: 'Failed to copy link to clipboard',
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      }));
     }
     await navigator.share(venue);
   }
@@ -38,32 +48,30 @@ function Location() {
   };
 
   return (
-    <Container minH="100vh">
-      <Flex flexDirection="column" justifyContent="space-evenly">
-        <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
-          {`Let's go to ${place.name}!`}
-        </Heading>
+    <Flex flexDirection="column">
+      <Heading py={8} fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+        {`Let's go to ${place.name}!`}
+      </Heading>
 
-        <AspectRatio maxW="600px" ratio={4 / 3}>
-          <iframe
-            title="map"
-            src={routes.route1}
-            width="600"
-            height="450"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-          />
-        </AspectRatio>
-        <Flex my="35px">
-          <Button onClick={sharePlace}>Share place</Button>
-          <Spacer />
-          <Button onClick={returnHomeClick} variant="ghost" color="#DCDCDC">
-            Return Home
-          </Button>
-        </Flex>
+      <AspectRatio maxW="600px" ratio={4 / 3}>
+        <iframe
+          title="map"
+          src={routes.route1}
+          width="600"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+        />
+      </AspectRatio>
+      <Flex my="35px">
+        <Button onClick={sharePlace}>{!navigator.canShare ? 'Copy link' : 'Share place'}</Button>
+        <Spacer />
+        <Button onClick={returnHomeClick} variant="ghost">
+          Return Home
+        </Button>
       </Flex>
-    </Container>
+    </Flex>
   );
 }
 
