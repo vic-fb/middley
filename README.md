@@ -1,8 +1,7 @@
-<img align="right" src="client/public/logos/favicon.ico" alt="middley-icon" height="70"/>
+<img align="right" src="client/public/logos/favicon.ico" alt="middley-icon" height="60"/>
 
 # Middley
 
----
 Middley is an app designed to help you meet your friends halfway. Based on two locations and a preferred activity type provided by the user, the app displays a few meet-up spots to choose from.
 
 ### Try it out [here](https://middley.vercel.app/).
@@ -18,7 +17,6 @@ Our motivation behind creating Middley was the wish to enable young urbanites to
 by helping them transcend the barriers of indecisiveness and lack of 
 time and energy. 
 
-
 ## Usage
 
 The user can either start by logging in, choosing a local search or a worldwide search (not active yet).
@@ -33,11 +31,13 @@ After choosing, they can see a few options of places around the middle of the tw
 
 Once chosen, they can click 'Go!' to bring up a map. If they click on the map, it will open in Google Maps. If they click 'Share Place' this will generate a link to send to a friend, which will bring up the location on Google Maps on their phone. 
 
-Both parties will now be able to navigate to the chosen location with ease. 
+Both parties will now be able to navigate to the chosen location with ease.
 
-## DB schema
-
-![DB schema as seen on DrawSQL](client/src/common/assets/database-schema.png)
+## Main features
+- user registration, user login and profile access (authentication and authorization)
+- provide meet-up options between two locations (geocoding with OpenCage API, options from Yelp Fusion API)
+- display meet-up location on map (Google Maps Embed API)
+- share location (Javascript Web Share API)
 
 ## Tools used
 
@@ -56,6 +56,10 @@ Other libraries and tools we used are:
 - Third Party APIs (OpenCage geocoding API, Yelp Fusion API, Google Maps Embed API)
 
 ![img.png](client/src/common/assets/tech-stack.png)
+
+## DB schema
+
+![DB schema as seen on DrawSQL](client/src/common/assets/database-schema.png)
 
 ## Setup
 
