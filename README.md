@@ -4,8 +4,6 @@
 
 Middley is an app designed to help you meet your friends halfway. Based on two locations and a preferred activity type provided by the user, the app displays a few meet-up spots to choose from.
 
-### Try it out [here](https://middley.vercel.app/).
-
 ## Motivation
 
 A problem that deserves a solution: our research showed that Millennials and Gen Z are more connected than ever through social media, and yet are often lonely and struggle to make decisions. 
